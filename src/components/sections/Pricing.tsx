@@ -1,0 +1,112 @@
+import { Check } from "lucide-react";
+
+export function Pricing() {
+  const plans = [
+    {
+      name: "Starter",
+      price: "$49",
+      period: "/mo",
+      description: "Perfect for small businesses getting started",
+      features: [
+        "Up to 500 calls per month",
+        "Basic analytics dashboard",
+        "Standard voice quality",
+        "Email support",
+        "1 phone number"
+      ],
+    },
+    {
+      name: "Pro",
+      price: "$149",
+      period: "/mo",
+      description: "For growing businesses that need more",
+      features: [
+        "Up to 5,000 calls per month",
+        "Advanced analytics & insights",
+        "Premium voice quality",
+        "CRM integration",
+        "Smart appointment scheduling",
+        "Priority support",
+        "3 phone numbers"
+      ],
+      popular: true,
+    },
+    {
+      name: "Enterprise",
+      price: "Custom",
+      period: "",
+      description: "Unlimited scale for large organizations",
+      features: [
+        "Unlimited call volume",
+        "Full API access",
+        "Custom voice models",
+        "Dedicated account manager",
+        "Custom integrations",
+        "24/7 premium support",
+        "Unlimited phone numbers"
+      ],
+    },
+  ];
+
+  return (
+    <section id="pricing" className="py-12 px-6 bg-gradient-to-b from-gray-50 to-white">
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-foreground leading-[1.1]">
+            Simple, <span className="gradient-text">Transparent Pricing</span>
+          </h2>
+          <p className="text-xl md:text-lg text-gray-600 leading-relaxed">
+            Choose the perfect plan for your business. No hidden fees, cancel anytime.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {plans.map((plan, index) => (
+            <div
+              key={index}
+              className={`bg-white border ${
+                plan.popular ? "border-primary shadow-2xl scale-105" : "border-gray-200"
+              } rounded-2xl p-8 relative transition-all duration-300 hover:shadow-2xl`}
+            >
+              {plan.popular && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#72b9bb] via-[#8cc5b8] to-[#ffd1bd] text-white px-6 py-1 rounded-full text-sm font-bold">
+                  Most Popular
+                </div>
+              )}
+
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-bold mb-2 text-foreground">{plan.name}</h3>
+                <div className="flex items-baseline justify-center mb-2">
+                  <span className="text-5xl font-extrabold gradient-text">{plan.price}</span>
+                  <span className="text-gray-500 ml-1">{plan.period}</span>
+                </div>
+                <p className="text-gray-600 text-sm">{plan.description}</p>
+              </div>
+
+              <ul className="space-y-3 mb-8">
+                {plan.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <div className="w-5 h-5 bg-gradient-to-r from-[#72b9bb] to-[#8cc5b8] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-white" />
+                    </div>
+                    <span className="text-gray-600 text-sm">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <button
+                className={`w-full py-3 px-6 rounded-full font-semibold transition-all duration-300 ${
+                  plan.popular
+                    ? "bg-gradient-to-r from-[#72b9bb] via-[#8cc5b8] to-[#ffd1bd] text-white hover:scale-105 shadow-lg"
+                    : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                }`}
+              >
+                {plan.price === "Custom" ? "Contact Sales" : "Get Started"}
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
