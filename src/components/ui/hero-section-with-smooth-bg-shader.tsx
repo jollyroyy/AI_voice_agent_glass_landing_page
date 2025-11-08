@@ -83,19 +83,19 @@ export function HeroSection({
       </div>
 
       <div className={`relative z-10 ${maxWidth} mx-auto px-6 w-full`}>
-        <div className="text-center py-24 px-6">
+        <div className="text-center py-32 md:py-40 px-6 max-w-5xl mx-auto">
           <h1
-            className={`font-extrabold tracking-tight text-foreground leading-[1.1] mb-6 text-xl md:text-2xl lg:text-3xl ${titleClassName}`}
-            style={{ fontFamily: 'Satoshi, Inter, sans-serif' }}
+            className={`font-bold tracking-tight text-foreground leading-[1.15] mb-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl ${titleClassName}`}
+            style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
           >
             {title} <span className="gradient-text">{highlightText}</span>
           </h1>
-          <p className={`text-xl md:text-lg leading-relaxed max-w-2xl mx-auto mb-10 ${descriptionClassName}`}>
+          <p className={`text-lg sm:text-xl md:text-2xl leading-relaxed max-w-3xl mx-auto mb-12 font-normal ${descriptionClassName}`}>
             {description}
           </p>
           <button
             onClick={handleButtonClick}
-            className={`px-8 py-4 rounded-full bg-gradient-to-r from-[#72b9bb] via-[#8cc5b8] to-[#ffd1bd] text-white font-bold shadow-xl hover:scale-105 transition-transform ${buttonClassName}`}
+            className={`px-8 py-4 rounded-full bg-gradient-to-r from-[#72b9bb] via-[#8cc5b8] to-[#ffd1bd] text-white font-bold shadow-xl hover:scale-105 transition-transform text-base ${buttonClassName}`}
           >
             {buttonText}
           </button>
