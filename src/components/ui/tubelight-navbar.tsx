@@ -18,13 +18,22 @@ export function NavBar({ items, className }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0].name)
 
   return (
-    <div
-      className={cn(
-        "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-6",
-        className,
-      )}
-    >
-      <div className="flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
+    <>
+      <div className="fixed top-6 left-6 z-50">
+        <img
+          src="/hero_ai_voice_image.jpeg"
+          alt="AI Voice Agent"
+          className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full object-cover shadow-lg border-2 border-primary/20"
+        />
+      </div>
+
+      <div
+        className={cn(
+          "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-6",
+          className,
+        )}
+      >
+        <div className="flex items-center gap-1 bg-background/5 border border-border backdrop-blur-lg py-1.5 px-2 rounded-full shadow-lg">
         {items.map((item) => {
           const Icon = item.icon
           const isActive = activeTab === item.name
@@ -35,7 +44,7 @@ export function NavBar({ items, className }: NavBarProps) {
               href={item.url}
               onClick={() => setActiveTab(item.name)}
               className={cn(
-                "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
+                "relative cursor-pointer text-sm font-semibold px-4 py-1.5 rounded-full transition-colors",
                 "text-foreground/80 hover:text-primary",
                 isActive && "bg-muted text-primary",
               )}
@@ -67,5 +76,6 @@ export function NavBar({ items, className }: NavBarProps) {
         })}
       </div>
     </div>
+    </>
   )
 }
