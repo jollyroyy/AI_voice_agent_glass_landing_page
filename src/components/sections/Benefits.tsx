@@ -33,9 +33,9 @@ export function Benefits() {
   ];
 
   return (
-    <section id="benefits" className="py-24 px-6">
+    <section id="benefits" className="py-12 px-6">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-foreground leading-[1.1]">
             What You Get <span className="gradient-text">Starting Today</span>
           </h2>

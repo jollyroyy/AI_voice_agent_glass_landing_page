@@ -9,7 +9,7 @@ export function CTASection() {
   ];
 
   return (
-    <section className="py-24 px-6">
+    <section className="py-12 px-6">
       <div className="container mx-auto max-w-5xl">
         <div className="bg-white/60 backdrop-blur-xl border border-gray-100 rounded-3xl shadow-2xl p-16 md:p-24 text-center">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-foreground leading-[1.1]">

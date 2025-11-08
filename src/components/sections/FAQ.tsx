@@ -32,9 +32,9 @@ export function FAQ() {
   ];
 
   return (
-    <section id="faqs" className="py-24 px-6">
+    <section id="faqs" className="py-12 px-6">
       <div className="container mx-auto max-w-4xl">
-        <div className="text-center mb-20">
+        <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-foreground leading-[1.1]">
             Questions? <span className="gradient-text">We've Got Answers</span>
           </h2>

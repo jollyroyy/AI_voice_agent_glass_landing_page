@@ -18,9 +18,9 @@ export function HowItWorks() {
   ];
 
   return (
-    <section id="how-it-works" className="py-24 px-6">
+    <section id="how-it-works" className="py-12 px-6">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-foreground leading-[1.1]">
             Up & Running in <span className="gradient-text">15 Minutes</span>
           </h2>

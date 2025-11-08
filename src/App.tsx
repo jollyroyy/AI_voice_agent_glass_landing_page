@@ -5,6 +5,7 @@ import { AnimatedAIBanner } from '@/components/ui/animated-ai-banner';
 import { Stats } from '@/components/sections/Stats';
 import { UseCases } from '@/components/sections/UseCases';
 import { PainPoints } from '@/components/sections/PainPoints';
+import { WhyUs } from '@/components/sections/WhyUs';
 import { HowItWorks } from '@/components/sections/HowItWorks';
 import { Benefits } from '@/components/sections/Benefits';
 import { CTASection } from '@/components/sections/CTASection';
@@ -26,8 +27,6 @@ function App() {
     <div className="min-h-screen bg-white">
       <NavBar items={navItems} />
 
-      <AnimatedAIBanner />
-
       <section id="home">
         <HeroSection
           title="Your Smartest Employee Isn't Human —"
@@ -43,9 +42,12 @@ function App() {
         />
       </section>
 
+      <AnimatedAIBanner />
+
       <Stats />
       <UseCases />
       <PainPoints />
+      <WhyUs />
       <HowItWorks />
       <Benefits />
       <CTASection />
