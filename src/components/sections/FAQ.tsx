@@ -35,10 +35,10 @@ export function FAQ() {
     <section id="faqs" className="py-24 px-6">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-5 text-gray-900">
-            Questions? <span className="bg-gradient-to-r from-pink-500 to-rose-600 bg-clip-text text-transparent">We've Got Answers</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-foreground leading-[1.1]">
+            Questions? <span className="gradient-text">We've Got Answers</span>
           </h2>
-          <p className="text-xl text-gray-600 leading-relaxed">
+          <p className="text-xl md:text-lg text-gray-600 leading-relaxed">
             Everything you need to know about VoiceFlow AI
           </p>
         </div>
@@ -47,13 +47,13 @@ export function FAQ() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white border border-pink-100 rounded-2xl p-8 cursor-pointer transition-all duration-300 hover:border-pink-400 hover:shadow-xl hover:shadow-pink-200/30"
+              className="bg-white border border-gray-100 rounded-2xl shadow-lg p-8 cursor-pointer transition-all duration-300 hover:shadow-2xl"
               onClick={() => setOpenIndex(openIndex === index ? null : index)}
             >
               <div className="flex justify-between items-start gap-4">
-                <h3 className="text-xl font-bold text-gray-900 flex-1">{faq.question}</h3>
+                <h3 className="text-xl font-bold tracking-tight text-foreground flex-1">{faq.question}</h3>
                 <ChevronDown
-                  className={`w-6 h-6 text-pink-500 transition-transform duration-300 flex-shrink-0 ${
+                  className={`w-6 h-6 text-[#72b9bb] transition-transform duration-300 flex-shrink-0 ${
                     openIndex === index ? "rotate-180" : ""
                   }`}
                 />

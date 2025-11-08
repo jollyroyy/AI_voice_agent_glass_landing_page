@@ -36,10 +36,10 @@ export function Benefits() {
     <section id="benefits" className="py-24 px-6">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-5 text-gray-900">
-            What You Get <span className="bg-gradient-to-r from-pink-500 to-rose-600 bg-clip-text text-transparent">Starting Today</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-foreground leading-[1.1]">
+            What You Get <span className="gradient-text">Starting Today</span>
           </h2>
-          <p className="text-xl text-gray-600 leading-relaxed">
+          <p className="text-xl md:text-lg text-gray-600 leading-relaxed">
             Real results that transform your business from day one
           </p>
         </div>
@@ -48,10 +48,10 @@ export function Benefits() {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="bg-white border border-pink-100 rounded-3xl p-12 text-center transition-all duration-300 hover:-translate-y-2 hover:border-pink-400 hover:shadow-2xl hover:shadow-pink-200/50"
+              className="bg-white border border-gray-100 rounded-2xl shadow-lg p-12 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
             >
               <div className="text-6xl mb-6">{benefit.icon}</div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">{benefit.title}</h3>
+              <h3 className="text-2xl font-bold tracking-tight mb-4 text-foreground">{benefit.title}</h3>
               <p className="text-gray-600 text-base leading-relaxed">{benefit.description}</p>
             </div>
           ))}

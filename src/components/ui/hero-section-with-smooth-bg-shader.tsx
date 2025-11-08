@@ -39,8 +39,6 @@ export function HeroSection({
   buttonClassName = "",
   maxWidth = "max-w-6xl",
   veilOpacity = "bg-white/20 dark:bg-black/25",
-  fontFamily = "Satoshi, sans-serif",
-  fontWeight = 500,
 }: HeroSectionProps) {
   const [dimensions, setDimensions] = useState({ width: 1920, height: 1080 })
   const [mounted, setMounted] = useState(false)
@@ -85,19 +83,19 @@ export function HeroSection({
       </div>
 
       <div className={`relative z-10 ${maxWidth} mx-auto px-6 w-full`}>
-        <div className="text-center">
+        <div className="text-center bg-white/60 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-100 py-24 px-6">
           <h1
-            className={`font-bold text-foreground text-balance text-4xl sm:text-5xl md:text-6xl xl:text-[80px] leading-tight sm:leading-tight md:leading-tight lg:leading-tight xl:leading-[1.1] mb-6 lg:text-7xl ${titleClassName}`}
-            style={{ fontFamily, fontWeight }}
+            className={`font-extrabold tracking-tight text-foreground leading-[1.1] mb-6 ${titleClassName}`}
+            style={{ fontFamily: 'Satoshi, Inter, sans-serif' }}
           >
-            {title} <span className="text-primary">{highlightText}</span>
+            {title} <span className="gradient-text">{highlightText}</span>
           </h1>
-          <p className={`text-lg sm:text-xl text-white text-pretty max-w-2xl mx-auto leading-relaxed mb-10 px-4 ${descriptionClassName}`}>
+          <p className={`text-xl md:text-lg leading-relaxed max-w-2xl mx-auto mb-10 ${descriptionClassName}`}>
             {description}
           </p>
           <button
             onClick={handleButtonClick}
-            className={`px-6 py-4 sm:px-8 sm:py-6 rounded-full border-4 bg-[rgba(63,63,63,1)] border-card text-sm sm:text-base text-white hover:bg-[rgba(63,63,63,0.9)] transition-colors ${buttonClassName}`}
+            className={`px-8 py-4 rounded-full bg-gradient-to-r from-[#72b9bb] via-[#8cc5b8] to-[#ffd1bd] text-white font-bold shadow-xl hover:scale-105 transition-transform ${buttonClassName}`}
           >
             {buttonText}
           </button>

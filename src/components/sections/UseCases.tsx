@@ -21,10 +21,10 @@ export function UseCases() {
     <section id="solutions" className="py-24 px-6">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-5 text-gray-900">
-            Built Specifically For <span className="bg-gradient-to-r from-pink-500 to-rose-600 bg-clip-text text-transparent">Your Business</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-foreground leading-[1.1]">
+            Built Specifically For <span className="gradient-text">Your Business</span>
           </h2>
-          <p className="text-xl text-gray-600 leading-relaxed">
+          <p className="text-xl md:text-lg text-gray-600 leading-relaxed">
             Whether you're running a dental practice or selling properties, our AI agents understand your industry inside out
           </p>
         </div>
@@ -33,11 +33,11 @@ export function UseCases() {
           {cases.map((item, index) => (
             <div
               key={index}
-              className="bg-white border border-pink-100 rounded-3xl p-10 transition-all duration-300 hover:-translate-y-2 hover:border-pink-400 hover:shadow-2xl hover:shadow-pink-200/50"
+              className="bg-white border border-gray-100 rounded-2xl shadow-lg p-10 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
             >
               <div className="text-6xl mb-6">{item.icon}</div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">{item.title}</h3>
-              <p className="text-gray-600 text-lg leading-relaxed">{item.description}</p>
+              <h3 className="text-2xl font-bold tracking-tight mb-4 text-foreground">{item.title}</h3>
+              <p className="text-gray-600 leading-relaxed">{item.description}</p>
             </div>
           ))}
         </div>
