@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { LucideIcon, ChevronDown } from "lucide-react";
+import { LucideIcon } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -40,7 +40,7 @@ export function NavBar({ items, className }: NavBarProps) {
           className
         )}
       >
-        <div className="flex items-center gap-1 bg-background/5 border border-border backdrop-blur-lg py-1.5 px-2 rounded-full shadow-lg">
+        <div className="flex items-center gap-1 bg-background/5 border border-border backdrop-blur-lg py-1.5 px-2 rounded-full shadow-lg bg-transparent">
           {items.map((item) => {
             const Icon = item.icon;
             const isActive = activeTab === item.name;
@@ -57,7 +57,7 @@ export function NavBar({ items, className }: NavBarProps) {
                   <button
                     onClick={() => setActiveTab(item.name)}
                     className={cn(
-                      "relative cursor-pointer text-sm font-semibold px-4 py-1.5 rounded-full transition-colors flex items-center gap-1",
+                      "relative cursor-pointer text-sm font-semibold px-4 py-1.5 rounded-full transition-colors",
                       "text-foreground/80 hover:text-primary",
                       isActive && "bg-muted text-primary"
                     )}
@@ -66,7 +66,6 @@ export function NavBar({ items, className }: NavBarProps) {
                     <span className="md:hidden">
                       <Icon size={18} strokeWidth={2.5} />
                     </span>
-                    <ChevronDown className="hidden md:inline w-3 h-3" />
                     {isActive && (
                       <motion.div
                         layoutId="lamp"
@@ -127,14 +126,13 @@ export function NavBar({ items, className }: NavBarProps) {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
-                    className="hidden md:block absolute top-full mt-3 bg-background/5 backdrop-blur-xl border border-border/50 rounded-2xl shadow-2xl p-2 min-w-[240px] z-50"
+                    className="hidden md:block absolute top-full mt-3 bg-white/90 backdrop-blur-xl border border-gray-200 rounded-lg shadow-lg p-1 min-w-[220px] z-50"
                   >
-                    {item.dropdown?.map((dropItem, idx) => (
+                    {item.dropdown?.map((dropItem) => (
                       <a
                         key={dropItem.name}
                         href={dropItem.url}
-                        className="block px-4 py-3 text-sm font-medium text-foreground/70 hover:text-primary hover:bg-primary/10 rounded-xl transition-all duration-200"
-                        style={{ animationDelay: `${idx * 50}ms` }}
+                        className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md transition-all duration-200"
                       >
                         {dropItem.name}
                       </a>
