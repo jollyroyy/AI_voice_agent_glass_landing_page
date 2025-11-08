@@ -29,7 +29,7 @@ function App() {
         <HeroSection
           title="Your Smartest Employee Isn't Human —"
           highlightText="It's Your AI Voice Agent"
-          description="Transform your dental clinic and real estate business with AI voice agents that answer every call, schedule appointments instantly, and work 24/7—no sick days, no breaks, no missed opportunities."
+          description="Transform your business with AI powered Voice Agents that answers every call, schedule appointments instantly, work 24/7 - no sick days, no breaks, no missed opportunities"
           buttonText="Get Started Free"
           distortion={1.2}
           speed={0.8}
