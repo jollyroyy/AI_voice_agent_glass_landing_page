@@ -126,13 +126,15 @@ export function NavBar({ items, className }: NavBarProps) {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="hidden md:block absolute top-full mt-2 bg-white/95 backdrop-blur-lg border border-gray-200 rounded-xl shadow-xl p-3 min-w-[220px] z-50"
+                    transition={{ duration: 0.2 }}
+                    className="hidden md:block absolute top-full mt-3 bg-background/5 backdrop-blur-xl border border-border/50 rounded-2xl shadow-2xl p-2 min-w-[240px] z-50"
                   >
-                    {item.dropdown?.map((dropItem) => (
+                    {item.dropdown?.map((dropItem, idx) => (
                       <a
                         key={dropItem.name}
                         href={dropItem.url}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:text-primary hover:bg-gray-100 rounded-lg transition-colors"
+                        className="block px-4 py-3 text-sm font-medium text-foreground/70 hover:text-primary hover:bg-primary/10 rounded-xl transition-all duration-200"
+                        style={{ animationDelay: `${idx * 50}ms` }}
                       >
                         {dropItem.name}
                       </a>

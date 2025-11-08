@@ -15,7 +15,7 @@ import { CTASection } from '@/components/sections/CTASection';
 import { FAQ } from '@/components/sections/FAQ';
 import { Contact } from '@/components/sections/Contact';
 import { Footer } from '@/components/sections/Footer';
-import { Home, Sparkles, Target, Zap, MessagesSquare, Phone, Building2, DollarSign } from 'lucide-react';
+import { Home, Sparkles, Target, Zap, MessagesSquare, Phone, Building2 } from 'lucide-react';
 
 const navItems = [
   { name: 'Home', url: '#home', icon: Home },
@@ -41,9 +41,7 @@ const navItems = [
     ]
   },
   { name: 'How It Works', url: '#how-it-works', icon: Zap },
-  { name: 'Pricing', url: '#pricing', icon: DollarSign },
-  { name: 'Case Studies', url: '#cases', icon: Sparkles },
-  { name: 'About', url: '#about', icon: Building2 },
+  { name: 'About', url: '#about', icon: Sparkles },
   { name: 'FAQs', url: '#faqs', icon: MessagesSquare },
   { name: 'Contact', url: '#contact', icon: Phone },
 ];
