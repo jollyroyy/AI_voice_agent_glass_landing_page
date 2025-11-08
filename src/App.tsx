@@ -1,20 +1,28 @@
 import './App.css';
 import { HeroSection } from '@/components/ui/hero-section-with-smooth-bg-shader';
 import { NavBar } from '@/components/ui/tubelight-navbar';
+import { Stats } from '@/components/sections/Stats';
+import { UseCases } from '@/components/sections/UseCases';
+import { PainPoints } from '@/components/sections/PainPoints';
+import { HowItWorks } from '@/components/sections/HowItWorks';
+import { Benefits } from '@/components/sections/Benefits';
+import { CTASection } from '@/components/sections/CTASection';
+import { FAQ } from '@/components/sections/FAQ';
+import { Footer } from '@/components/sections/Footer';
 import { Home, Sparkles, Target, Zap, MessagesSquare, Phone } from 'lucide-react';
 
 const navItems = [
   { name: 'Home', url: '#home', icon: Home },
-  { name: 'Features', url: '#features', icon: Sparkles },
   { name: 'Solutions', url: '#solutions', icon: Target },
-  { name: 'Pricing', url: '#pricing', icon: Zap },
-  { name: 'Testimonials', url: '#testimonials', icon: MessagesSquare },
+  { name: 'Benefits', url: '#benefits', icon: Sparkles },
+  { name: 'How It Works', url: '#how-it-works', icon: Zap },
+  { name: 'FAQs', url: '#faqs', icon: MessagesSquare },
   { name: 'Contact', url: '#contact', icon: Phone },
 ];
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <NavBar items={navItems} />
 
       <section id="home">
@@ -31,6 +39,15 @@ function App() {
           onButtonClick={() => console.log('Get started clicked')}
         />
       </section>
+
+      <Stats />
+      <UseCases />
+      <PainPoints />
+      <HowItWorks />
+      <Benefits />
+      <CTASection />
+      <FAQ />
+      <Footer />
     </div>
   );
 }
