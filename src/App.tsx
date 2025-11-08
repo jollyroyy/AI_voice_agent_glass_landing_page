@@ -3,6 +3,8 @@ import { HeroSection } from '@/components/ui/hero-section-with-smooth-bg-shader'
 import { NavBar } from '@/components/ui/navbar-with-dropdowns';
 import WavyShader from '@/components/ui/wavy-shader';
 import { Stats } from '@/components/sections/Stats';
+import { Solutions } from '@/components/sections/Solutions';
+import { Industries } from '@/components/sections/Industries';
 import { UseCases } from '@/components/sections/UseCases';
 import { PainPoints } from '@/components/sections/PainPoints';
 import { WhyUs } from '@/components/sections/WhyUs';
@@ -19,27 +21,8 @@ import { Home, Sparkles, Target, Zap, MessagesSquare, Phone, Building2 } from 'l
 
 const navItems = [
   { name: 'Home', url: '#home', icon: Home },
-  {
-    name: 'Solutions',
-    icon: Target,
-    dropdown: [
-      { name: 'Customer Support Automation', url: '#solutions' },
-      { name: 'Lead Qualification & Follow-Up', url: '#solutions' },
-      { name: 'Appointment Scheduling', url: '#solutions' },
-      { name: 'Voice Surveys & Feedback', url: '#solutions' },
-    ]
-  },
-  {
-    name: 'Industries',
-    icon: Building2,
-    dropdown: [
-      { name: 'Real Estate', url: '#cases' },
-      { name: 'Healthcare', url: '#cases' },
-      { name: 'Hospitality', url: '#cases' },
-      { name: 'E-commerce', url: '#cases' },
-      { name: 'Financial Services', url: '#cases' },
-    ]
-  },
+  { name: 'Solutions', url: '#solutions', icon: Target },
+  { name: 'Industries', url: '#industries', icon: Building2 },
   { name: 'How It Works', url: '#how-it-works', icon: Zap },
   { name: 'About', url: '#about', icon: Sparkles },
   { name: 'FAQs', url: '#faqs', icon: MessagesSquare },
@@ -67,6 +50,9 @@ function App() {
       </section>
 
       <WavyShader />
+
+      <Solutions />
+      <Industries />
 
       <Stats />
       <UseCases />

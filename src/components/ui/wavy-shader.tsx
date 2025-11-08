@@ -17,6 +17,13 @@ const WavyShader = () => {
 
     const float overallSpeed = 0.2;
     const float gridSmoothWidth = 0.015;
+    const float axisWidth = 0.05;
+    const float majorLineWidth = 0.025;
+    const float minorLineWidth = 0.0125;
+    const float majorLineFrequency = 5.0;
+    const float minorLineFrequency = 1.0;
+    const vec4 gridColor = vec4(0.5);
+    const float scale = 5.0;
     const vec4 lineColor = vec4(0.4, 0.2, 0.8, 1.0);
     const float minLineWidth = 0.01;
     const float maxLineWidth = 0.2;
@@ -31,11 +38,21 @@ const WavyShader = () => {
     const float minOffsetSpread = 0.6;
     const float maxOffsetSpread = 2.0;
     const int linesPerGroup = 16;
-    const float scale = 5.0;
 
     #define drawCircle(pos, radius, coord) smoothstep(radius + gridSmoothWidth, radius, length(coord - (pos)))
     #define drawSmoothLine(pos, halfWidth, t) smoothstep(halfWidth, 0.0, abs(pos - (t)))
     #define drawCrispLine(pos, halfWidth, t) smoothstep(halfWidth + gridSmoothWidth, halfWidth, abs(pos - (t)))
+    #define drawPeriodicLine(freq, width, t) drawCrispLine(freq / 2.0, width, abs(mod(t, freq) - (freq) / 2.0))
+
+    float drawGridLines(float axis) {
+      return drawCrispLine(0.0, axisWidth, axis)
+            + drawPeriodicLine(majorLineFrequency, majorLineWidth, axis)
+            + drawPeriodicLine(minorLineFrequency, minorLineWidth, axis);
+    }
+
+    float drawGrid(vec2 space) {
+      return min(1.0, drawGridLines(space.x) + drawGridLines(space.y));
+    }
 
     float random(float t) {
       return (cos(t) + cos(t * 1.3 + 1.3) + cos(t * 1.4 + 1.4)) / 3.0;
@@ -58,6 +75,8 @@ const WavyShader = () => {
       space.x += random(space.y * warpFrequency + iTime * warpSpeed + 2.0) * warpAmplitude * horizontalFade;
 
       vec4 lines = vec4(0.0);
+      vec4 bgColor1 = vec4(0.1, 0.1, 0.3, 1.0);
+      vec4 bgColor2 = vec4(0.3, 0.1, 0.5, 1.0);
 
       for(int l = 0; l < linesPerGroup; l++) {
         float normalizedLineIndex = float(l) / float(linesPerGroup);
@@ -77,9 +96,10 @@ const WavyShader = () => {
         lines += line * lineColor * rand;
       }
 
-      fragColor = vec4(0.0);
+      fragColor = mix(bgColor1, bgColor2, uv.x);
+      fragColor *= verticalFade;
+      fragColor.a = 1.0;
       fragColor += lines;
-      fragColor.a = lines.r + lines.g + lines.b;
 
       gl_FragColor = fragColor;
     }
@@ -171,10 +191,8 @@ const WavyShader = () => {
     const render = () => {
       const currentTime = (Date.now() - startTime) / 1000;
 
-      gl.clearColor(0.0, 0.0, 0.0, 0.0);
+      gl.clearColor(0.0, 0.0, 0.0, 1.0);
       gl.clear(gl.COLOR_BUFFER_BIT);
-      gl.enable(gl.BLEND);
-      gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
 
       gl.useProgram(programInfo.program);
 
@@ -205,7 +223,7 @@ const WavyShader = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-32 overflow-hidden">
+    <div className="relative w-full h-[400px] overflow-hidden">
       <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full" />
     </div>
   );
