@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export function AnimatedAIBanner() {
   return (
-    <div className="relative w-full py-8 overflow-hidden bg-white flex items-center justify-center">
+    <div className="relative w-full py-8 overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white flex items-center justify-center">
 
       <motion.div
         className="relative z-20 container mx-auto px-6"
