@@ -1,6 +1,5 @@
 import './App.css';
 import { HeroSection } from '@/components/ui/hero-section-with-smooth-bg-shader';
-import { HeroFuturistic } from '@/components/ui/hero-futuristic';
 import { NavBar } from '@/components/ui/tubelight-navbar';
 import { Stats } from '@/components/sections/Stats';
 import { UseCases } from '@/components/sections/UseCases';
@@ -26,25 +25,19 @@ function App() {
     <div className="min-h-screen bg-white">
       <NavBar items={navItems} />
 
-      <section id="home" className="relative">
-        <div className="fixed inset-0 w-screen h-screen z-0">
-          <HeroSection
-            title=""
-            highlightText=""
-            description=""
-            buttonText=""
-            distortion={1.2}
-            speed={0.8}
-            colors={["#4a9eff", "#7ec8f5", "#a8d5ff", "#e3f2ff", "#5ab9ea", "#c5e7ff"]}
-            titleClassName="hidden"
-            descriptionClassName="hidden"
-            buttonClassName="hidden"
-            onButtonClick={() => {}}
-          />
-        </div>
-        <div className="relative z-10">
-          <HeroFuturistic />
-        </div>
+      <section id="home">
+        <HeroSection
+          title="Your Smartest Employee Isn't Human —"
+          highlightText="It's Your AI Voice Agent"
+          description="Transform your dental clinic and real estate business with AI voice agents that answer every call, schedule appointments instantly, and work 24/7—no sick days, no breaks, no missed opportunities."
+          buttonText="Get Started Free"
+          distortion={1.2}
+          speed={0.8}
+          colors={["#4a9eff", "#7ec8f5", "#a8d5ff", "#e3f2ff", "#5ab9ea", "#c5e7ff"]}
+          titleClassName=""
+          descriptionClassName="text-black"
+          onButtonClick={() => console.log('Get started clicked')}
+        />
       </section>
 
       <Stats />

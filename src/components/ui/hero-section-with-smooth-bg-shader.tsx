@@ -83,9 +83,9 @@ export function HeroSection({
       </div>
 
       <div className={`relative z-10 ${maxWidth} mx-auto px-6 w-full`}>
-        <div className="text-center bg-white/60 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-100 py-24 px-6">
+        <div className="text-center py-24 px-6">
           <h1
-            className={`font-extrabold tracking-tight text-foreground leading-[1.1] mb-6 ${titleClassName}`}
+            className={`font-extrabold tracking-tight text-foreground leading-[1.1] mb-6 text-3xl md:text-4xl lg:text-5xl ${titleClassName}`}
             style={{ fontFamily: 'Satoshi, Inter, sans-serif' }}
           >
             {title} <span className="gradient-text">{highlightText}</span>
