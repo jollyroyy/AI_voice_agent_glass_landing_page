@@ -1,6 +1,7 @@
 import './App.css';
 import { HeroSection } from '@/components/ui/hero-section-with-smooth-bg-shader';
 import { NavBar } from '@/components/ui/navbar-with-dropdowns';
+import WavyShader from '@/components/ui/wavy-shader';
 import { Stats } from '@/components/sections/Stats';
 import { UseCases } from '@/components/sections/UseCases';
 import { PainPoints } from '@/components/sections/PainPoints';
@@ -64,6 +65,8 @@ function App() {
           onButtonClick={() => console.log('Get started clicked')}
         />
       </section>
+
+      <WavyShader />
 
       <Stats />
       <UseCases />
