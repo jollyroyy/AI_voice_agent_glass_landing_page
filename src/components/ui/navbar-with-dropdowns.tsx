@@ -68,7 +68,7 @@ export function NavBar({ items, className }: NavBarProps) {
                     }}
                     className={cn(
                       "relative cursor-pointer text-sm font-semibold px-4 py-1.5 rounded-full transition-colors",
-                      "text-foreground/80 hover:text-primary",
+                      "text-foreground/80 hover:text-primary bg-transparent",
                       isActive && "text-primary"
                     )}
                   >
@@ -104,7 +104,7 @@ export function NavBar({ items, className }: NavBarProps) {
                     }}
                     className={cn(
                       "relative cursor-pointer text-sm font-semibold px-4 py-1.5 rounded-full transition-colors",
-                      "text-foreground/80 hover:text-primary",
+                      "text-foreground/80 hover:text-primary bg-transparent",
                       isActive && "text-primary"
                     )}
                   >
