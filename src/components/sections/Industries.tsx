@@ -3,49 +3,43 @@ import { Home as HomeIcon, Stethoscope, Building2, Check } from 'lucide-react';
 
 const industries = [
   {
-    title: 'Healthcare & Dental Practices',
-    subtitle: 'HIPAA-Compliant Patient Communication',
+    title: 'Dental Clinics',
+    subtitle: 'More confirmed appointments. Less phone chaos. Happier patients.',
     icon: Stethoscope,
+    pain: 'Full phones, high no-show risk, long intake calls.',
     benefits: [
-      'Insurance verification and eligibility checks',
-      'Appointment reminders to reduce no-shows',
-      'Prescription refill request routing',
-      'Emergency vs. non-emergency triage',
-      'New patient intake coordination',
-      'Recall and reactivation campaigns',
-      'Integration with Dentrix, Epic, Kareo, and more',
+      'Automated appointment booking 24/7',
+      'Pre-visit intake capture (forms, insurance questions)',
+      'Same-day recall prompts',
+      'Friendly reminders that reduce no-shows',
+      'Insurance verification assistance',
     ],
-    footer: 'HIPAA-compliant data encryption with secure PHI handling protocols and BAA included.',
   },
   {
-    title: 'Real Estate Professionals',
-    subtitle: 'Never Miss a Buyer or Seller Again',
-    icon: HomeIcon,
-    benefits: [
-      'Property-specific inquiries from MLS data',
-      'Showing schedule coordination',
-      'Buyer/seller pre-qualification',
-      'Open house registration',
-      'Mortgage pre-approval status capture',
-      'Comparative market analysis requests',
-      'Integration with Zillow, Follow Up Boss, MLS systems',
-    ],
-    footer: 'Automated follow-up sequences with drip campaign coordination and market updates.',
-  },
-  {
-    title: 'Professional Services',
-    subtitle: 'Consultation Booking Made Effortless',
+    title: 'Medical Clinics (GPs, Specialists)',
+    subtitle: 'Faster triage, fewer missed urgent calls, more time for clinical care.',
     icon: Building2,
+    pain: 'Triage bottlenecks, urgent vs routine separation, lengthy admin tasks.',
     benefits: [
-      'Service package explanation',
-      'Pricing tier guidance',
-      'Consultation scheduling',
-      'Document collection coordination',
-      'Project scope capture',
-      'Proposal follow-up',
-      'Integration with Salesforce, HubSpot, Calendly',
+      'Smart triage scripts for better prioritization',
+      'Urgent-call escalation to staff immediately',
+      'Prescription refill routing',
+      'Multilingual support for diverse patients',
+      'Reduced admin burden on clinical staff',
     ],
-    footer: 'Seamless integration with your existing CRM, calendar, and project management tools.',
+  },
+  {
+    title: 'Realtors & Broker Teams',
+    subtitle: 'Faster contact, more showings, shorter lead-to-listing time.',
+    icon: HomeIcon,
+    pain: 'Leads go cold after first inquiry, manual scheduling, no consistent follow-up.',
+    benefits: [
+      'Instant lead qualification when they call',
+      'Automated showing scheduling',
+      'Follow-ups for open-house attendees',
+      'Calendar and CRM sync',
+      'Never miss a hot lead again',
+    ],
   },
 ];
 
@@ -74,22 +68,25 @@ export function Industries() {
                     </div>
                     <div>
                       <CardTitle className="text-3xl mb-2">{industry.title}</CardTitle>
-                      <p className="text-xl text-gray-600 font-semibold">{industry.subtitle}</p>
+                      <p className="text-lg text-gray-600 font-semibold mb-3">{industry.subtitle}</p>
                     </div>
+                  </div>
+                  <div className="mt-4 bg-red-50 border-l-4 border-red-400 p-4">
+                    <p className="text-sm text-gray-700"><strong>Pain:</strong> {industry.pain}</p>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-4 mb-6">
+                  <p className="text-base font-semibold text-foreground mb-4">Value:</p>
+                  <ul className="space-y-3">
                     {industry.benefits.map((benefit, idx) => (
                       <li key={idx} className="flex items-start gap-3">
-                        <div className="w-6 h-6 bg-gradient-to-r from-[#72b9bb] to-[#8cc5b8] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <Check className="w-4 h-4 text-white" />
+                        <div className="w-5 h-5 bg-gradient-to-r from-[#72b9bb] to-[#8cc5b8] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <Check className="w-3 h-3 text-white" />
                         </div>
                         <span className="text-gray-700 text-base">{benefit}</span>
                       </li>
                     ))}
                   </ul>
-                  <p className="text-gray-600 italic text-base pl-9">{industry.footer}</p>
                 </CardContent>
               </Card>
             );

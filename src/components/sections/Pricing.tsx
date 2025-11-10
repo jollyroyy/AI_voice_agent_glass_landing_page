@@ -3,61 +3,57 @@ import { Check } from "lucide-react";
 export function Pricing() {
   const plans = [
     {
-      name: "Starter Plan",
-      price: "$[PRICE]",
-      period: "/month",
-      description: "Perfect for solo practitioners and small offices",
+      name: "Pilot Program",
+      price: "From [PILOT PRICE]",
+      period: "",
+      description: "Low-risk trial to measure impact",
       features: [
-        "[X] calls per month included",
-        "Basic appointment scheduling",
-        "Calendar integration",
-        "Email notifications",
-        "Business hours coverage"
-      ],
-    },
-    {
-      name: "Professional Plan",
-      price: "$[PRICE]",
-      period: "/month",
-      description: "Ideal for growing practices and busy agents",
-      features: [
-        "[X] calls per month included",
-        "Advanced scheduling with multiple calendars",
-        "CRM integration",
-        "24/7 coverage",
-        "SMS notifications",
-        "Call analytics dashboard"
+        "[X-day] controlled pilot",
+        "Setup and script design included",
+        "Analytics dashboard",
+        "Measure real impact before scaling",
+        "No long-term commitment"
       ],
       popular: true,
     },
     {
-      name: "Enterprise Plan",
-      price: "Custom Pricing",
+      name: "Custom Plans",
+      price: "Custom Quote",
       period: "",
-      description: "For multi-location practices and brokerages",
+      description: "Tailored to your volume and needs",
       features: [
-        "Unlimited calls",
-        "Multiple AI agents",
-        "Advanced integrations",
-        "Dedicated account manager",
-        "Custom workflows and scripting"
+        "Volume-based pricing",
+        "Full calendar and CRM integration",
+        "Compliance options (HIPAA-ready)",
+        "Priority support",
+        "Flexible scaling"
       ],
     },
   ];
+
+  const earlyAdopterInfo = {
+    title: "Why choose VoiceShine (even though we're new)",
+    benefits: [
+      "Focused on results: we design every flow to reduce friction and increase conversions.",
+      "Transparent process and clear KPIs from day one.",
+      "You'll be an early partner — influence product shape and receive priority support and pricing.",
+      "Fast turnaround: pilots ready in [X days/weeks] depending on integrations."
+    ]
+  };
 
   return (
     <section id="pricing" className="py-12 px-6 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-foreground leading-[1.1]">
-            Transparent Pricing <span className="gradient-text">That Makes Sense</span>
+            Pricing & <span className="gradient-text">Pilots</span>
           </h2>
           <p className="text-xl md:text-lg text-gray-600 leading-relaxed mb-6">
-            [X]-day money-back guarantee. Cancel anytime.
+            New agency — special early-adopter pilot pricing and custom packages
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {plans.map((plan, index) => (
             <div
               key={index}
@@ -98,10 +94,24 @@ export function Pricing() {
                     : "bg-gray-100 text-gray-800 hover:bg-gray-200"
                 }`}
               >
-                {plan.price === "Custom" ? "Contact Sales" : "Get Started"}
+                Request a Tailored Quote
               </button>
             </div>
           ))}
+        </div>
+
+        <div className="mt-16 bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200 rounded-3xl p-12">
+          <h3 className="text-3xl font-bold text-center mb-8 text-foreground">{earlyAdopterInfo.title}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {earlyAdopterInfo.benefits.map((benefit, index) => (
+              <div key={index} className="flex items-start gap-3">
+                <div className="w-6 h-6 bg-gradient-to-r from-[#72b9bb] to-[#8cc5b8] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <Check className="w-4 h-4 text-white" />
+                </div>
+                <p className="text-gray-700 text-base">{benefit}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,34 +1,39 @@
 export function Benefits() {
   const benefits = [
     {
-      icon: "💰",
-      title: "70% Lower Costs",
-      description: "Replace expensive staff with AI that never calls in sick, never takes vacation, and costs less than lunch.",
+      icon: "🗣️",
+      title: "Natural two-way voice",
+      description: "Conversation feels human, not robotic. Advanced AI that understands context and responds naturally.",
     },
     {
-      icon: "📈",
-      title: "3x More Bookings",
-      description: "Capture every lead, every time. No more voicemails. No more missed opportunities. Just pure growth.",
+      icon: "🔗",
+      title: "Calendar + CRM integration",
+      description: "Sync with Google Calendar, Outlook, and leading CRMs. All your tools working together seamlessly.",
     },
     {
-      icon: "⏰",
-      title: "24/7 Coverage",
-      description: "Your AI agent works nights, weekends, and holidays. Never miss a call again, even when you're sleeping.",
-    },
-    {
-      icon: "🎯",
-      title: "Perfect Accuracy",
-      description: "No more double bookings, wrong times, or forgotten details. Every interaction is flawless and professional.",
+      icon: "✏️",
+      title: "Script customization",
+      description: "Your tone, your FAQs, your hand-off rules. Fully customized to match your brand and workflow.",
     },
     {
       icon: "🌍",
-      title: "Multilingual Support",
-      description: "Speak to your customers in their preferred language. Break down barriers and expand your market reach.",
+      title: "Multilingual options",
+      description: "Speak your patients and clients languages. Break down barriers and serve diverse communities.",
+    },
+    {
+      icon: "🔒",
+      title: "Compliance-minded setup",
+      description: "Industry-appropriate data protection practices. HIPAA-ready options available for healthcare.",
     },
     {
       icon: "📊",
-      title: "Real-Time Analytics",
-      description: "Track every call, conversation, and conversion. Make data-driven decisions to grow your business faster.",
+      title: "Analytics dashboard",
+      description: "Track calls, conversions, no-show reduction, and handoffs. Measure what matters.",
+    },
+    {
+      icon: "🧪",
+      title: "Pilot program",
+      description: "Low-risk trial so you can measure impact before scaling. See results before you commit.",
     },
   ];
 
@@ -37,22 +42,19 @@ export function Benefits() {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-foreground leading-[1.1]">
-            What You Get <span className="gradient-text">Starting Today</span>
+            Features That Actually <span className="gradient-text">Move the Needle</span>
           </h2>
-          <p className="text-xl md:text-lg text-gray-600 leading-relaxed">
-            Real results that transform your business from day one
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-100 rounded-2xl shadow-lg p-12 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+              className="bg-white border border-gray-100 rounded-2xl shadow-lg p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
             >
-              <div className="text-6xl mb-6">{benefit.icon}</div>
-              <h3 className="text-2xl font-bold tracking-tight mb-4 text-foreground">{benefit.title}</h3>
-              <p className="text-gray-600 text-base leading-relaxed">{benefit.description}</p>
+              <div className="text-5xl mb-4">{benefit.icon}</div>
+              <h3 className="text-lg font-bold tracking-tight mb-3 text-foreground">{benefit.title}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{benefit.description}</p>
             </div>
           ))}
         </div>
