@@ -1,7 +1,7 @@
 import { MeshGradient } from "@paper-design/shaders-react"
 import { useEffect, useState } from "react"
 import DisplayCards from "./display-cards"
-import { Heart, Users, TrendingUp } from "lucide-react"
+import { TrendingUp, Clock, Brain, Target, Heart } from "lucide-react"
 
 interface HeroSectionProps {
   title?: string
@@ -69,34 +69,44 @@ export function HeroSection({
 
   const displayCardsData = [
     {
-      icon: <Heart className="size-4 text-pink-300" />,
-      title: "Loyalty Driver",
-      description: "Turn every call into loyalty",
-      date: "Smart follow-ups",
-      iconClassName: "text-pink-500",
-      titleClassName: "text-pink-500",
-      className:
-        "[grid-area:stack] hover:-translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0",
-    },
-    {
-      icon: <Users className="size-4 text-blue-300" />,
-      title: "Agent Empowerment",
-      description: "Boost customer retention",
-      date: "AI-powered support",
-      iconClassName: "text-blue-500",
+      icon: <TrendingUp className="size-4 text-blue-300" />,
+      title: "Boost Conversions. Maximize ROI.",
+      description: "Turn every lead into a sales opportunity with intelligent voice engagement that closes faster",
       titleClassName: "text-blue-500",
       className:
-        "[grid-area:stack] translate-x-16 translate-y-10 hover:-translate-y-1 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0",
+        "[grid-area:stack] hover:-translate-y-16 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-all before:duration-700 hover:grayscale-0 before:left-0 before:top-0 transition-all duration-700",
     },
     {
-      icon: <TrendingUp className="size-4 text-green-300" />,
-      title: "Sales Accelerator",
-      description: "Enhance conversions faster",
-      date: "Winning behaviors",
-      iconClassName: "text-green-500",
+      icon: <Clock className="size-4 text-purple-300" />,
+      title: "Shorter Sales Cycles. Stronger Pipelines.",
+      description: "Automate follow-ups and accelerate deals with precision-driven AI agents.",
+      titleClassName: "text-purple-500",
+      className:
+        "[grid-area:stack] translate-x-16 translate-y-10 hover:-translate-y-6 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-all before:duration-700 hover:grayscale-0 before:left-0 before:top-0 transition-all duration-700",
+    },
+    {
+      icon: <Brain className="size-4 text-green-300" />,
+      title: "Smarter Conversations. Higher Revenue.",
+      description: "Replicate your best sales performers and scale success effortlessly.",
       titleClassName: "text-green-500",
       className:
-        "[grid-area:stack] translate-x-32 translate-y-20 hover:translate-y-10",
+        "[grid-area:stack] translate-x-32 translate-y-20 hover:translate-y-4 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-all before:duration-700 hover:grayscale-0 before:left-0 before:top-0 transition-all duration-700",
+    },
+    {
+      icon: <Target className="size-4 text-orange-300" />,
+      title: "Consistent Performance. Predictable Growth.",
+      description: "Empower every agent with data-backed voice intelligence that drives measurable results.",
+      titleClassName: "text-orange-500",
+      className:
+        "[grid-area:stack] translate-x-48 translate-y-30 hover:translate-y-14 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-all before:duration-700 hover:grayscale-0 before:left-0 before:top-0 transition-all duration-700",
+    },
+    {
+      icon: <Heart className="size-4 text-pink-300" />,
+      title: "Customer Experience That Sells.",
+      description: "Deliver seamless, personalized interactions that convert first-time buyers into loyal customers.",
+      titleClassName: "text-pink-500",
+      className:
+        "[grid-area:stack] translate-x-64 translate-y-40 hover:translate-y-24 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-all before:duration-700 hover:grayscale-0 before:left-0 before:top-0 transition-all duration-700",
     },
   ];
 
@@ -126,7 +136,7 @@ export function HeroSection({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-left">
               <h1
-                className={`font-bold tracking-tight text-foreground leading-[1.15] mb-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl ${titleClassName}`}
+                className={`font-bold tracking-tight text-foreground leading-[1.15] mb-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl ${titleClassName}`}
                 style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
               >
                 {title} <span className="gradient-text">{highlightText}</span>
