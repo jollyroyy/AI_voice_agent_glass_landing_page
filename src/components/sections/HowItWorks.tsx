@@ -1,19 +1,28 @@
 export function HowItWorks() {
   const steps = [
     {
-      icon: "📱",
-      title: "Forward Your Calls",
-      description: "Get your unique AI agent number. Forward your business line to it. Done. Takes 5 minutes and works with any phone provider.",
+      icon: "⚙️",
+      title: "Custom Configuration",
+      description: "We learn your business, services, pricing, scheduling preferences, and common caller questions. We train your AI agent on your specific workflows.",
+      days: "Day 1-2",
     },
     {
-      icon: "🎯",
-      title: "Customize Your Agent",
-      description: "Tell us your services, hours, and preferences. Choose a voice. Set your brand tone. Our AI learns your business in minutes, not months.",
+      icon: "🎤",
+      title: "Voice & Personality Design",
+      description: "Choose your agent's voice, tone, and communication style. Professional? Warm and friendly? Your brand, your choice.",
+      days: "Day 2-3",
+    },
+    {
+      icon: "🔧",
+      title: "Integration & Testing",
+      description: "We connect your AI agent to your phone system, calendar, and CRM. We run test calls to ensure perfection.",
+      days: "Day 3-4",
     },
     {
       icon: "🚀",
-      title: "Start Capturing Leads",
-      description: "Your AI agent goes live instantly. Every call answered. Every appointment booked. Every lead captured. While you focus on what you do best.",
+      title: "Launch & Monitor",
+      description: "Your AI agent goes live. We monitor performance, gather feedback, and optimize continuously.",
+      days: "Day 5+",
     },
   ];
 
@@ -22,14 +31,11 @@ export function HowItWorks() {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-foreground leading-[1.1]">
-            Up & Running in <span className="gradient-text">15 Minutes</span>
+            How It Works: From Setup to Success in <span className="gradient-text">[X] Days</span>
           </h2>
-          <p className="text-xl md:text-lg text-gray-600 leading-relaxed">
-            No technical skills needed. No complicated setup. Just simple, powerful automation.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {steps.map((step, index) => (
             <div
               key={index}
@@ -39,6 +45,7 @@ export function HowItWorks() {
                 {index + 1}
               </div>
               <div className="text-6xl mt-5 mb-6">{step.icon}</div>
+              <div className="text-sm font-semibold text-[#72b9bb] mb-2">{step.days}</div>
               <h3 className="text-2xl font-bold tracking-tight mb-4 text-foreground">{step.title}</h3>
               <p className="text-gray-600 text-base leading-relaxed">{step.description}</p>
             </div>

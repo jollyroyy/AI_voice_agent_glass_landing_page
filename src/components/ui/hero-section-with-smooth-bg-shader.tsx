@@ -6,7 +6,9 @@ interface HeroSectionProps {
   highlightText?: string
   description?: string
   buttonText?: string
+  secondaryButtonText?: string
   onButtonClick?: () => void
+  onSecondaryButtonClick?: () => void
   colors?: string[]
   distortion?: number
   swirl?: number
@@ -27,7 +29,9 @@ export function HeroSection({
   highlightText = "Smart Brands",
   description = "Transform your brand and evolve it through AI-driven brand guidelines and always up-to-date core components.",
   buttonText = "Join Waitlist",
+  secondaryButtonText,
   onButtonClick,
+  onSecondaryButtonClick,
   colors = ["#72b9bb", "#b5d9d9", "#ffd1bd", "#ffebe0", "#8cc5b8", "#dbf4a4"],
   distortion = 0.8,
   swirl = 0.6,
@@ -93,12 +97,22 @@ export function HeroSection({
           <p className={`text-lg sm:text-xl md:text-2xl leading-relaxed max-w-3xl mx-auto mb-12 font-normal ${descriptionClassName}`}>
             {description}
           </p>
-          <button
-            onClick={handleButtonClick}
-            className={`px-8 py-4 rounded-full bg-gradient-to-r from-[#72b9bb] via-[#8cc5b8] to-[#ffd1bd] text-white font-bold shadow-xl hover:scale-105 transition-transform text-base ${buttonClassName}`}
-          >
-            {buttonText}
-          </button>
+          <div className="flex flex-col sm:flex-row gap-5 justify-center">
+            <button
+              onClick={handleButtonClick}
+              className={`px-8 py-4 rounded-full bg-gradient-to-r from-[#72b9bb] via-[#8cc5b8] to-[#ffd1bd] text-white font-bold shadow-xl hover:scale-105 transition-transform text-base ${buttonClassName}`}
+            >
+              {buttonText}
+            </button>
+            {secondaryButtonText && (
+              <button
+                onClick={onSecondaryButtonClick}
+                className="px-8 py-4 rounded-full bg-white text-foreground font-semibold border-2 border-gray-200 shadow-lg hover:scale-105 transition-transform text-base"
+              >
+                {secondaryButtonText}
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </section>

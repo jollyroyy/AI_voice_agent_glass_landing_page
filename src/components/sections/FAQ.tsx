@@ -6,28 +6,32 @@ export function FAQ() {
 
   const faqs = [
     {
-      question: "How long does it take to set up?",
-      answer: "Just 15 minutes. You get a unique phone number, forward your business line to it, customize your AI agent's personality and knowledge base, and you're live. No technical skills or complex integrations required.",
+      question: "Does it really sound human?",
+      answer: "Yes. Our AI voice agents use advanced conversational AI that handles interruptions, understands context, and speaks naturally. Most callers never realize they're speaking with AI.",
     },
     {
       question: "What if the AI can't answer a question?",
-      answer: "Your AI agent is trained on your specific business information and can handle 95% of common questions. For complex cases, it smoothly transfers to you or takes a detailed message with contact info, ensuring no lead is lost.",
+      answer: "Your AI agent is smart enough to recognize when a call needs human attention. It will gracefully transfer the caller to your team or take a detailed message with callback information.",
     },
     {
-      question: "Can it integrate with my existing software?",
-      answer: "Yes! We integrate with popular scheduling systems, CRMs, and practice management software used by dental clinics and real estate agencies. Your bookings sync automatically, and all lead data flows directly into your existing tools.",
+      question: "How long does setup take?",
+      answer: "Most clients are fully operational within [X] business days. We handle the technical setup—you just provide information about your business.",
     },
     {
-      question: "How much does it cost?",
-      answer: "Plans start at $99/month for unlimited calls and bookings—that's less than $3 per day. Compare that to a receptionist's salary of $35,000+ per year plus benefits. Most clients see ROI within the first week.",
+      question: "Can it integrate with my existing systems?",
+      answer: "Yes. VoiceShine integrates with major calendar platforms (Google Calendar, Outlook, Apple Calendar), practice management software, and CRM systems. If you have a special system, we'll work with you to make it happen.",
     },
     {
-      question: "What makes your AI different from others?",
-      answer: "We're built specifically for dental and real estate businesses. Our AI understands industry terminology, handles appointment scheduling natively, and sounds natural—not robotic. Plus, we answer in under 2 seconds, while most competitors take 5-10 seconds.",
+      question: "What if I already have a receptionist?",
+      answer: "Perfect! Your AI agent complements your human team by handling overflow calls, after-hours inquiries, and routine questions. Your staff can focus on complex issues and in-person patients/clients.",
     },
     {
-      question: "Can I try it before committing?",
-      answer: "Absolutely! Start with a 14-day free trial. No credit card required. Test it with real calls, see the bookings roll in, and only pay if you love it. Most customers decide to keep it within the first 3 days.",
+      question: "What happens to calls after business hours?",
+      answer: "Your AI agent works 24/7. Late-night and weekend callers can still book appointments, get information, and leave detailed messages—converting opportunities that would otherwise be lost.",
+    },
+    {
+      question: "Is my data secure?",
+      answer: "Absolutely. We're [COMPLIANCE_STANDARD] compliant and use enterprise-grade encryption. All call data is stored securely and never shared with third parties.",
     },
   ];
 
@@ -36,11 +40,8 @@ export function FAQ() {
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-foreground leading-[1.1]">
-            Questions? <span className="gradient-text">We've Got Answers</span>
+            Frequently Asked <span className="gradient-text">Questions</span>
           </h2>
-          <p className="text-xl md:text-lg text-gray-600 leading-relaxed">
-            Everything you need to know about VoiceFlow AI
-          </p>
         </div>
 
         <div className="space-y-5">

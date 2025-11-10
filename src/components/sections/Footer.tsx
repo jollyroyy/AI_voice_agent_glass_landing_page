@@ -26,10 +26,10 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           <div className="lg:col-span-1">
             <div className="text-2xl font-bold gradient-text mb-6">
-              VoiceFlow AI
+              VoiceShine
             </div>
             <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-              The smartest AI voice agent for dental clinics and real estate professionals. Never miss a call again.
+              Your Business Never Sleeps. Neither Should Your Phone.
             </p>
             <div className="flex gap-4">
               <a
@@ -78,9 +78,25 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="border-t border-gray-200 pt-8 text-center">
-          <p className="text-gray-500 text-sm">
-            © 2025 VoiceFlow AI. All rights reserved. Built with 💗 for businesses that never stop growing.
+        <div className="border-t border-gray-200 pt-8">
+          <div className="text-center mb-6">
+            <h4 className="text-lg font-bold text-foreground mb-4">Still Have Questions?</h4>
+            <p className="text-gray-600 text-sm mb-2">Email us: hello@voiceshine.com</p>
+            <p className="text-gray-600 text-sm mb-2">Call us: [PHONE_NUMBER]</p>
+            <p className="text-gray-500 text-xs">Available Monday-Friday, 9 AM - 6 PM [TIMEZONE]</p>
+          </div>
+          <div className="text-center pt-6 border-t border-gray-200">
+            <h4 className="text-base font-bold text-foreground mb-3">Built for Businesses Who Can't Afford to Miss Calls</h4>
+            <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600 mb-6">
+              <span>✓ Enterprise-grade reliability with [X]% uptime</span>
+              <span>✓ HIPAA-compliant for healthcare practices</span>
+              <span>✓ Continuous learning and improvement</span>
+              <span>✓ Dedicated support team</span>
+              <span>✓ Money-back satisfaction guarantee</span>
+            </div>
+          </div>
+          <p className="text-gray-500 text-sm text-center">
+            © 2025 VoiceShine. All rights reserved.
           </p>
         </div>
       </div>

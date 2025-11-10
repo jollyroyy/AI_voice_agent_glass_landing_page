@@ -1,26 +1,46 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Headphones, UserCheck, Calendar, MessageSquare } from 'lucide-react';
+import { Phone, Calendar, MessageCircle, Zap, Users, Bell, PhoneForwarded } from 'lucide-react';
 
 const solutions = [
   {
-    title: 'Customer Support Automation',
-    description: 'Handle customer inquiries 24/7 with intelligent AI agents that understand context and provide accurate solutions instantly.',
-    icon: Headphones,
+    title: 'Answers every call in under 3 seconds',
+    description: 'No more hold music or voicemail',
+    icon: Phone,
   },
   {
-    title: 'Lead Qualification & Follow-Up',
-    description: 'Automatically qualify leads, schedule follow-ups, and nurture prospects through personalized conversations.',
-    icon: UserCheck,
-  },
-  {
-    title: 'Appointment Scheduling',
-    description: 'Seamlessly book, reschedule, and manage appointments through natural voice conversations.',
+    title: 'Books appointments directly into your calendar',
+    description: 'Syncs with your existing scheduling system',
     icon: Calendar,
   },
   {
-    title: 'Voice Surveys & Feedback',
-    description: 'Collect valuable customer feedback through engaging voice interactions and automated surveys.',
-    icon: MessageSquare,
+    title: 'Answers common questions instantly',
+    description: 'Hours, pricing, services, directions',
+    icon: MessageCircle,
+  },
+  {
+    title: 'Qualifies leads while they are hot',
+    description: 'Captures crucial information before they move on',
+    icon: Zap,
+  },
+  {
+    title: 'Handles multiple calls simultaneously',
+    description: 'No busy signals, ever',
+    icon: Users,
+  },
+  {
+    title: 'Speaks naturally and professionally',
+    description: 'Your callers will not know it is AI',
+    icon: MessageCircle,
+  },
+  {
+    title: 'Transfers urgent calls to you',
+    description: 'Smart routing for situations that need your personal touch',
+    icon: PhoneForwarded,
+  },
+  {
+    title: 'Sends you instant notifications',
+    description: 'Know what is happening in real-time',
+    icon: Bell,
   },
 ];
 
@@ -30,14 +50,14 @@ export function Solutions() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our Solutions
+            Meet Your New <span className="gradient-text">AI Receptionist</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Powerful AI voice agents tailored to transform your business operations
+            VoiceShine deploys intelligent voice agents that sound completely human, understand natural conversation, and handle calls exactly how you would - without ever sleeping, taking breaks, or missing a single opportunity.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {solutions.map((solution, index) => {
             const Icon = solution.icon;
             return (

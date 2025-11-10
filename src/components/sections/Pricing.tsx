@@ -3,47 +3,44 @@ import { Check } from "lucide-react";
 export function Pricing() {
   const plans = [
     {
-      name: "Starter",
-      price: "$49",
-      period: "/mo",
-      description: "Perfect for small businesses getting started",
+      name: "Starter Plan",
+      price: "$[PRICE]",
+      period: "/month",
+      description: "Perfect for solo practitioners and small offices",
       features: [
-        "Up to 500 calls per month",
-        "Basic analytics dashboard",
-        "Standard voice quality",
-        "Email support",
-        "1 phone number"
+        "[X] calls per month included",
+        "Basic appointment scheduling",
+        "Calendar integration",
+        "Email notifications",
+        "Business hours coverage"
       ],
     },
     {
-      name: "Pro",
-      price: "$149",
-      period: "/mo",
-      description: "For growing businesses that need more",
+      name: "Professional Plan",
+      price: "$[PRICE]",
+      period: "/month",
+      description: "Ideal for growing practices and busy agents",
       features: [
-        "Up to 5,000 calls per month",
-        "Advanced analytics & insights",
-        "Premium voice quality",
+        "[X] calls per month included",
+        "Advanced scheduling with multiple calendars",
         "CRM integration",
-        "Smart appointment scheduling",
-        "Priority support",
-        "3 phone numbers"
+        "24/7 coverage",
+        "SMS notifications",
+        "Call analytics dashboard"
       ],
       popular: true,
     },
     {
-      name: "Enterprise",
-      price: "Custom",
+      name: "Enterprise Plan",
+      price: "Custom Pricing",
       period: "",
-      description: "Unlimited scale for large organizations",
+      description: "For multi-location practices and brokerages",
       features: [
-        "Unlimited call volume",
-        "Full API access",
-        "Custom voice models",
+        "Unlimited calls",
+        "Multiple AI agents",
+        "Advanced integrations",
         "Dedicated account manager",
-        "Custom integrations",
-        "24/7 premium support",
-        "Unlimited phone numbers"
+        "Custom workflows and scripting"
       ],
     },
   ];
@@ -53,10 +50,10 @@ export function Pricing() {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-foreground leading-[1.1]">
-            Simple, <span className="gradient-text">Transparent Pricing</span>
+            Transparent Pricing <span className="gradient-text">That Makes Sense</span>
           </h2>
-          <p className="text-xl md:text-lg text-gray-600 leading-relaxed">
-            Choose the perfect plan for your business. No hidden fees, cancel anytime.
+          <p className="text-xl md:text-lg text-gray-600 leading-relaxed mb-6">
+            [X]-day money-back guarantee. Cancel anytime.
           </p>
         </div>
 
