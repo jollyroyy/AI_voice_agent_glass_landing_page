@@ -1,11 +1,6 @@
 export function PainPoints() {
   const pains = [
     {
-      icon: "📞",
-      title: "Incoming calls and messages slip through the cracks",
-      description: "Every missed call is a lost opportunity. Voicemail boxes fill up while potential patients and clients move on to your competitors.",
-    },
-    {
       icon: "⏰",
       title: "Front-desk staff spend hours on routine tasks",
       description: "Booking, reminders, and basic qualification consume valuable time that could be spent on high-value interactions and patient care.",
@@ -31,7 +26,7 @@ export function PainPoints() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {pains.map((pain, index) => (
             <div
               key={index}
