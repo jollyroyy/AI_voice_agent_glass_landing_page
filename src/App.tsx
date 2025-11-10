@@ -2,6 +2,7 @@ import './App.css';
 import { HeroSection } from '@/components/ui/hero-section-with-smooth-bg-shader';
 import { NavBar } from '@/components/ui/navbar-with-dropdowns';
 import WavyShader from '@/components/ui/wavy-shader';
+import { FeaturesSectionWithCardGradient } from '@/components/ui/feature-section-with-card-gradient';
 import { Solutions } from '@/components/sections/Solutions';
 import { Industries } from '@/components/sections/Industries';
 import { PainPoints } from '@/components/sections/PainPoints';
@@ -60,6 +61,8 @@ function App() {
           onSecondaryButtonClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
         />
       </section>
+
+      <FeaturesSectionWithCardGradient />
 
       <WavyShader />
 
