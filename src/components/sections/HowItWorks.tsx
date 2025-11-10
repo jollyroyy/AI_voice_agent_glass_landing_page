@@ -1,28 +1,28 @@
 export function HowItWorks() {
   const steps = [
     {
-      icon: "⚙️",
-      title: "Custom Configuration",
-      description: "We learn your business, services, pricing, scheduling preferences, and common caller questions. We train your AI agent on your specific workflows.",
+      icon: "🔍",
+      title: "Discovery & Configuration",
+      description: "Kickoff call to understand your business operations. Map current call handling workflows. Identify pain points and priorities. Gather service information and common caller questions.",
       days: "Day 1-2",
     },
     {
-      icon: "🎤",
-      title: "Voice & Personality Design",
-      description: "Choose your agent's voice, tone, and communication style. Professional? Warm and friendly? Your brand, your choice.",
-      days: "Day 2-3",
+      icon: "🤖",
+      title: "AI Training & Customization",
+      description: "Train AI on your specific business. Configure conversation flows and appointment logic. Set up custom responses and escalation rules. Connect calendar, CRM, and integrations.",
+      days: "Day 3-4",
     },
     {
-      icon: "🔧",
-      title: "Integration & Testing",
-      description: "We connect your AI agent to your phone system, calendar, and CRM. We run test calls to ensure perfection.",
-      days: "Day 3-4",
+      icon: "✅",
+      title: "Testing & Refinement",
+      description: "Internal team test calls and scenario testing. Edge case handling verification. Response accuracy validation. Voice and tone adjustments. Staff training on the system.",
+      days: "Day 5-6",
     },
     {
       icon: "🚀",
       title: "Launch & Monitor",
-      description: "Your AI agent goes live. We monitor performance, gather feedback, and optimize continuously.",
-      days: "Day 5+",
+      description: "Soft launch with monitoring. Real-time performance tracking. Quick adjustments as needed. Full launch after validation. Ongoing optimization and monthly check-ins.",
+      days: "Day 7+",
     },
   ];
 
@@ -31,8 +31,11 @@ export function HowItWorks() {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-foreground leading-[1.1]">
-            How It Works: From Setup to Success in <span className="gradient-text">[X] Days</span>
+            Implementation <span className="gradient-text">Process</span>
           </h2>
+          <p className="text-xl md:text-lg text-gray-600 leading-relaxed">
+            Launch Your AI Agent in [X] Days
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">

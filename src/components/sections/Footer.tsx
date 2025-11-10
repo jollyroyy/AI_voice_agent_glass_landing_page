@@ -95,8 +95,8 @@ export function Footer() {
               <span>✓ Money-back satisfaction guarantee</span>
             </div>
           </div>
-          <p className="text-gray-500 text-sm text-center">
-            © 2025 VoiceShine. All rights reserved.
+          <p className="text-gray-500 text-sm text-center mt-4">
+            © 2025 VoiceShine - Intelligent Voice Agents That Grow Your Business 24/7. All rights reserved.
           </p>
         </div>
       </div>

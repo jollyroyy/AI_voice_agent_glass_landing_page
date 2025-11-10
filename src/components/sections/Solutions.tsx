@@ -3,44 +3,44 @@ import { Phone, Calendar, MessageCircle, Zap, Users, Bell, PhoneForwarded } from
 
 const solutions = [
   {
-    title: 'Answers every call in under 3 seconds',
-    description: 'No more hold music or voicemail',
-    icon: Phone,
-  },
-  {
-    title: 'Books appointments directly into your calendar',
-    description: 'Syncs with your existing scheduling system',
-    icon: Calendar,
-  },
-  {
-    title: 'Answers common questions instantly',
-    description: 'Hours, pricing, services, directions',
+    title: 'Advanced Conversational AI',
+    description: 'Understands intent, context, and nuance—not just keywords. Handles interruptions naturally and recognizes urgency and emotion.',
     icon: MessageCircle,
   },
   {
-    title: 'Qualifies leads while they are hot',
-    description: 'Captures crucial information before they move on',
-    icon: Zap,
-  },
-  {
-    title: 'Handles multiple calls simultaneously',
-    description: 'No busy signals, ever',
-    icon: Users,
-  },
-  {
-    title: 'Speaks naturally and professionally',
-    description: 'Your callers will not know it is AI',
-    icon: MessageCircle,
-  },
-  {
-    title: 'Transfers urgent calls to you',
-    description: 'Smart routing for situations that need your personal touch',
+    title: 'Intelligent Call Routing',
+    description: 'Identifies callers, pulls relevant history, routes to appropriate workflow, and begins conversation within seconds.',
     icon: PhoneForwarded,
   },
   {
-    title: 'Sends you instant notifications',
-    description: 'Know what is happening in real-time',
+    title: 'Natural Conversation Engine',
+    description: 'Greets with custom messages, listens actively, handles multiple topics, and adjusts tone based on caller emotion.',
+    icon: Users,
+  },
+  {
+    title: 'Smart Action Execution',
+    description: 'Checks real-time availability, books appointments, sends confirmations, updates CRM, and transfers urgent calls.',
+    icon: Zap,
+  },
+  {
+    title: 'Real-Time Calendar Integration',
+    description: 'Sees your exact availability, prevents double-booking, handles same-day emergencies, and manages waitlists.',
+    icon: Calendar,
+  },
+  {
+    title: 'Lead Qualification & Capture',
+    description: 'Asks the right questions to qualify every caller and automatically flows information into your CRM.',
+    icon: Phone,
+  },
+  {
+    title: '24/7 Availability',
+    description: 'Handle unlimited simultaneous calls any time, day or night. Scale instantly without hiring during peak times.',
     icon: Bell,
+  },
+  {
+    title: 'Learning & Optimization',
+    description: 'Every call makes your agent smarter. Learns new scenarios, adapts to patterns, and improves accuracy over time.',
+    icon: Zap,
   },
 ];
 
@@ -50,10 +50,13 @@ export function Solutions() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Meet Your New <span className="gradient-text">AI Receptionist</span>
+            Core <span className="gradient-text">Technology</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            VoiceShine deploys intelligent voice agents that sound completely human, understand natural conversation, and handle calls exactly how you would - without ever sleeping, taking breaks, or missing a single opportunity.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
+            The VoiceShine System Architecture
+          </p>
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto italic">
+            This is not a phone tree. This is actual conversation.
           </p>
         </div>
 

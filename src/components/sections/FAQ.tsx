@@ -6,32 +6,32 @@ export function FAQ() {
 
   const faqs = [
     {
-      question: "Does it really sound human?",
-      answer: "Yes. Our AI voice agents use advanced conversational AI that handles interruptions, understands context, and speaks naturally. Most callers never realize they're speaking with AI.",
+      question: "How does VoiceShine handle complex conversations?",
+      answer: "Our AI uses advanced natural language processing to understand intent, context, and nuance. It can handle interruptions mid-sentence, understand accents, recognize urgency, ask clarifying questions, and remember context throughout the entire conversation. This is not a phone tree—it is actual conversation.",
     },
     {
-      question: "What if the AI can't answer a question?",
-      answer: "Your AI agent is smart enough to recognize when a call needs human attention. It will gracefully transfer the caller to your team or take a detailed message with callback information.",
+      question: "What integrations does VoiceShine support?",
+      answer: "VoiceShine integrates with Google Calendar, Microsoft Outlook, Salesforce, HubSpot, Zoho CRM, practice management systems, Twilio, RingCentral, Stripe, Square, and 1000+ apps via Zapier. We also build custom integrations for specialized tools your business uses.",
     },
     {
-      question: "How long does setup take?",
-      answer: "Most clients are fully operational within [X] business days. We handle the technical setup—you just provide information about your business.",
+      question: "How secure is my data with VoiceShine?",
+      answer: "Enterprise-grade security with 256-bit AES encryption, SOC 2 Type II certification, HIPAA compliance for healthcare, and GDPR compliance. We maintain [X]% uptime SLA with redundant systems, automatic failover, and 24/7 monitoring.",
     },
     {
-      question: "Can it integrate with my existing systems?",
-      answer: "Yes. VoiceShine integrates with major calendar platforms (Google Calendar, Outlook, Apple Calendar), practice management software, and CRM systems. If you have a special system, we'll work with you to make it happen.",
+      question: "Can the AI learn my specific business processes?",
+      answer: "Yes. During setup, we train your AI agent on your services, pricing, scheduling preferences, common questions, and brand voice. The system continuously learns from every call, adapting to seasonal patterns and improving accuracy over time.",
     },
     {
-      question: "What if I already have a receptionist?",
-      answer: "Perfect! Your AI agent complements your human team by handling overflow calls, after-hours inquiries, and routine questions. Your staff can focus on complex issues and in-person patients/clients.",
+      question: "What happens when the AI needs to transfer a call?",
+      answer: "Your AI agent recognizes when human attention is needed (emergencies, complex situations, angry callers, high-value opportunities). It provides a warm handoff, briefing you on context before connection, and ensuring no repetition for the caller.",
     },
     {
-      question: "What happens to calls after business hours?",
-      answer: "Your AI agent works 24/7. Late-night and weekend callers can still book appointments, get information, and leave detailed messages—converting opportunities that would otherwise be lost.",
+      question: "How quickly can I get started?",
+      answer: "Most clients launch in 7 days. Day 1-2: Discovery and configuration. Day 3-4: AI training and integration setup. Day 5-6: Testing and staff training. Day 7: Go live with ongoing monitoring and optimization.",
     },
     {
-      question: "Is my data secure?",
-      answer: "Absolutely. We're [COMPLIANCE_STANDARD] compliant and use enterprise-grade encryption. All call data is stored securely and never shared with third parties.",
+      question: "What kind of analytics and reporting do I get?",
+      answer: "Comprehensive dashboard showing total calls handled, response times, call duration, appointment booking rates, peak call patterns, common questions, caller insights, revenue tracking, ROI calculations, call recordings, transcripts, and quality scores.",
     },
   ];
 
