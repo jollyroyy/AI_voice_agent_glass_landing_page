@@ -139,7 +139,7 @@ export function NavBar({ items, className }: NavBarProps) {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
-                    className="hidden md:block absolute top-full mt-3 bg-white/95 backdrop-blur-xl border border-gray-200 rounded-lg shadow-xl p-2 min-w-[220px] z-50"
+                    className="hidden md:block absolute top-full left-0 mt-3 bg-white/95 backdrop-blur-xl border border-gray-200 rounded-lg shadow-xl p-2 min-w-[220px] z-50"
                     onMouseEnter={() => setOpenDropdown(item.name)}
                     onMouseLeave={() => setOpenDropdown(null)}
                   >
@@ -152,7 +152,7 @@ export function NavBar({ items, className }: NavBarProps) {
                           handleItemClick(item.name, dropItem.url);
                           setOpenDropdown(null);
                         }}
-                        className="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-primary hover:bg-primary/5 rounded-md transition-all duration-200"
+                        className="block px-4 py-2.5 text-sm font-medium text-left text-gray-700 hover:text-primary hover:bg-primary/5 rounded-md transition-all duration-200"
                       >
                         {dropItem.name}
                       </a>
