@@ -21,8 +21,15 @@ interface NavBarProps {
 }
 
 export function NavBar({ items, className }: NavBarProps) {
-  const [activeTab, setActiveTab] = useState(items[0].name);
+  const [activeTab, setActiveTab] = useState<string | null>(null);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
+  const handleItemClick = (itemName: string, url?: string) => {
+    setActiveTab(itemName);
+    if (url) {
+      document.querySelector(url)?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <>
@@ -45,21 +52,24 @@ export function NavBar({ items, className }: NavBarProps) {
             const Icon = item.icon;
             const isActive = activeTab === item.name;
             const hasDropdown = item.dropdown && item.dropdown.length > 0;
+            const isDropdownOpen = openDropdown === item.name;
 
             return (
               <div
                 key={item.name}
                 className="relative"
                 onMouseEnter={() => hasDropdown && setOpenDropdown(item.name)}
-                onMouseLeave={() => setOpenDropdown(null)}
+                onMouseLeave={() => !isDropdownOpen && setOpenDropdown(null)}
               >
                 {hasDropdown ? (
                   <button
-                    onClick={() => setActiveTab(item.name)}
+                    onClick={() => {
+                      setOpenDropdown(isDropdownOpen ? null : item.name);
+                    }}
                     className={cn(
                       "relative cursor-pointer text-sm font-semibold px-4 py-1.5 rounded-full transition-colors",
                       "text-foreground/80 hover:text-primary",
-                      isActive && "bg-muted text-primary"
+                      isActive && "text-primary"
                     )}
                   >
                     <span className="hidden md:inline">{item.name}</span>
@@ -88,11 +98,14 @@ export function NavBar({ items, className }: NavBarProps) {
                 ) : (
                   <a
                     href={item.url}
-                    onClick={() => setActiveTab(item.name)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleItemClick(item.name, item.url);
+                    }}
                     className={cn(
                       "relative cursor-pointer text-sm font-semibold px-4 py-1.5 rounded-full transition-colors",
                       "text-foreground/80 hover:text-primary",
-                      isActive && "bg-muted text-primary"
+                      isActive && "text-primary"
                     )}
                   >
                     <span className="hidden md:inline">{item.name}</span>
@@ -120,19 +133,26 @@ export function NavBar({ items, className }: NavBarProps) {
                   </a>
                 )}
 
-                {hasDropdown && openDropdown === item.name && (
+                {hasDropdown && isDropdownOpen && (
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
-                    className="hidden md:block absolute top-full mt-3 bg-white/90 backdrop-blur-xl border border-gray-200 rounded-lg shadow-lg p-1 min-w-[220px] z-50"
+                    className="hidden md:block absolute top-full mt-3 bg-white/95 backdrop-blur-xl border border-gray-200 rounded-lg shadow-xl p-2 min-w-[220px] z-50"
+                    onMouseEnter={() => setOpenDropdown(item.name)}
+                    onMouseLeave={() => setOpenDropdown(null)}
                   >
                     {item.dropdown?.map((dropItem) => (
                       <a
                         key={dropItem.name}
                         href={dropItem.url}
-                        className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md transition-all duration-200"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleItemClick(item.name, dropItem.url);
+                          setOpenDropdown(null);
+                        }}
+                        className="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-primary hover:bg-primary/5 rounded-md transition-all duration-200"
                       >
                         {dropItem.name}
                       </a>
