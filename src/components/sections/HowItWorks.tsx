@@ -1,11 +1,6 @@
 export function HowItWorks() {
   const steps = [
     {
-      icon: "📞",
-      title: "Strategy call",
-      description: "Map your top use-cases and KPIs. Understand your current pain points and desired outcomes.",
-    },
-    {
       icon: "✍️",
       title: "Script & flow design",
       description: "We build your voice persona and conversation flows tailored to your business and brand.",
@@ -31,7 +26,7 @@ export function HowItWorks() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {steps.map((step, index) => (
             <div
               key={index}

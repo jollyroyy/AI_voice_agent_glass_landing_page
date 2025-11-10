@@ -7,7 +7,7 @@ export function FAQ() {
   const faqs = [
     {
       question: "Will VoiceShine work with my current booking system/EMR/CRM?",
-      answer: "We integrate with most major calendar and CRM platforms. During the strategy call we will confirm exact compatibility and list any required connectors.",
+      answer: "We integrate with most major calendar and CRM platforms. During our initial consultation we will confirm exact compatibility and list any required connectors.",
     },
     {
       question: "Is patient/client data safe?",
