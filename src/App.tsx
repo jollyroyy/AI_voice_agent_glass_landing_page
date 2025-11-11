@@ -38,6 +38,12 @@ function App() {
     <main className="text-gray-100 bg-[#0a0a0f]">
       <NavBar items={navItems} />
 
+      <AnomalousMatterHero
+        title=""
+        subtitle=""
+        description=""
+      />
+
       <HeroSection
         title="AI Voice Agents that Drive Growth"
         highlightText="for Modern Businesses"
@@ -47,12 +53,6 @@ function App() {
         distortion={1.2}
         speed={0.6}
         className="min-h-screen"
-      />
-
-      <AnomalousMatterHero
-        title=""
-        subtitle=""
-        description=""
       />
 
       <section id="solutions" className="relative py-32 px-8">
