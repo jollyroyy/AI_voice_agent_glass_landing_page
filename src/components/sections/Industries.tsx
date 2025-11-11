@@ -58,7 +58,7 @@ export function Industries() {
           {industries.map((industry, index) => (
             <div
               key={index}
-              className="group bg-white rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="group bg-gradient-to-br from-[#f5f0e8] to-[#ebe4d8] border border-[#d4c4a8] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
             >
               <div className="aspect-[4/3] overflow-hidden">
                 <img
@@ -68,10 +68,10 @@ export function Industries() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="text-lg font-bold text-gray-900 mb-3 text-left">
                   {industry.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-700 text-sm leading-relaxed text-left">
                   {industry.description}
                 </p>
               </div>

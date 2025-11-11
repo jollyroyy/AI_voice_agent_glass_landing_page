@@ -57,9 +57,9 @@ export function Pricing() {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`bg-white border ${
-                plan.popular ? "border-primary shadow-2xl scale-105" : "border-gray-200"
-              } rounded-2xl p-8 relative transition-all duration-300 hover:shadow-2xl`}
+              className={`bg-gradient-to-br from-[#f5f0e8] to-[#ebe4d8] border border-[#d4c4a8] rounded-xl p-8 relative transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 shadow-lg ${
+                plan.popular ? "scale-105" : ""
+              }`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#72b9bb] via-[#8cc5b8] to-[#ffd1bd] text-white px-6 py-1 rounded-full text-sm font-bold">
@@ -67,13 +67,13 @@ export function Pricing() {
                 </div>
               )}
 
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-2 text-foreground">{plan.name}</h3>
-                <div className="flex items-baseline justify-center mb-2">
+              <div className="text-left mb-6">
+                <h3 className="text-xl font-bold mb-2 text-gray-900">{plan.name}</h3>
+                <div className="flex items-baseline justify-start mb-2">
                   <span className="text-5xl font-extrabold gradient-text">{plan.price}</span>
                   <span className="text-gray-500 ml-1">{plan.period}</span>
                 </div>
-                <p className="text-gray-600 text-sm">{plan.description}</p>
+                <p className="text-gray-700 text-sm">{plan.description}</p>
               </div>
 
               <ul className="space-y-3 mb-8">
@@ -82,17 +82,13 @@ export function Pricing() {
                     <div className="w-5 h-5 bg-gradient-to-r from-[#72b9bb] to-[#8cc5b8] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check className="w-3 h-3 text-white" />
                     </div>
-                    <span className="text-gray-600 text-sm">{feature}</span>
+                    <span className="text-gray-700 text-sm">{feature}</span>
                   </li>
                 ))}
               </ul>
 
               <button
-                className={`w-full py-3 px-6 rounded-full font-semibold transition-all duration-300 ${
-                  plan.popular
-                    ? "bg-gradient-to-r from-[#72b9bb] via-[#8cc5b8] to-[#ffd1bd] text-white hover:scale-105 shadow-lg"
-                    : "bg-gray-100 text-gray-800 hover:bg-gray-200"
-                }`}
+                className="w-full py-3 px-6 rounded-full font-bold transition-all duration-300 bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:from-cyan-600 hover:to-blue-600 hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 Request a Tailored Quote
               </button>

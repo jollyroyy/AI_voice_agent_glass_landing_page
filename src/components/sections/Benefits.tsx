@@ -50,11 +50,11 @@ export function Benefits() {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="bg-white border border-gray-100 rounded-2xl shadow-lg p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+              className="bg-gradient-to-br from-[#f5f0e8] to-[#ebe4d8] border border-[#d4c4a8] rounded-xl shadow-lg p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
             >
-              <div className="text-5xl mb-4">{benefit.icon}</div>
-              <h3 className="text-lg font-bold tracking-tight mb-3 text-foreground">{benefit.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{benefit.description}</p>
+              <div className="text-4xl mb-4 text-left">{benefit.icon}</div>
+              <h3 className="text-lg font-bold tracking-tight mb-3 text-gray-900 text-left">{benefit.title}</h3>
+              <p className="text-gray-700 text-sm leading-relaxed text-left">{benefit.description}</p>
             </div>
           ))}
         </div>

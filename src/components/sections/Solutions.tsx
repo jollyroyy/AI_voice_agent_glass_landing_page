@@ -36,16 +36,16 @@ export function Solutions() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {solutions.map((solution, index) => {
             const Icon = solution.icon;
             return (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#72b9bb] to-[#8cc5b8] flex items-center justify-center mb-6 mx-auto">
-                  <Icon className="w-8 h-8 text-white" />
+              <div key={index} className="bg-gradient-to-br from-[#f5f0e8] to-[#ebe4d8] border border-[#d4c4a8] rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 flex items-center justify-center mb-5 shadow-md">
+                  <Icon className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{solution.title}</h3>
-                <p className="text-base text-gray-600 leading-relaxed">
+                <h3 className="text-lg font-bold text-gray-900 mb-3 text-left">{solution.title}</h3>
+                <p className="text-sm text-gray-700 leading-relaxed text-left">
                   {solution.description}
                 </p>
               </div>

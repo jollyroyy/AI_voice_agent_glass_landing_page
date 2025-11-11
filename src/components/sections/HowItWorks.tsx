@@ -26,18 +26,18 @@ export function HowItWorks() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {steps.map((step, index) => (
             <div
               key={index}
-              className="text-center"
+              className="bg-gradient-to-br from-[#f5f0e8] to-[#ebe4d8] border border-[#d4c4a8] rounded-xl shadow-lg p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
             >
-              <div className="inline-flex w-20 h-20 bg-gradient-to-r from-[#72b9bb] via-[#8cc5b8] to-[#ffd1bd] rounded-full items-center justify-center text-3xl font-extrabold text-white shadow-lg mb-6">
+              <div className="inline-flex w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full items-center justify-center text-2xl font-bold text-white shadow-md mb-5">
                 {index + 1}
               </div>
-              <div className="text-5xl mb-5">{step.icon}</div>
-              <h3 className="text-2xl font-bold tracking-tight mb-4 text-foreground">{step.title}</h3>
-              <p className="text-gray-600 text-base leading-relaxed">{step.description}</p>
+              <div className="text-4xl mb-4 text-left">{step.icon}</div>
+              <h3 className="text-xl font-bold tracking-tight mb-3 text-gray-900 text-left">{step.title}</h3>
+              <p className="text-gray-700 text-sm leading-relaxed text-left">{step.description}</p>
             </div>
           ))}
         </div>

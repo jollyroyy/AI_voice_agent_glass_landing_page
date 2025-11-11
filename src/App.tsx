@@ -131,16 +131,16 @@ function App() {
 						].map((card, i) => (
 							<motion.div
 								key={i}
-								className="p-8 rounded-2xl bg-white/80 backdrop-blur-sm border border-white/40 hover:bg-white/90 transition shadow-lg hover:shadow-2xl"
+								className="p-8 rounded-xl bg-gradient-to-br from-[#f5f0e8] to-[#ebe4d8] border border-[#d4c4a8] hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 shadow-lg"
 								initial={{ opacity: 0, y: 30 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true, amount: 0.2 }}
 								transition={{ delay: i * 0.1 }}
 							>
-								<h3 className="text-xl font-sans font-semibold text-black mb-3">
+								<h3 className="text-lg font-sans font-bold text-gray-900 mb-3 text-left">
 									{card.title}
 								</h3>
-								<p className="text-gray-800 text-sm leading-relaxed font-sans">
+								<p className="text-gray-700 text-sm leading-relaxed font-sans text-left">
 									{card.desc}
 								</p>
 							</motion.div>
@@ -186,16 +186,16 @@ function App() {
 						].map((industry, i) => (
 							<motion.div
 								key={i}
-								className="p-8 bg-white/80 rounded-2xl border border-gray-200 hover:bg-white transition shadow-lg"
+								className="p-8 bg-gradient-to-br from-[#f5f0e8] to-[#ebe4d8] border border-[#d4c4a8] rounded-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 shadow-lg"
 								initial={{ opacity: 0, y: 40 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true, amount: 0.2 }}
 								transition={{ delay: i * 0.1 }}
 							>
-								<h3 className="text-xl font-sans font-semibold text-black mb-3">
+								<h3 className="text-lg font-sans font-bold text-gray-900 mb-3 text-left">
 									{industry.title}
 								</h3>
-								<p className="text-sm leading-relaxed font-sans text-gray-700">
+								<p className="text-sm leading-relaxed font-sans text-gray-700 text-left">
 									{industry.desc}
 								</p>
 							</motion.div>
@@ -222,23 +222,23 @@ function App() {
 						engineered to convert interest into engagement and engagement into growth.
 					</p>
 					<div className="grid md:grid-cols-3 gap-8 text-left">
-						<div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:scale-[1.02] transition-all duration-300 shadow-[0_0_15px_rgba(0,255,255,0.05)]">
-							<h3 className="text-xl font-sans font-semibold text-black mb-3">Human-Centric AI</h3>
-							<p className="font-sans text-black">
+						<div className="bg-gradient-to-br from-[#f5f0e8] to-[#ebe4d8] border border-[#d4c4a8] rounded-xl p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 shadow-lg">
+							<h3 className="text-lg font-sans font-bold text-gray-900 mb-3 text-left">Human-Centric AI</h3>
+							<p className="font-sans text-gray-700 text-sm leading-relaxed text-left">
 								VoiceShine blends emotional intelligence with natural speech synthesis —
 								making every voice interaction sound empathetic and brand-aligned.
 							</p>
 						</div>
-						<div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:scale-[1.02] transition-all duration-300 shadow-[0_0_15px_rgba(0,255,255,0.05)]">
-							<h3 className="text-xl font-sans font-semibold text-black mb-3">Built for Growth</h3>
-							<p className="font-sans text-black">
+						<div className="bg-gradient-to-br from-[#f5f0e8] to-[#ebe4d8] border border-[#d4c4a8] rounded-xl p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 shadow-lg">
+							<h3 className="text-lg font-sans font-bold text-gray-900 mb-3 text-left">Built for Growth</h3>
+							<p className="font-sans text-gray-700 text-sm leading-relaxed text-left">
 								Designed not just to automate, but to accelerate — shortening sales cycles,
 								boosting loyalty, and creating predictable ROI from every conversation.
 							</p>
 						</div>
-						<div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:scale-[1.02] transition-all duration-300 shadow-[0_0_15px_rgba(0,255,255,0.05)]">
-							<h3 className="text-xl font-sans font-semibold text-black mb-3">Effortless Integration</h3>
-							<p className="font-sans text-black">
+						<div className="bg-gradient-to-br from-[#f5f0e8] to-[#ebe4d8] border border-[#d4c4a8] rounded-xl p-8 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 shadow-lg">
+							<h3 className="text-lg font-sans font-bold text-gray-900 mb-3 text-left">Effortless Integration</h3>
+							<p className="font-sans text-gray-700 text-sm leading-relaxed text-left">
 								Plug VoiceShine into CRMs, booking tools, or analytics systems with zero friction.
 								Implementation takes minutes — results show instantly.
 							</p>
