@@ -35,9 +35,13 @@ export function NavBar({ items, className }: NavBarProps) {
     <>
       <div className="fixed top-4 left-4 z-50">
         <img
-          src="/voice shine logo.png"
+          src="/voice shine logo copy.png"
           alt="VoiceShine Logo"
-          className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 object-contain drop-shadow-2xl"
+          className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 object-contain"
+          style={{
+            filter: 'drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3))',
+            imageRendering: 'crisp-edges'
+          }}
         />
       </div>
 
