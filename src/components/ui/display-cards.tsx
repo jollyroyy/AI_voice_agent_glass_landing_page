@@ -27,7 +27,7 @@ function DisplayCard({
     <div
       onClick={onClick}
       className={cn(
-        "relative flex h-auto min-h-[200px] w-[26rem] -skew-y-[8deg] cursor-pointer select-none flex-col justify-start gap-4 rounded-xl border-2 border-amber-200/50 bg-gradient-to-br from-[#f5f5dc] via-[#faf8f3] to-[#f8f6f0] px-6 py-5 transition-all duration-500 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-[24rem] after:bg-gradient-to-l after:from-background after:to-transparent after:content-[''] hover:border-amber-300/70 hover:shadow-2xl hover:shadow-amber-200/40",
+        "relative flex h-auto min-h-[200px] w-[26rem] -skew-y-[8deg] cursor-pointer select-none flex-col justify-start gap-4 rounded-xl border-2 border-amber-200/50 bg-gradient-to-br from-[#f5f5dc] via-[#faf8f3] to-[#f8f6f0] px-6 py-5 transition-all duration-1000 ease-in-out after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-[24rem] after:bg-gradient-to-l after:from-background after:to-transparent after:content-[''] hover:border-amber-300/70 hover:shadow-2xl hover:shadow-amber-200/40 animate-float",
         className
       )}
     >
@@ -69,7 +69,7 @@ export default function DisplayCards({ cards }: DisplayCardsProps) {
 
   return (
     <>
-      <div className="grid [grid-template-areas:'stack'] place-items-center opacity-100 animate-in fade-in-0 duration-700">
+      <div className="grid [grid-template-areas:'stack'] place-items-center opacity-100 animate-in fade-in-0 duration-1000">
         {displayCards.map((cardProps, index) => (
           <DisplayCard
             key={index}

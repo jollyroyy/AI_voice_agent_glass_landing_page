@@ -97,7 +97,7 @@ export function HeroSection({
             >
               {title} <span className="gradient-text">{highlightText}</span>
             </h1>
-            <p className={`text-lg sm:text-xl md:text-2xl leading-relaxed mb-12 font-normal ${descriptionClassName}`}>
+            <p className={`text-lg sm:text-xl md:text-2xl leading-relaxed mb-12 font-normal text-[#654321] ${descriptionClassName}`}>
               {description}
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
