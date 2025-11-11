@@ -55,10 +55,10 @@ function App() {
 				titleClassName="text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
 			/>
 
-			<section id="solutions" className="relative py-32 px-8">
+			<section id="solutions" className="relative py-16 px-8">
 				<div className="max-w-6xl mx-auto text-center">
 					<motion.h2
-						className="text-5xl font-display font-bold text-black mb-10"
+						className="text-5xl font-display font-bold text-black mb-8"
 						initial={{ opacity: 0, y: 40 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, amount: 0.2 }}
@@ -66,7 +66,7 @@ function App() {
 					>
 						Solutions
 					</motion.h2>
-					<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+					<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 						{[
 							{
 								title: 'Customer Support Automation',
@@ -107,13 +107,13 @@ function App() {
 
 			<section
 				id="industries"
-				className="relative py-32 px-8 bg-transparent"
+				className="relative py-16 px-8 bg-transparent"
 			>
 				<div className="max-w-6xl mx-auto text-center">
-					<h2 className="text-5xl font-display font-bold text-black mb-12">
+					<h2 className="text-5xl font-display font-bold text-black mb-8">
 						Industries We Serve
 					</h2>
-					<div className="grid md:grid-cols-3 gap-10">
+					<div className="grid md:grid-cols-3 gap-6">
 						{[
 							{
 								title: 'Real Estate',
@@ -166,10 +166,10 @@ function App() {
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true, amount: 0.2 }}
 				transition={{ duration: 0.6 }}
-				className="relative py-32 px-6 md:px-12 lg:px-20 text-center bg-transparent backdrop-blur-xl"
+				className="relative py-16 px-6 md:px-12 lg:px-20 text-center bg-transparent backdrop-blur-xl"
 			>
 				<div className="max-w-6xl mx-auto">
-					<h2 className="text-5xl font-display font-bold text-black mb-10">
+					<h2 className="text-5xl font-display font-bold text-black mb-8">
 						About VoiceShine
 					</h2>
 					<p className="text-lg md:text-xl font-sans leading-relaxed max-w-4xl mx-auto mb-16 text-black">
@@ -211,7 +211,7 @@ function App() {
 				</div>
 			</motion.section>
 
-			<section id="contact" className="py-32 px-8 text-center bg-[#0a0a0f]">
+			<section id="contact" className="py-16 px-8 text-center bg-[#0a0a0f]">
 				<h2 className="text-5xl font-display font-bold text-cyan-400 mb-10">Contact Us</h2>
 				<p className="font-sans mb-8" style={{color: '#C9D6E0'}}>
 					Ready to elevate your customer experience with intelligent voice
