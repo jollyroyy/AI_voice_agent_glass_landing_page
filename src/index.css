@@ -28,10 +28,9 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: linear-gradient(135deg, #b5dcff 0%, #e5f2ff 50%, #b5dcff 100%);
 }
 
 h1 {
@@ -130,9 +129,6 @@ button:focus-visible {
 @layer base {
   * {
     @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
 }
 
