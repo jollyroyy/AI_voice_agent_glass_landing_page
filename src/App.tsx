@@ -2,10 +2,29 @@ import './App.css';
 import { NavBar } from '@/components/ui/navbar-with-dropdowns';
 import { HeroSection } from '@/components/ui/hero-section-with-smooth-bg-shader';
 import { useState } from 'react';
-import { Target, Briefcase, Calculator, Phone } from 'lucide-react';
+import { Target, Briefcase, Calculator, Phone, Building2 } from 'lucide-react';
 
 const navItems = [
-  { name: 'Solutions', url: '#solutions', icon: Target },
+  {
+    name: 'Solutions',
+    icon: Target,
+    dropdown: [
+      { name: 'AI Voice Agents', url: '#solutions' },
+      { name: 'Appointment Scheduling', url: '#solutions' },
+      { name: 'Lead Qualification', url: '#solutions' },
+      { name: 'Customer Support', url: '#solutions' },
+    ]
+  },
+  {
+    name: 'Industries',
+    icon: Building2,
+    dropdown: [
+      { name: 'Dental Clinics', url: '#usecases' },
+      { name: 'Healthcare', url: '#usecases' },
+      { name: 'Real Estate', url: '#usecases' },
+      { name: 'Professional Services', url: '#usecases' },
+    ]
+  },
   { name: 'Use Cases', url: '#usecases', icon: Briefcase },
   { name: 'ROI Calculator', url: '#roi', icon: Calculator },
   { name: 'Contact', url: '#contact', icon: Phone },
