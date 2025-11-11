@@ -34,7 +34,7 @@ export function NavBar({ items, className }: NavBarProps) {
 
   return (
     <>
-      <div className="fixed top-4 left-32 z-50">
+      <div className="fixed top-1 left-20 z-50">
         <img
           src="/VS-removebg-preview copy.png"
           alt="VoiceShine Logo"
