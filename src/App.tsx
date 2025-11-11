@@ -58,36 +58,36 @@ function App() {
 				<DisplayCards
 					cards={[
 						{
-							icon: <Zap className="size-4 text-amber-900" />,
+							icon: <Zap className="size-5 text-amber-900" />,
 							title: "Instant Response",
 							description: "Answer every call in under 2 seconds with human-like AI that never sleeps",
-							titleClassName: "text-amber-900",
+							titleClassName: "text-amber-900 font-extrabold",
 							className:
-								"[grid-area:stack] before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/40 hover:before:opacity-0 before:transition-opacity before:duration-500 before:left-0 before:top-0",
+								"[grid-area:stack]",
 						},
 						{
-							icon: <TrendingUp className="size-4 text-amber-900" />,
+							icon: <TrendingUp className="size-5 text-amber-900" />,
 							title: "3x More Leads",
 							description: "Convert prospects faster with intelligent follow-ups and qualification",
-							titleClassName: "text-amber-900",
+							titleClassName: "text-amber-900 font-extrabold",
 							className:
-								"[grid-area:stack] translate-x-16 translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/40 hover:before:opacity-0 before:transition-opacity before:duration-500 before:left-0 before:top-0",
+								"[grid-area:stack] translate-x-16 translate-y-10",
 						},
 						{
-							icon: <Clock className="size-4 text-amber-900" />,
+							icon: <Clock className="size-5 text-amber-900" />,
 							title: "24/7 Availability",
 							description: "Never miss a call or opportunity, even outside business hours",
-							titleClassName: "text-amber-900",
+							titleClassName: "text-amber-900 font-extrabold",
 							className:
-								"[grid-area:stack] translate-x-32 translate-y-20 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/40 hover:before:opacity-0 before:transition-opacity before:duration-500 before:left-0 before:top-0",
+								"[grid-area:stack] translate-x-32 translate-y-20",
 						},
 						{
-							icon: <HeadphonesIcon className="size-4 text-amber-900" />,
+							icon: <HeadphonesIcon className="size-5 text-amber-900" />,
 							title: "Human-Like Voice",
 							description: "Natural conversations that build trust and drive engagement",
-							titleClassName: "text-amber-900",
+							titleClassName: "text-amber-900 font-extrabold",
 							className:
-								"[grid-area:stack] translate-x-48 translate-y-32 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/40 hover:before:opacity-0 before:transition-opacity before:duration-500 before:left-0 before:top-0",
+								"[grid-area:stack] translate-x-48 translate-y-32",
 						},
 					]}
 				/>
