@@ -34,18 +34,16 @@ export function NavBar({ items, className }: NavBarProps) {
   return (
     <>
       <div className="fixed top-6 left-6 z-50">
-        <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-3 border border-gray-200/50">
-          <img
-            src="/Gemini_Generated_Image_4g7yax4g7yax4g7y.png"
-            alt="VoiceShine Logo"
-            className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 object-contain"
-          />
-        </div>
+        <img
+          src="/hero_ai_voice_image.jpeg"
+          alt="AI Voice Agent"
+          className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full object-cover shadow-lg border-2 border-primary/20"
+        />
       </div>
 
       <div
         className={cn(
-          "fixed top-6 right-6 z-50",
+          "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-6",
           className
         )}
       >
