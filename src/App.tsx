@@ -44,10 +44,10 @@ function App() {
 			<div className="py-8"></div>
 
 			<HeroSection
-				title="AI Voice Agents that Drive Growth"
-				highlightText="for Modern Businesses"
-				description="Transform every call into a customer. VoiceShine automates engagement, lead generation, and retention — your always-on, human-sounding voice growth engine."
-				buttonText="Try the Voice Agent Now"
+				title="AI Voice Agents"
+				highlightText="Drive Growth"
+				description="Automate engagement and retention with AI."
+				buttonText="Try Now"
 				colors={[
 					'#4a9eff',
 					'#7ec8f5',
@@ -59,6 +59,8 @@ function App() {
 				distortion={1.2}
 				speed={0.6}
 				className="h-[33vh]"
+				titleClassName="text-xl sm:text-2xl md:text-3xl lg:text-4xl"
+				descriptionClassName="text-sm sm:text-base md:text-lg"
 			/>
 
 			<section id="solutions" className="relative py-32 px-8">
@@ -113,10 +115,10 @@ function App() {
 
 			<section
 				id="industries"
-				className="relative py-32 px-8 bg-[#0a0a0f]"
+				className="relative py-32 px-8 bg-transparent"
 			>
 				<div className="max-w-6xl mx-auto text-center">
-					<h2 className="text-5xl font-display font-bold text-cyan-400 mb-12">
+					<h2 className="text-5xl font-display font-bold text-black mb-12">
 						Industries We Serve
 					</h2>
 					<div className="grid md:grid-cols-3 gap-10">
@@ -148,16 +150,16 @@ function App() {
 						].map((industry, i) => (
 							<motion.div
 								key={i}
-								className="p-8 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition"
+								className="p-8 bg-white/80 rounded-2xl border border-gray-200 hover:bg-white transition shadow-lg"
 								initial={{ opacity: 0, y: 40 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true, amount: 0.2 }}
 								transition={{ delay: i * 0.1 }}
 							>
-								<h3 className="text-xl font-sans font-semibold text-white mb-3">
+								<h3 className="text-xl font-sans font-semibold text-black mb-3">
 									{industry.title}
 								</h3>
-								<p className="text-sm leading-relaxed font-sans" style={{color: '#C9D6E0'}}>
+								<p className="text-sm leading-relaxed font-sans text-gray-700">
 									{industry.desc}
 								</p>
 							</motion.div>

@@ -23,12 +23,12 @@ export function GenerativeArtScene() {
     renderer.setPixelRatio(window.devicePixelRatio);
     currentMount.appendChild(renderer.domElement);
 
-    const geometry = new THREE.IcosahedronGeometry(0.4, 64);
+    const geometry = new THREE.IcosahedronGeometry(0.6, 64);
     const material = new THREE.ShaderMaterial({
       uniforms: {
         time: { value: 0 },
         pointLightPos: { value: new THREE.Vector3(0, 0, 5) },
-        color: { value: new THREE.Color("#4a9eff") },
+        color: { value: new THREE.Color("#1a3a5c") },
       },
       vertexShader: `
                 uniform float time;
@@ -101,13 +101,15 @@ export function GenerativeArtScene() {
                     float diffuse = max(dot(normal, lightDir), 0.0);
 
                     float fresnel = 1.0 - dot(normal, vec3(0.0, 0.0, 1.0));
-                    fresnel = pow(fresnel, 2.0);
+                    fresnel = pow(fresnel, 3.0);
 
-                    vec3 finalColor = color * diffuse + color * fresnel * 0.5;
+                    vec3 darkBlue = vec3(0.1, 0.2, 0.36);
+                    vec3 brightBlue = vec3(0.29, 0.6, 1.0);
+                    vec3 finalColor = mix(darkBlue, brightBlue, diffuse) + brightBlue * fresnel * 0.8;
 
                     gl_FragColor = vec4(finalColor, 1.0);
                 }`,
-      wireframe: true,
+      wireframe: false,
     });
     const mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
@@ -174,7 +176,7 @@ export function AnomalousMatterHero({
   return (
     <section
       role="banner"
-      className="relative w-full h-[33vh] bg-transparent text-white overflow-hidden"
+      className="relative w-full h-[33vh] bg-gradient-to-b from-gray-100 to-gray-200 text-white overflow-hidden"
     >
       <Suspense fallback={<div className="w-full h-full bg-transparent" />}>
         <GenerativeArtScene />
