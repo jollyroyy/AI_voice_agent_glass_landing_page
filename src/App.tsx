@@ -18,7 +18,15 @@ function App() {
     <div className="min-h-screen">
       <NavBar items={navItems} />
 
-      <section className="text-center py-20 px-4">
+      <div className="flex justify-center pt-24 pb-8">
+        <img
+          src="/hero_ai_voice_image.jpeg"
+          alt="AI Voice Agent"
+          className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full object-cover shadow-2xl border-4 border-white/30"
+        />
+      </div>
+
+      <section className="text-center py-12 px-4">
         <h1 className="text-5xl font-extrabold text-gray-900">Give Your Business a Voice That Converts</h1>
         <p className="mt-6 text-xl text-gray-700 max-w-2xl mx-auto">
           Engage, qualify, and retain customers 24/7 with intelligent AI voice agents that sound human, act instantly, and scale effortlessly.
