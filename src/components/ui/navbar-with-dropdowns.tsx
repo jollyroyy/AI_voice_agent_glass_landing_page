@@ -35,9 +35,10 @@ export function NavBar({ items, className }: NavBarProps) {
     <>
       <div className="fixed top-6 left-6 z-50">
         <img
-          src="/hero_ai_voice_image.jpeg"
-          alt="AI Voice Agent"
-          className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full object-cover shadow-lg border-2 border-primary/20"
+          src="/voice shine logo.png"
+          alt="VoiceShine Logo"
+          className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 object-contain"
+          style={{ mixBlendMode: 'multiply' }}
         />
       </div>
 
