@@ -3,7 +3,7 @@ export function CTASection() {
     <section className="py-12 px-6">
       <div className="container mx-auto max-w-5xl">
         <div className="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-3xl shadow-2xl p-16 md:p-20 text-center text-white">
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-[1.1] text-white">
             Ready to see it in <span className="text-yellow-300">your voice?</span>
           </h2>
           <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed font-semibold">

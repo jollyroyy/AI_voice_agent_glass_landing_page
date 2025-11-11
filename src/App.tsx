@@ -1,10 +1,15 @@
 import './App.css';
 import { NavBar } from '@/components/ui/navbar-with-dropdowns';
 import { HeroSection } from '@/components/ui/hero-section-with-smooth-bg-shader';
-import { AnomalousMatterHero } from '@/components/ui/anomalous-matter-hero';
-import { Target, Phone, Building2, Users } from 'lucide-react';
+import DisplayCards from '@/components/ui/display-cards';
+import { Target, Phone, Building2, Users, Zap, Clock, TrendingUp, HeadphonesIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
+<<<<<<< HEAD
 import { VoiceAIAgent } from "./components/ui/VoiceAIAgent";
+=======
+import { ROICalculator } from '@/components/sections/ROICalculator';
+
+>>>>>>> c425aac0371e6b67b3caeae04172d30ac36d3f42
 const navItems = [
 	{
 		name: 'Solutions',
@@ -55,14 +60,52 @@ function App() {
 				distortion={1.2}
 				speed={0.6}
 				className="min-h-screen"
-			/>
+				titleClassName="text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
+			>
+				<DisplayCards
+					cards={[
+						{
+							icon: <Zap className="size-5 text-amber-900" />,
+							title: "Instant Response",
+							description: "Answer every call in under 2 seconds with human-like AI that never sleeps",
+							titleClassName: "text-amber-900 font-extrabold",
+							className:
+								"[grid-area:stack] hover:!-translate-y-40 hover:!scale-150",
+						},
+						{
+							icon: <TrendingUp className="size-5 text-amber-900" />,
+							title: "3x More Leads",
+							description: "Convert prospects faster with intelligent follow-ups and qualification",
+							titleClassName: "text-amber-900 font-extrabold",
+							className:
+								"[grid-area:stack] translate-x-16 translate-y-10 hover:!-translate-y-40 hover:!scale-150",
+						},
+						{
+							icon: <Clock className="size-5 text-amber-900" />,
+							title: "24/7 Availability",
+							description: "Never miss a call or opportunity, even outside business hours",
+							titleClassName: "text-amber-900 font-extrabold",
+							className:
+								"[grid-area:stack] translate-x-32 translate-y-20 hover:!-translate-y-20 hover:!scale-125",
+						},
+						{
+							icon: <HeadphonesIcon className="size-5 text-amber-900" />,
+							title: "Human-Like Voice",
+							description: "Natural conversations that build trust and drive engagement",
+							titleClassName: "text-amber-900 font-extrabold",
+							className:
+								"[grid-area:stack] translate-x-48 translate-y-32 hover:!-translate-y-20 hover:!scale-125",
+						},
+					]}
+				/>
+			</HeroSection>
 
-			<AnomalousMatterHero title="" subtitle="" description="" />
+			<ROICalculator />
 
-			<section id="solutions" className="relative py-32 px-8">
+			<section id="solutions" className="relative py-16 px-8">
 				<div className="max-w-6xl mx-auto text-center">
 					<motion.h2
-						className="text-5xl font-bold text-black mb-10"
+						className="text-5xl font-display font-bold text-black mb-8"
 						initial={{ opacity: 0, y: 40 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true, amount: 0.2 }}
@@ -70,7 +113,7 @@ function App() {
 					>
 						Solutions
 					</motion.h2>
-					<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+					<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 						{[
 							{
 								title: 'Customer Support Automation',
@@ -97,10 +140,10 @@ function App() {
 								viewport={{ once: true, amount: 0.2 }}
 								transition={{ delay: i * 0.1 }}
 							>
-								<h3 className="text-xl font-semibold text-black mb-3">
+								<h3 className="text-xl font-sans font-semibold text-black mb-3">
 									{card.title}
 								</h3>
-								<p className="text-gray-800 text-sm leading-relaxed">
+								<p className="text-gray-800 text-sm leading-relaxed font-sans">
 									{card.desc}
 								</p>
 							</motion.div>
@@ -111,13 +154,13 @@ function App() {
 
 			<section
 				id="industries"
-				className="relative py-32 px-8 bg-[#0a0a0f]"
+				className="relative py-16 px-8 bg-transparent"
 			>
 				<div className="max-w-6xl mx-auto text-center">
-					<h2 className="text-5xl font-bold text-cyan-400 mb-12">
+					<h2 className="text-5xl font-display font-bold text-black mb-8">
 						Industries We Serve
 					</h2>
-					<div className="grid md:grid-cols-3 gap-10">
+					<div className="grid md:grid-cols-3 gap-6">
 						{[
 							{
 								title: 'Real Estate',
@@ -146,16 +189,16 @@ function App() {
 						].map((industry, i) => (
 							<motion.div
 								key={i}
-								className="p-8 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition"
+								className="p-8 bg-white/80 rounded-2xl border border-gray-200 hover:bg-white transition shadow-lg"
 								initial={{ opacity: 0, y: 40 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true, amount: 0.2 }}
 								transition={{ delay: i * 0.1 }}
 							>
-								<h3 className="text-xl font-semibold text-white mb-3">
+								<h3 className="text-xl font-sans font-semibold text-black mb-3">
 									{industry.title}
 								</h3>
-								<p className="text-gray-400 text-sm leading-relaxed">
+								<p className="text-sm leading-relaxed font-sans text-gray-700">
 									{industry.desc}
 								</p>
 							</motion.div>
@@ -170,48 +213,37 @@ function App() {
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true, amount: 0.2 }}
 				transition={{ duration: 0.6 }}
-				className="relative py-32 px-6 md:px-12 lg:px-20 text-center bg-transparent backdrop-blur-xl"
+				className="relative py-16 px-6 md:px-12 lg:px-20 text-center bg-transparent backdrop-blur-xl"
 			>
 				<div className="max-w-6xl mx-auto">
-					<h2 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 drop-shadow-[0_0_15px_rgba(0,255,255,0.3)] mb-10">
+					<h2 className="text-5xl font-display font-bold text-black mb-8">
 						About VoiceShine
 					</h2>
-					<p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto mb-16">
-						VoiceShine helps modern businesses scale human-like customer
-						interactions with intelligent AI voice agents. Every conversation is
-						powered by empathy, context, and clarity — designed to engage
-						customers, shorten response times, and turn routine communication into
-						measurable business growth.
+					<p className="text-lg md:text-xl font-sans leading-relaxed max-w-4xl mx-auto mb-16 text-black">
+						VoiceShine empowers modern businesses to scale authentic, human-like customer conversations
+						with intelligent AI voice agents. Each interaction is guided by empathy, clarity, and context —
+						engineered to convert interest into engagement and engagement into growth.
 					</p>
 					<div className="grid md:grid-cols-3 gap-8 text-left">
 						<div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:scale-[1.02] transition-all duration-300 shadow-[0_0_15px_rgba(0,255,255,0.05)]">
-							<h3 className="text-xl font-semibold text-cyan-400 mb-3">
-								Conversational Intelligence
-							</h3>
-							<p className="text-gray-400">
-								Our AI voice agents replicate human tonality and emotional depth —
-								delivering engaging conversations that feel authentic and build trust
-								with every interaction.
+							<h3 className="text-xl font-sans font-semibold text-black mb-3">Human-Centric AI</h3>
+							<p className="font-sans text-black">
+								VoiceShine blends emotional intelligence with natural speech synthesis —
+								making every voice interaction sound empathetic and brand-aligned.
 							</p>
 						</div>
 						<div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:scale-[1.02] transition-all duration-300 shadow-[0_0_15px_rgba(0,255,255,0.05)]">
-							<h3 className="text-xl font-semibold text-cyan-400 mb-3">
-								Growth-Driven Design
-							</h3>
-							<p className="text-gray-400">
-								VoiceShine isn’t just about automation — it’s about acceleration. We
-								create AI systems that increase retention, amplify brand loyalty, and
-								drive predictable ROI.
+							<h3 className="text-xl font-sans font-semibold text-black mb-3">Built for Growth</h3>
+							<p className="font-sans text-black">
+								Designed not just to automate, but to accelerate — shortening sales cycles,
+								boosting loyalty, and creating predictable ROI from every conversation.
 							</p>
 						</div>
 						<div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:scale-[1.02] transition-all duration-300 shadow-[0_0_15px_rgba(0,255,255,0.05)]">
-							<h3 className="text-xl font-semibold text-cyan-400 mb-3">
-								Effortless Integration
-							</h3>
-							<p className="text-gray-400">
-								Integrate seamlessly with your existing CRM, calendar, or customer
-								systems. Deploy instantly without complex technical setup — your
-								growth engine starts from day one.
+							<h3 className="text-xl font-sans font-semibold text-black mb-3">Effortless Integration</h3>
+							<p className="font-sans text-black">
+								Plug VoiceShine into CRMs, booking tools, or analytics systems with zero friction.
+								Implementation takes minutes — results show instantly.
 							</p>
 						</div>
 					</div>
@@ -220,15 +252,15 @@ function App() {
 							href="#contact"
 							className="inline-block px-10 py-5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-semibold text-lg shadow-[0_0_25px_rgba(0,255,255,0.3)] hover:shadow-[0_0_35px_rgba(0,255,255,0.5)] hover:scale-105 transition-transform duration-300"
 						>
-							Discover How VoiceShine Can Accelerate Your Growth
+							Discover How VoiceShine Accelerates Growth
 						</a>
 					</div>
 				</div>
 			</motion.section>
 
-			<section id="contact" className="py-32 px-8 text-center bg-[#0a0a0f]">
-				<h2 className="text-5xl font-bold text-cyan-400 mb-10">Contact Us</h2>
-				<p className="text-gray-400 mb-8">
+			<section id="contact" className="py-16 px-8 text-center bg-[#0a0a0f]">
+				<h2 className="text-5xl font-display font-bold text-cyan-400 mb-10">Contact Us</h2>
+				<p className="font-sans mb-8" style={{color: '#C9D6E0'}}>
 					Ready to elevate your customer experience with intelligent voice
 					automation?
 				</p>

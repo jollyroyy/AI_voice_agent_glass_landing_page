@@ -45,7 +45,7 @@ export function Pricing() {
     <section id="pricing" className="py-12 px-6 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-foreground leading-[1.1]">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-amber-900 leading-[1.1]">
             Pricing & <span className="gradient-text">Pilots</span>
           </h2>
           <p className="text-xl md:text-lg text-gray-600 leading-relaxed mb-6">

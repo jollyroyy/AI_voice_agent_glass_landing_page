@@ -51,7 +51,7 @@ export function NavBar({ items, className }: NavBarProps) {
           className
         )}
       >
-        <div className="flex items-center gap-1 bg-white/10 border border-gray-200/30 backdrop-blur-lg py-1.5 px-2 rounded-full shadow-lg">
+        <div className="flex items-center gap-4 bg-white/10 border border-gray-200/30 backdrop-blur-lg py-1.5 px-4 rounded-full shadow-lg">
           {items.map((item) => {
             const Icon = item.icon;
             const isActive = activeTab === item.name;
@@ -69,11 +69,12 @@ export function NavBar({ items, className }: NavBarProps) {
                   <button
                     onClick={() => {
                       setOpenDropdown(isDropdownOpen ? null : item.name);
+                      handleItemClick(item.name);
                     }}
                     className={cn(
-                      "relative cursor-pointer text-sm font-semibold px-4 py-1.5 rounded-full transition-colors",
-                      "text-foreground/80 hover:text-primary bg-transparent",
-                      isActive && "text-primary"
+                      "relative cursor-pointer text-sm font-semibold px-4 py-1.5 rounded-full transition-all duration-300",
+                      "text-foreground/80 hover:text-primary hover:bg-primary/5 bg-transparent",
+                      isActive && "text-primary bg-primary/5"
                     )}
                   >
                     <span className="hidden md:inline">{item.name}</span>
@@ -83,7 +84,7 @@ export function NavBar({ items, className }: NavBarProps) {
                     {isActive && (
                       <motion.div
                         layoutId="lamp"
-                        className="absolute inset-0 w-full bg-primary/5 rounded-full -z-10"
+                        className="absolute inset-0 w-full bg-transparent rounded-full -z-10"
                         initial={false}
                         transition={{
                           type: "spring",
@@ -107,9 +108,9 @@ export function NavBar({ items, className }: NavBarProps) {
                       handleItemClick(item.name, item.url);
                     }}
                     className={cn(
-                      "relative cursor-pointer text-sm font-semibold px-4 py-1.5 rounded-full transition-colors",
-                      "text-foreground/80 hover:text-primary bg-transparent",
-                      isActive && "text-primary"
+                      "relative cursor-pointer text-sm font-semibold px-4 py-1.5 rounded-full transition-all duration-300",
+                      "text-foreground/80 hover:text-primary hover:bg-primary/5 bg-transparent",
+                      isActive && "text-primary bg-primary/5"
                     )}
                   >
                     <span className="hidden md:inline">{item.name}</span>
@@ -119,7 +120,7 @@ export function NavBar({ items, className }: NavBarProps) {
                     {isActive && (
                       <motion.div
                         layoutId="lamp"
-                        className="absolute inset-0 w-full bg-primary/5 rounded-full -z-10"
+                        className="absolute inset-0 w-full bg-transparent rounded-full -z-10"
                         initial={false}
                         transition={{
                           type: "spring",

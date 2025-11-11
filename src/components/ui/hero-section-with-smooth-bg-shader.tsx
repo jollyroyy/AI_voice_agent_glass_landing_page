@@ -22,6 +22,7 @@ interface HeroSectionProps {
   veilOpacity?: string
   fontFamily?: string
   fontWeight?: number
+  children?: React.ReactNode
 }
 
 export function HeroSection({
@@ -43,6 +44,7 @@ export function HeroSection({
   buttonClassName = "",
   maxWidth = "max-w-6xl",
   veilOpacity = "bg-white/20 dark:bg-black/25",
+  children,
 }: HeroSectionProps) {
   const [dimensions, setDimensions] = useState({ width: 1920, height: 1080 })
   const [mounted, setMounted] = useState(false)
@@ -87,31 +89,36 @@ export function HeroSection({
       </div>
 
       <div className={`relative z-10 ${maxWidth} mx-auto px-6 w-full`}>
-        <div className="text-center py-20 md:py-28 px-6 max-w-5xl mx-auto">
-          <h1
-            className={`font-bold tracking-tight text-foreground leading-[1.15] mb-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl ${titleClassName}`}
-            style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
-          >
-            {title} <span className="gradient-text">{highlightText}</span>
-          </h1>
-          <p className={`text-lg sm:text-xl md:text-2xl leading-relaxed max-w-3xl mx-auto mb-12 font-normal ${descriptionClassName}`}>
-            {description}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-5 justify-center">
-            <button
-              onClick={handleButtonClick}
-              className={`px-8 py-4 rounded-full bg-gradient-to-r from-[#72b9bb] via-[#8cc5b8] to-[#ffd1bd] text-white font-bold shadow-xl hover:scale-105 transition-transform text-base ${buttonClassName}`}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-20 md:py-28">
+          <div className="text-left">
+            <h1
+              className={`font-bold tracking-tight text-foreground leading-[1.15] mb-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl ${titleClassName}`}
+              style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
             >
-              {buttonText}
-            </button>
-            {secondaryButtonText && (
+              {title} <span className="gradient-text">{highlightText}</span>
+            </h1>
+            <p className={`text-lg sm:text-xl md:text-2xl leading-relaxed mb-12 font-normal ${descriptionClassName}`}>
+              {description}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-5">
               <button
-                onClick={onSecondaryButtonClick}
-                className="px-8 py-4 rounded-full bg-white text-foreground font-semibold border-2 border-gray-200 shadow-lg hover:scale-105 transition-transform text-base"
+                onClick={handleButtonClick}
+                className={`px-8 py-4 rounded-full bg-gradient-to-r from-[#72b9bb] via-[#8cc5b8] to-[#ffd1bd] text-white font-bold shadow-xl hover:scale-105 transition-transform text-base ${buttonClassName}`}
               >
-                {secondaryButtonText}
+                {buttonText}
               </button>
-            )}
+              {secondaryButtonText && (
+                <button
+                  onClick={onSecondaryButtonClick}
+                  className="px-8 py-4 rounded-full bg-white text-foreground font-semibold border-2 border-gray-200 shadow-lg hover:scale-105 transition-transform text-base"
+                >
+                  {secondaryButtonText}
+                </button>
+              )}
+            </div>
+          </div>
+          <div className="hidden lg:flex justify-center items-start mt-[-2rem]">
+            {children}
           </div>
         </div>
       </div>

@@ -31,7 +31,7 @@ export function FAQ() {
     <section id="faqs" className="py-12 px-6">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-foreground leading-[1.1]">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-amber-900 leading-[1.1]">
             Frequently Asked <span className="gradient-text">Questions</span>
           </h2>
         </div>

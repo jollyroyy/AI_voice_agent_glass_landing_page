@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', 'Satoshi', 'Lato', system-ui, -apple-system, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -96,6 +96,10 @@ button:focus-visible {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+
+    --text-heading: #F5F8FA;
+    --text-body: #C9D6E0;
+    --text-accent: #5ac8fa;
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -122,6 +126,10 @@ button:focus-visible {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+
+    --text-heading: #F5F8FA;
+    --text-body: #C9D6E0;
+    --text-accent: #5ac8fa;
   }
 }
 
@@ -189,4 +197,54 @@ button:focus-visible {
 
 .animate-fade-in-long {
   animation: fadeIn 1.2s ease-out forwards;
+}
+
+@layer components {
+  .heading {
+    font-family: 'Satoshi', 'Inter Display', 'Poppins', sans-serif;
+    font-weight: 700;
+    color: var(--text-heading);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .heading-display {
+    font-family: 'Satoshi', 'Inter Display', 'Poppins', sans-serif;
+    font-weight: 800;
+    color: var(--text-heading);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+
+  .subheading {
+    font-family: 'Inter', 'Satoshi', sans-serif;
+    font-weight: 600;
+    color: var(--text-heading);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  .body-text {
+    font-family: 'Inter', 'Satoshi', 'Lato', sans-serif;
+    font-weight: 400;
+    color: var(--text-body);
+    line-height: 1.6;
+    letter-spacing: 0;
+  }
+
+  .body-text-large {
+    font-family: 'Inter', 'Satoshi', 'Lato', sans-serif;
+    font-weight: 400;
+    color: var(--text-body);
+    line-height: 1.5;
+    letter-spacing: 0;
+    max-width: 75ch;
+  }
+
+  .accent-text {
+    font-family: 'Inter', 'Satoshi', sans-serif;
+    font-weight: 600;
+    color: var(--text-accent);
+    letter-spacing: -0.01em;
+  }
 }

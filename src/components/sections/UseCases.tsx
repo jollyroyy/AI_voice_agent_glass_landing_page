@@ -21,7 +21,7 @@ export function UseCases() {
     <section id="solutions" className="py-12 px-6">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-foreground leading-[1.1]">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-amber-900 leading-[1.1]">
             Built Specifically For <span className="gradient-text">Your Business</span>
           </h2>
           <p className="text-xl md:text-lg text-gray-600 leading-relaxed">

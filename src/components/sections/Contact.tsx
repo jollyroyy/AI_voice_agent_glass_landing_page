@@ -24,7 +24,7 @@ export function Contact() {
     <section id="contact" className="py-12 px-6">
       <div className="container mx-auto max-w-2xl">
         <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-foreground leading-[1.1]">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-amber-900 leading-[1.1]">
             Book a <span className="gradient-text">Live Demo</span>
           </h2>
           <p className="text-xl md:text-lg text-gray-600 leading-relaxed">

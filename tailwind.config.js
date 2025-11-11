@@ -9,7 +9,8 @@ export default {
   ],
   theme: {
     fontFamily: {
-      sans: ['Satoshi', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+      display: ['Satoshi', 'Inter Display', 'Poppins', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+      sans: ['Inter', 'Satoshi', 'Lato', 'Source Sans Pro', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
     },
     extend: {
       borderRadius: {

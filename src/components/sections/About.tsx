@@ -3,7 +3,7 @@ export function About() {
     <section id="about" className="py-12 px-6 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-foreground leading-[1.1]">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-amber-900 leading-[1.1]">
             About <span className="gradient-text">AIVoice</span>
           </h2>
         </div>

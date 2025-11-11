@@ -46,7 +46,7 @@ export function Industries() {
     <section id="industries" className="py-20 px-6 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-amber-900 mb-4">
             Industry-Specific <span className="gradient-text">Solutions</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">

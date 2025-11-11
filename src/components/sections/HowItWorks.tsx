@@ -21,7 +21,7 @@ export function HowItWorks() {
     <section id="how-it-works" className="py-20 px-6">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-foreground leading-[1.1]">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-amber-900 leading-[1.1]">
             Process — From First Call <span className="gradient-text">to Live (Fast)</span>
           </h2>
         </div>
