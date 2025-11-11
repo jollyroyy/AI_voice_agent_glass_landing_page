@@ -58,36 +58,36 @@ function App() {
 				<DisplayCards
 					cards={[
 						{
-							icon: <Zap className="size-4 text-white" />,
+							icon: <Zap className="size-4 text-amber-900" />,
 							title: "Instant Response",
 							description: "Answer every call in under 2 seconds with human-like AI that never sleeps",
-							titleClassName: "text-white",
+							titleClassName: "text-amber-900",
 							className:
-								"[grid-area:stack] hover:-translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 hover:before:opacity-0 before:transition-opacity before:duration-700 before:left-0 before:top-0",
+								"[grid-area:stack] before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/40 hover:before:opacity-0 before:transition-opacity before:duration-500 before:left-0 before:top-0",
 						},
 						{
-							icon: <TrendingUp className="size-4 text-white" />,
+							icon: <TrendingUp className="size-4 text-amber-900" />,
 							title: "3x More Leads",
 							description: "Convert prospects faster with intelligent follow-ups and qualification",
-							titleClassName: "text-white",
+							titleClassName: "text-amber-900",
 							className:
-								"[grid-area:stack] translate-x-16 translate-y-10 hover:-translate-y-1 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 hover:before:opacity-0 before:transition-opacity before:duration-700 before:left-0 before:top-0",
+								"[grid-area:stack] translate-x-16 translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/40 hover:before:opacity-0 before:transition-opacity before:duration-500 before:left-0 before:top-0",
 						},
 						{
-							icon: <Clock className="size-4 text-white" />,
+							icon: <Clock className="size-4 text-amber-900" />,
 							title: "24/7 Availability",
 							description: "Never miss a call or opportunity, even outside business hours",
-							titleClassName: "text-white",
+							titleClassName: "text-amber-900",
 							className:
-								"[grid-area:stack] translate-x-32 translate-y-20 hover:translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 hover:before:opacity-0 before:transition-opacity before:duration-700 before:left-0 before:top-0",
+								"[grid-area:stack] translate-x-32 translate-y-20 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/40 hover:before:opacity-0 before:transition-opacity before:duration-500 before:left-0 before:top-0",
 						},
 						{
-							icon: <HeadphonesIcon className="size-4 text-white" />,
+							icon: <HeadphonesIcon className="size-4 text-amber-900" />,
 							title: "Human-Like Voice",
 							description: "Natural conversations that build trust and drive engagement",
-							titleClassName: "text-white",
+							titleClassName: "text-amber-900",
 							className:
-								"[grid-area:stack] translate-x-48 translate-y-32 hover:translate-y-20 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 hover:before:opacity-0 before:transition-opacity before:duration-700 before:left-0 before:top-0",
+								"[grid-area:stack] translate-x-48 translate-y-32 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/40 hover:before:opacity-0 before:transition-opacity before:duration-500 before:left-0 before:top-0",
 						},
 					]}
 				/>

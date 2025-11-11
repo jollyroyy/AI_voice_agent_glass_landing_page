@@ -17,27 +17,27 @@ interface DisplayCardProps {
 
 function DisplayCard({
   className,
-  icon = <Sparkles className="size-4 text-white" />,
+  icon = <Sparkles className="size-4 text-amber-900" />,
   title = "Featured",
   description = "Discover amazing content",
-  titleClassName = "text-white",
+  titleClassName = "text-amber-900",
   onClick,
 }: DisplayCardProps) {
   return (
     <div
       onClick={onClick}
       className={cn(
-        "relative flex h-auto min-h-[200px] w-[26rem] -skew-y-[8deg] cursor-pointer select-none flex-col justify-start gap-3 rounded-xl border-2 border-[#72b9bb]/30 bg-gradient-to-br from-[#72b9bb] via-[#8cc5b8] to-[#b5d9d9] backdrop-blur-sm px-5 py-4 transition-all duration-700 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-[24rem] after:bg-gradient-to-l after:from-background after:to-transparent after:content-[''] hover:border-[#72b9bb]/50 hover:shadow-2xl hover:shadow-[#72b9bb]/20",
+        "relative flex h-auto min-h-[200px] w-[26rem] -skew-y-[8deg] cursor-pointer select-none flex-col justify-start gap-3 rounded-xl border-2 border-amber-200/40 bg-gradient-to-br from-[#f5f5dc] via-[#faf8f3] to-[#f8f6f0] backdrop-blur-sm px-5 py-4 transition-all duration-500 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-[24rem] after:bg-gradient-to-l after:from-background after:to-transparent after:content-[''] hover:border-amber-300/60 hover:shadow-2xl hover:shadow-amber-200/30 hover:-translate-y-8 hover:scale-105",
         className
       )}
     >
       <div className="flex items-center gap-2">
-        <span className="relative inline-block rounded-full bg-white/20 p-1">
+        <span className="relative inline-block rounded-full bg-amber-100/80 p-1.5">
           {icon}
         </span>
       </div>
-      <p className={cn("text-base font-bold leading-tight text-white", titleClassName)}>{title}</p>
-      <p className="text-sm text-white/90 leading-relaxed">{description}</p>
+      <p className={cn("text-base font-bold leading-tight text-amber-900", titleClassName)}>{title}</p>
+      <p className="text-sm text-amber-950/80 leading-relaxed">{description}</p>
     </div>
   );
 }
@@ -77,23 +77,23 @@ export default function DisplayCards({ cards }: DisplayCardsProps) {
             onClick={() => handleCardClick(index)}
             className={cn(
               cardProps.className,
-              selectedCard === index && "z-50 scale-110 -translate-y-16"
+              selectedCard === index && "z-50 scale-110 -translate-y-20"
             )}
           />
         ))}
       </div>
       {selectedCard !== null && (
         <div
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 flex items-center justify-center"
+          className="fixed inset-0 bg-black/60 backdrop-blur-md z-[100] flex items-center justify-center"
           onClick={() => setSelectedCard(null)}
         >
           <div
-            className="relative max-w-2xl w-full mx-4 skew-y-0"
+            className="relative max-w-2xl w-full mx-4"
             onClick={(e) => e.stopPropagation()}
           >
             <DisplayCard
               {...displayCards[selectedCard]}
-              className="!skew-y-0 !w-full scale-110 shadow-2xl border-[#72b9bb]/50"
+              className="!skew-y-0 !w-full scale-125 shadow-2xl border-amber-300/60 hover:scale-125 hover:translate-y-0"
               onClick={() => setSelectedCard(null)}
             />
           </div>
