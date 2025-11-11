@@ -23,7 +23,7 @@ export function GenerativeArtScene() {
     renderer.setPixelRatio(window.devicePixelRatio);
     currentMount.appendChild(renderer.domElement);
 
-    const geometry = new THREE.IcosahedronGeometry(1.2, 64);
+    const geometry = new THREE.IcosahedronGeometry(0.4, 64);
     const material = new THREE.ShaderMaterial({
       uniforms: {
         time: { value: 0 },
@@ -174,7 +174,7 @@ export function AnomalousMatterHero({
   return (
     <section
       role="banner"
-      className="relative w-full h-screen bg-transparent text-white overflow-hidden"
+      className="relative w-full h-[33vh] bg-transparent text-white overflow-hidden"
     >
       <Suspense fallback={<div className="w-full h-full bg-transparent" />}>
         <GenerativeArtScene />

@@ -37,6 +37,12 @@ function App() {
 		<main className="text-gray-100 bg-[#0a0a0f]">
 			<NavBar items={navItems} />
 
+			<div className="py-8"></div>
+
+			<AnomalousMatterHero title="" subtitle="" description="" />
+
+			<div className="py-8"></div>
+
 			<HeroSection
 				title="AI Voice Agents that Drive Growth"
 				highlightText="for Modern Businesses"
@@ -52,10 +58,8 @@ function App() {
 				]}
 				distortion={1.2}
 				speed={0.6}
-				className="min-h-screen"
+				className="h-[33vh]"
 			/>
-
-			<AnomalousMatterHero title="" subtitle="" description="" />
 
 			<section id="solutions" className="relative py-32 px-8">
 				<div className="max-w-6xl mx-auto text-center">
@@ -171,32 +175,32 @@ function App() {
 				className="relative py-32 px-6 md:px-12 lg:px-20 text-center bg-transparent backdrop-blur-xl"
 			>
 				<div className="max-w-6xl mx-auto">
-					<h2 className="text-5xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 drop-shadow-[0_0_15px_rgba(0,255,255,0.3)] mb-10">
+					<h2 className="text-5xl font-display font-bold text-black mb-10">
 						About VoiceShine
 					</h2>
-					<p className="text-lg md:text-xl font-sans leading-relaxed max-w-4xl mx-auto mb-16" style={{color: '#C9D6E0'}}>
+					<p className="text-lg md:text-xl font-sans leading-relaxed max-w-4xl mx-auto mb-16 text-black">
 						VoiceShine empowers modern businesses to scale authentic, human-like customer conversations
 						with intelligent AI voice agents. Each interaction is guided by empathy, clarity, and context —
 						engineered to convert interest into engagement and engagement into growth.
 					</p>
 					<div className="grid md:grid-cols-3 gap-8 text-left">
 						<div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:scale-[1.02] transition-all duration-300 shadow-[0_0_15px_rgba(0,255,255,0.05)]">
-							<h3 className="text-xl font-sans font-semibold text-cyan-400 mb-3">Human-Centric AI</h3>
-							<p className="font-sans" style={{color: '#C9D6E0'}}>
+							<h3 className="text-xl font-sans font-semibold text-black mb-3">Human-Centric AI</h3>
+							<p className="font-sans text-black">
 								VoiceShine blends emotional intelligence with natural speech synthesis —
 								making every voice interaction sound empathetic and brand-aligned.
 							</p>
 						</div>
 						<div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:scale-[1.02] transition-all duration-300 shadow-[0_0_15px_rgba(0,255,255,0.05)]">
-							<h3 className="text-xl font-sans font-semibold text-cyan-400 mb-3">Built for Growth</h3>
-							<p className="font-sans" style={{color: '#C9D6E0'}}>
+							<h3 className="text-xl font-sans font-semibold text-black mb-3">Built for Growth</h3>
+							<p className="font-sans text-black">
 								Designed not just to automate, but to accelerate — shortening sales cycles,
 								boosting loyalty, and creating predictable ROI from every conversation.
 							</p>
 						</div>
 						<div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:scale-[1.02] transition-all duration-300 shadow-[0_0_15px_rgba(0,255,255,0.05)]">
-							<h3 className="text-xl font-sans font-semibold text-cyan-400 mb-3">Effortless Integration</h3>
-							<p className="font-sans" style={{color: '#C9D6E0'}}>
+							<h3 className="text-xl font-sans font-semibold text-black mb-3">Effortless Integration</h3>
+							<p className="font-sans text-black">
 								Plug VoiceShine into CRMs, booking tools, or analytics systems with zero friction.
 								Implementation takes minutes — results show instantly.
 							</p>
