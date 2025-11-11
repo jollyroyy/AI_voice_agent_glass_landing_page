@@ -22,18 +22,18 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-12 px-6">
+    <section id="contact" className="py-20 px-6 bg-white">
       <div className="container mx-auto max-w-2xl">
         <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-amber-900 leading-[1.1]">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-5 text-gray-900 leading-[1.1]">
             Book a <span className="gradient-text">Live Demo</span>
           </h2>
-          <p className="text-xl md:text-lg text-gray-600 leading-relaxed">
+          <p className="text-xl text-gray-600 leading-relaxed">
             See how an AI voice agent can transform your customer experience in just 15 minutes
           </p>
         </div>
 
-        <div className="bg-white border border-gray-100 rounded-2xl shadow-lg p-10">
+        <div className="bg-gradient-to-br from-[#f5f0e8] to-[#ebe4d8] border border-[#d4c4a8] rounded-xl shadow-lg p-10">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
