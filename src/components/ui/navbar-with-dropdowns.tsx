@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Video as LucideIcon } from "lucide-react";
+import { LucideIcon } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -35,9 +35,9 @@ export function NavBar({ items, className }: NavBarProps) {
     <>
       <div className="fixed top-4 left-4 z-50">
         <img
-          src="/unnamed.jpg"
+          src="/voice shine logo.png"
           alt="VoiceShine Logo"
-          className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 object-contain drop-shadow-xl"
+          className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 object-contain drop-shadow-2xl"
         />
       </div>
 
