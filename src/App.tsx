@@ -4,6 +4,7 @@ import { HeroSection } from '@/components/ui/hero-section-with-smooth-bg-shader'
 import DisplayCards from '@/components/ui/display-cards';
 import { Target, Phone, Building2, Users, Zap, Clock, TrendingUp, HeadphonesIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { ROICalculator } from '@/components/sections/ROICalculator';
 
 const navItems = [
 	{
@@ -79,7 +80,7 @@ function App() {
 							description: "Never miss a call or opportunity, even outside business hours",
 							titleClassName: "text-amber-900 font-extrabold",
 							className:
-								"[grid-area:stack] translate-x-32 translate-y-20",
+								"[grid-area:stack] translate-x-32 translate-y-20 hover:!-translate-y-40 hover:!scale-150",
 						},
 						{
 							icon: <HeadphonesIcon className="size-5 text-amber-900" />,
@@ -87,11 +88,13 @@ function App() {
 							description: "Natural conversations that build trust and drive engagement",
 							titleClassName: "text-amber-900 font-extrabold",
 							className:
-								"[grid-area:stack] translate-x-48 translate-y-32",
+								"[grid-area:stack] translate-x-48 translate-y-32 hover:!-translate-y-40 hover:!scale-150",
 						},
 					]}
 				/>
 			</HeroSection>
+
+			<ROICalculator />
 
 			<section id="solutions" className="relative py-16 px-8">
 				<div className="max-w-6xl mx-auto text-center">
