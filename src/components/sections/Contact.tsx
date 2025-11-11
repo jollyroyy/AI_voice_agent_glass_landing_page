@@ -36,11 +36,11 @@ export function Contact() {
         <div className="bg-gradient-to-br from-[#f5f0e8] to-[#ebe4d8] border border-[#d4c4a8] rounded-xl shadow-lg p-10">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+              <label htmlFor="name" className="block text-sm font-bold text-gray-900 mb-2">
                 Full Name
               </label>
               <div className="relative">
-                <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-700" />
                 <input
                   type="text"
                   id="name"
@@ -49,17 +49,17 @@ export function Contact() {
                   onChange={handleChange}
                   placeholder="John Doe"
                   required
-                  className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  className="w-full pl-12 pr-4 py-3 bg-[#f5f0e8] border-2 border-[#d4c4a8] rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all text-gray-900 placeholder:text-gray-600"
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+              <label htmlFor="email" className="block text-sm font-bold text-gray-900 mb-2">
                 Email Address
               </label>
               <div className="relative">
-                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-700" />
                 <input
                   type="email"
                   id="email"
@@ -68,17 +68,17 @@ export function Contact() {
                   onChange={handleChange}
                   placeholder="john@company.com"
                   required
-                  className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  className="w-full pl-12 pr-4 py-3 bg-[#f5f0e8] border-2 border-[#d4c4a8] rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all text-gray-900 placeholder:text-gray-600"
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2">
+              <label htmlFor="company" className="block text-sm font-bold text-gray-900 mb-2">
                 Company Name
               </label>
               <div className="relative">
-                <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-700" />
                 <input
                   type="text"
                   id="company"
@@ -87,7 +87,7 @@ export function Contact() {
                   onChange={handleChange}
                   placeholder="Acme Inc."
                   required
-                  className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  className="w-full pl-12 pr-4 py-3 bg-[#f5f0e8] border-2 border-[#d4c4a8] rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all text-gray-900 placeholder:text-gray-600"
                 />
               </div>
             </div>
@@ -99,7 +99,7 @@ export function Contact() {
               Request Demo
             </button>
 
-            <p className="text-center text-sm text-gray-500">
+            <p className="text-center text-sm text-gray-700 font-medium">
               We'll get back to you within 24 hours
             </p>
           </form>
