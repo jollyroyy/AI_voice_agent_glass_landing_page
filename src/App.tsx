@@ -4,7 +4,7 @@ import { HeroSection } from '@/components/ui/hero-section-with-smooth-bg-shader'
 import { AnomalousMatterHero } from '@/components/ui/anomalous-matter-hero';
 import { Target, Phone, Building2, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
-
+import { VoiceAIAgent } from "./components/ui/VoiceAIAgent";
 const navItems = [
 	{
 		name: 'Solutions',
@@ -36,6 +36,8 @@ function App() {
 	return (
 		<main className="text-gray-100 bg-[#0a0a0f]">
 			<NavBar items={navItems} />
+
+			<VoiceAIAgent />
 
 			<HeroSection
 				title="AI Voice Agents that Drive Growth"
