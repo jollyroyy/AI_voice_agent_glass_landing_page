@@ -50,9 +50,9 @@ function App() {
       />
 
       <AnomalousMatterHero
-        title="Voice Intelligence in Motion"
-        subtitle="Experience the Future of AI Voice Technology"
-        description="Watch as our advanced AI voice technology adapts and responds in real-time. Every interaction is designed to feel natural, intelligent, and effortlessly human."
+        title=""
+        subtitle=""
+        description=""
       />
 
       <section id="solutions" className="relative py-32 px-8">
