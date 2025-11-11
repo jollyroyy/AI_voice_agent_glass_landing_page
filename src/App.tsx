@@ -1,6 +1,7 @@
 import './App.css';
 import { NavBar } from '@/components/ui/navbar-with-dropdowns';
 import { HeroSection } from '@/components/ui/hero-section-with-smooth-bg-shader';
+import { AnomalousMatterHero } from '@/components/ui/anomalous-matter-hero';
 import { Target, Phone, Building2, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -46,6 +47,12 @@ function App() {
         distortion={1.2}
         speed={0.6}
         className="min-h-screen"
+      />
+
+      <AnomalousMatterHero
+        title="Voice Intelligence in Motion"
+        subtitle="Experience the Future of AI Voice Technology"
+        description="Watch as our advanced AI voice technology adapts and responds in real-time. Every interaction is designed to feel natural, intelligent, and effortlessly human."
       />
 
       <section id="solutions" className="relative py-32 px-8">
