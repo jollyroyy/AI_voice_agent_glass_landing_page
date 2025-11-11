@@ -36,13 +36,9 @@ export function NavBar({ items, className }: NavBarProps) {
     <>
       <div className="fixed top-4 left-4 z-50">
         <img
-          src="/vs-logo-clean.png"
+          src="/VS-removebg-preview copy.png"
           alt="VoiceShine Logo"
-          className="w-20 h-16 object-contain"
-          style={{
-            filter: 'brightness(1.5) contrast(1.4) saturate(1.6) drop-shadow(0 0 20px rgba(0, 220, 255, 0.9)) drop-shadow(0 0 10px rgba(0, 200, 255, 0.7))',
-            imageRendering: 'crisp-edges'
-          }}
+          className="w-32 h-20 object-contain"
         />
       </div>
 

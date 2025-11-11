@@ -94,7 +94,7 @@ export function Contact() {
 
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-[#72b9bb] via-[#8cc5b8] to-[#ffd1bd] text-white py-4 px-6 rounded-full font-bold text-lg shadow-xl hover:scale-105 transition-transform"
+              className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-4 px-6 rounded-full font-bold text-lg shadow-lg hover:shadow-xl hover:from-cyan-600 hover:to-blue-600 hover:scale-105 transition-all duration-300"
             >
               Request Demo
             </button>

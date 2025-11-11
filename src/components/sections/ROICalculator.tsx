@@ -182,7 +182,7 @@ export function ROICalculator() {
         <div className="mt-12 text-center">
           <a
             href="#contact"
-            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-amber-600 to-amber-700 text-white text-xl font-extrabold rounded-full shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-300 border-4 border-amber-800"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-xl font-bold rounded-full shadow-lg hover:shadow-xl hover:from-cyan-600 hover:to-blue-600 hover:scale-105 transition-all duration-300"
           >
             Start Recovering Revenue Today
             <TrendingUp className="size-6" />

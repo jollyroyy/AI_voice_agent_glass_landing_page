@@ -247,7 +247,7 @@ function App() {
 					<div className="mt-20">
 						<a
 							href="#contact"
-							className="inline-block px-10 py-5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-semibold text-lg shadow-[0_0_25px_rgba(0,255,255,0.3)] hover:shadow-[0_0_35px_rgba(0,255,255,0.5)] hover:scale-105 transition-transform duration-300"
+							className="inline-block px-10 py-5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold text-lg shadow-lg hover:shadow-xl hover:from-cyan-600 hover:to-blue-600 hover:scale-105 transition-all duration-300"
 						>
 							Discover How VoiceShine Accelerates Growth
 						</a>
@@ -288,7 +288,7 @@ function App() {
 					></textarea>
 					<button
 						type="submit"
-						className="px-10 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-black font-semibold rounded-full hover:scale-105 transition"
+						className="px-10 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold rounded-full shadow-lg hover:shadow-xl hover:from-cyan-600 hover:to-blue-600 hover:scale-105 transition-all duration-300"
 					>
 						Send Message
 					</button>

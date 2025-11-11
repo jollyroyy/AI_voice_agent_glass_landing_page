@@ -13,13 +13,13 @@ export function CTASection() {
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
             <a
               href="#contact"
-              className="inline-block bg-white text-blue-600 px-10 py-5 rounded-full font-bold shadow-xl hover:scale-105 transition-transform text-lg"
+              className="inline-block bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-10 py-5 rounded-full font-bold shadow-lg hover:shadow-xl hover:from-cyan-600 hover:to-blue-600 hover:scale-105 transition-all duration-300 text-lg"
             >
               Book a live demo
             </a>
             <a
               href="mailto:hello@voiceshine.com?subject=Pilot Program"
-              className="inline-block bg-transparent border-2 border-white text-white px-10 py-5 rounded-full font-bold hover:bg-white hover:text-blue-600 transition-all text-lg"
+              className="inline-block bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-10 py-5 rounded-full font-bold shadow-lg hover:shadow-xl hover:from-cyan-600 hover:to-blue-600 hover:scale-105 transition-all duration-300 text-lg"
             >
               Reserve one of our limited early-adopter pilot slots
             </a>
