@@ -2,12 +2,9 @@ import './App.css';
 import { NavBar } from '@/components/ui/navbar-with-dropdowns';
 import { HeroSection } from '@/components/ui/hero-section-with-smooth-bg-shader';
 import DisplayCards from '@/components/ui/display-cards';
-import { Target, Phone, Building2, Users, Zap, Clock, TrendingUp, HeadphonesIcon } from 'lucide-react';
+import { Target, Phone, Building2, Users, Zap, Clock, TrendingUp, HeadphonesIcon, Calendar } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { lazy, Suspense } from 'react';
 import { ROICalculator } from '@/components/sections/ROICalculator';
-
-const VoiceAIAgent = lazy(() => import('./components/ui/VoiceAIAgent').then(module => ({ default: module.VoiceAIAgent })));
 const navItems = [
 	{
 		name: 'Solutions',
@@ -33,18 +30,13 @@ const navItems = [
 	},
 	{ name: 'About', url: '#about', icon: Users },
 	{ name: 'Contact', url: '#contact', icon: Phone },
+	{ name: 'Book a Call', url: '#contact', icon: Calendar, isCTA: true },
 ];
 
 function App() {
 	return (
 		<main className="text-gray-100 bg-[#0a0a0f]">
 			<NavBar items={navItems} />
-
-			<Suspense fallback={<div className="w-full h-[380px] flex items-center justify-center">
-				<div className="animate-pulse text-cyan-400">Loading 3D Experience...</div>
-			</div>}>
-				<VoiceAIAgent />
-			</Suspense>
 
 			<HeroSection
 				title="AI Voice Agents that Drive Growth"

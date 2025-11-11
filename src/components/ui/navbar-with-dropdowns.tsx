@@ -13,6 +13,7 @@ interface NavItem {
   url?: string;
   icon: LucideIcon;
   dropdown?: DropdownItem[];
+  isCTA?: boolean;
 }
 
 interface NavBarProps {
@@ -57,6 +58,7 @@ export function NavBar({ items, className }: NavBarProps) {
             const isActive = activeTab === item.name;
             const hasDropdown = item.dropdown && item.dropdown.length > 0;
             const isDropdownOpen = openDropdown === item.name;
+            const isCTA = item.isCTA;
 
             return (
               <div
@@ -65,7 +67,21 @@ export function NavBar({ items, className }: NavBarProps) {
                 onMouseEnter={() => hasDropdown && setOpenDropdown(item.name)}
                 onMouseLeave={() => !isDropdownOpen && setOpenDropdown(null)}
               >
-                {hasDropdown ? (
+                {isCTA ? (
+                  <a
+                    href={item.url}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleItemClick(item.name, item.url);
+                    }}
+                    className="relative cursor-pointer text-sm font-bold px-6 py-2 rounded-full transition-all duration-300 bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:from-cyan-600 hover:to-blue-600 hover:scale-105 shadow-lg hover:shadow-xl"
+                  >
+                    <span className="hidden md:inline">{item.name}</span>
+                    <span className="md:hidden">
+                      <Icon size={18} strokeWidth={2.5} />
+                    </span>
+                  </a>
+                ) : hasDropdown ? (
                   <button
                     onClick={() => {
                       setOpenDropdown(isDropdownOpen ? null : item.name);
