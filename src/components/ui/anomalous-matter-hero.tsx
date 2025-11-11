@@ -31,7 +31,7 @@ export function GenerativeArtScene() {
       uniforms: {
         time: { value: 0 },
         pointLightPos: { value: new THREE.Vector3(0, 0, 5) },
-        color: { value: new THREE.Color("#a8c5e0") },
+        color: { value: new THREE.Color("#2a1810") },
         imageTexture: { value: imageTexture },
       },
       vertexShader: `
@@ -112,9 +112,9 @@ export function GenerativeArtScene() {
                     fresnel = pow(fresnel, 2.0);
 
                     vec4 texColor = texture2D(imageTexture, vUv);
-                    vec3 blendedColor = mix(color, texColor.rgb, 0.6);
-                    vec3 finalColor = blendedColor * diffuse + blendedColor * fresnel * 0.5;
-                    float alpha = 0.4 + fresnel * 0.3;
+                    vec3 blendedColor = mix(color, texColor.rgb, 0.7);
+                    vec3 finalColor = blendedColor * (diffuse * 1.5) + blendedColor * fresnel * 0.8;
+                    float alpha = 0.85 + fresnel * 0.15;
 
                     gl_FragColor = vec4(finalColor, alpha);
                 }`,
