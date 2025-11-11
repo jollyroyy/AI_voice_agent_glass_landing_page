@@ -1,7 +1,6 @@
 import './App.css';
 import { NavBar } from '@/components/ui/navbar-with-dropdowns';
 import { HeroSection } from '@/components/ui/hero-section-with-smooth-bg-shader';
-import { AnomalousMatterHero } from '@/components/ui/anomalous-matter-hero';
 import { Target, Phone, Building2, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -37,12 +36,6 @@ function App() {
 		<main className="text-gray-100 bg-[#0a0a0f]">
 			<NavBar items={navItems} />
 
-			<div className="py-8"></div>
-
-			<AnomalousMatterHero title="" subtitle="" description="" />
-
-			<div className="py-8"></div>
-
 			<HeroSection
 				title="AI Voice Agents that Drive Growth"
 				highlightText="for Modern Businesses"
@@ -58,7 +51,8 @@ function App() {
 				]}
 				distortion={1.2}
 				speed={0.6}
-				className="h-[33vh]"
+				className="min-h-screen"
+				titleClassName="text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
 			/>
 
 			<section id="solutions" className="relative py-32 px-8">
