@@ -16,19 +16,19 @@ export function GenerativeArtScene() {
       0.1,
       1000
     );
-    camera.position.z = 3;
+    camera.position.z = 2;
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
     currentMount.appendChild(renderer.domElement);
 
-    const geometry = new THREE.IcosahedronGeometry(0.6, 64);
+    const geometry = new THREE.IcosahedronGeometry(1.5, 64);
     const material = new THREE.ShaderMaterial({
       uniforms: {
         time: { value: 0 },
         pointLightPos: { value: new THREE.Vector3(0, 0, 5) },
-        color: { value: new THREE.Color("#1a3a5c") },
+        color: { value: new THREE.Color("#0d6efd") },
       },
       vertexShader: `
                 uniform float time;
@@ -103,9 +103,10 @@ export function GenerativeArtScene() {
                     float fresnel = 1.0 - dot(normal, vec3(0.0, 0.0, 1.0));
                     fresnel = pow(fresnel, 3.0);
 
-                    vec3 darkBlue = vec3(0.1, 0.2, 0.36);
-                    vec3 brightBlue = vec3(0.29, 0.6, 1.0);
-                    vec3 finalColor = mix(darkBlue, brightBlue, diffuse) + brightBlue * fresnel * 0.8;
+                    vec3 darkBlue = vec3(0.05, 0.27, 0.49);
+                    vec3 brightBlue = vec3(0.2, 0.5, 0.9);
+                    vec3 accentBlue = vec3(0.4, 0.7, 1.0);
+                    vec3 finalColor = mix(darkBlue, brightBlue, diffuse * 1.2) + accentBlue * fresnel * 1.5;
 
                     gl_FragColor = vec4(finalColor, 1.0);
                 }`,
@@ -114,7 +115,10 @@ export function GenerativeArtScene() {
     const mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
 
-    const pointLight = new THREE.PointLight(0xffffff, 1, 100);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambientLight);
+
+    const pointLight = new THREE.PointLight(0xffffff, 2, 100);
     pointLight.position.set(0, 0, 5);
     lightRef.current = pointLight;
     scene.add(pointLight);

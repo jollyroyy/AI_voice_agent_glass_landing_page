@@ -44,10 +44,10 @@ function App() {
 			<div className="py-8"></div>
 
 			<HeroSection
-				title="AI Voice Agents"
-				highlightText="Drive Growth"
-				description="Automate engagement and retention with AI."
-				buttonText="Try Now"
+				title="AI Voice Agents that Drive Growth"
+				highlightText="for Modern Businesses"
+				description="Transform every call into a customer. VoiceShine automates engagement, lead generation, and retention — your always-on, human-sounding voice growth engine."
+				buttonText="Try the Voice Agent Now"
 				colors={[
 					'#4a9eff',
 					'#7ec8f5',
@@ -59,8 +59,6 @@ function App() {
 				distortion={1.2}
 				speed={0.6}
 				className="h-[33vh]"
-				titleClassName="text-xl sm:text-2xl md:text-3xl lg:text-4xl"
-				descriptionClassName="text-sm sm:text-base md:text-lg"
 			/>
 
 			<section id="solutions" className="relative py-32 px-8">
