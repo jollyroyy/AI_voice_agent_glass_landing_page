@@ -2,40 +2,27 @@ import './App.css';
 import { NavBar } from '@/components/ui/navbar-with-dropdowns';
 import { HeroSection } from '@/components/ui/hero-section-with-smooth-bg-shader';
 import { useState } from 'react';
-import { Target, Briefcase, Calculator, Phone, Building2 } from 'lucide-react';
+import { Target, Calculator, Phone, Building2, Users, HelpCircle } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
 
 const navItems = [
-  {
-    name: 'Solutions',
-    icon: Target,
-    dropdown: [
-      { name: 'AI Voice Agents', url: '#solutions' },
-      { name: 'Appointment Scheduling', url: '#solutions' },
-      { name: 'Lead Qualification', url: '#solutions' },
-      { name: 'Customer Support', url: '#solutions' },
-    ]
-  },
-  {
-    name: 'Industries',
-    icon: Building2,
-    dropdown: [
-      { name: 'Dental Clinics', url: '#usecases' },
-      { name: 'Healthcare', url: '#usecases' },
-      { name: 'Real Estate', url: '#usecases' },
-      { name: 'Professional Services', url: '#usecases' },
-    ]
-  },
-  { name: 'Use Cases', url: '#usecases', icon: Briefcase },
+  { name: 'Solutions', url: '#solutions', icon: Target },
+  { name: 'Industries', url: '#industries', icon: Building2 },
   { name: 'ROI Calculator', url: '#roi', icon: Calculator },
+  { name: 'About', url: '#about', icon: Users },
+  { name: 'FAQ', url: '#faq', icon: HelpCircle },
   { name: 'Contact', url: '#contact', icon: Phone },
 ];
 
 function App() {
-  const [callVolume, setCallVolume] = useState('');
-  const [costPerCall, setCostPerCall] = useState('');
+  const [calls, setCalls] = useState(1000);
+  const [cost, setCost] = useState(15);
+  const savings = ((calls * cost * 0.4) || 0).toFixed(2);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-[#050510] via-[#0a0a1a] to-[#141428] text-gray-100">
       <NavBar items={navItems} />
 
       <section className="relative">
@@ -47,148 +34,108 @@ function App() {
           colors={["#4a9eff", "#7ec8f5", "#a8d5ff", "#e3f2ff", "#5ab9ea", "#c5e7ff"]}
           distortion={1.2}
           speed={0.8}
-          className="min-h-[60vh]"
+          className="min-h-screen"
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
-          <div className="flex justify-center pt-12 pb-8">
-            <img
-              src="/hero_ai_voice_image.jpeg"
-              alt="AI Voice Agent"
-              className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full object-cover shadow-2xl border-4 border-white/30"
-            />
-          </div>
-          <div className="text-center px-4">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">Give Your Business a Voice That Converts</h1>
-            <p className="mt-6 text-xl text-gray-700 max-w-2xl mx-auto">
-              Engage, qualify, and retain customers 24/7 with intelligent AI voice agents that sound human, act instantly, and scale effortlessly.
+          <div className="text-center px-10">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">AI Voice Agents That Never Sleep</h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              Automate customer conversations, convert leads faster, and deliver human-like experiences with VoiceShine — your intelligent voice automation partner.
             </p>
-            <button className="mt-10 px-8 py-4 bg-blue-600 text-white rounded-full text-lg hover:bg-blue-700 transition-colors">
-              Get a Free Demo
-            </button>
+            <Button className="mt-10 px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold rounded-2xl shadow-xl">
+              Start the Conversation
+            </Button>
           </div>
         </div>
       </section>
 
-      <section id="solutions" className="py-20 text-center px-4">
-        <h2 className="text-4xl font-bold mb-8 text-gray-900">Human-like Conversations. Real Business Outcomes.</h2>
-        <p className="max-w-3xl mx-auto text-lg text-gray-700 leading-relaxed">
-          VoiceShine automates voice interactions across industries — from dental clinics to real estate — helping businesses handle calls, book appointments, qualify leads, and follow up without missing a beat.
-          Our AI voice agents are tuned to your brand's tone and goals, ensuring every customer conversation builds trust and drives ROI.
-        </p>
-        <div className="mt-10 space-x-4">
-          <button className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
-            Explore Use Cases
-          </button>
-          <button className="px-6 py-3 border-2 border-blue-500 text-blue-500 rounded-lg hover:bg-blue-50 transition-colors">
-            Hear Sample Calls
-          </button>
+      <section id="solutions" className="py-32 px-10">
+        <h3 className="text-4xl font-bold text-center mb-16 text-white">Solutions Tailored for Growth</h3>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {['Customer Support Automation', 'Lead Qualification & Follow-Up', 'Appointment Scheduling', 'Voice Surveys & Feedback'].map((title, idx) => (
+            <Card key={idx} className="bg-white/5 hover:bg-white/10 transition-all border-0">
+              <CardContent className="p-8 text-center">
+                <h4 className="text-xl font-semibold text-cyan-400 mb-3">{title}</h4>
+                <p className="text-sm text-gray-400">AI-powered voice agents streamline operations, elevate engagement, and ensure results at scale.</p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </section>
 
-      <section id="usecases" className="py-20 bg-white/40 backdrop-blur-md text-center px-4">
-        <h2 className="text-4xl font-bold mb-12 text-gray-900">Designed for Growth Across Industries</h2>
-        <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-          <div className="p-6 bg-white/70 rounded-2xl shadow-md">
-            <h3 className="text-2xl font-semibold mb-4 text-gray-900">Dental Clinics</h3>
-            <p className="text-gray-700">Automate patient follow-ups, reminders, and appointment bookings — while keeping every interaction warm and personal.</p>
-          </div>
-          <div className="p-6 bg-white/70 rounded-2xl shadow-md">
-            <h3 className="text-2xl font-semibold mb-4 text-gray-900">Healthcare & Clinics</h3>
-            <p className="text-gray-700">Free up front-desk staff and ensure every call is handled with care, accuracy, and empathy.</p>
-          </div>
-          <div className="p-6 bg-white/70 rounded-2xl shadow-md">
-            <h3 className="text-2xl font-semibold mb-4 text-gray-900">Realtors</h3>
-            <p className="text-gray-700">Qualify leads instantly, schedule property visits, and engage prospects before your competition does.</p>
-          </div>
+      <section id="industries" className="py-32 px-10">
+        <h3 className="text-4xl font-bold text-center mb-16 text-white">Industries We Empower</h3>
+        <div className="grid md:grid-cols-3 gap-8 text-center">
+          {['Healthcare', 'Real Estate', 'Financial Services', 'E-commerce', 'Education', 'Hospitality'].map((industry, idx) => (
+            <motion.div whileHover={{ scale: 1.05 }} key={idx} className="bg-white/5 p-8 rounded-2xl shadow-lg">
+              <h4 className="text-xl font-semibold text-cyan-400 mb-2">{industry}</h4>
+              <p className="text-sm text-gray-400">VoiceShine automates communication, boosts conversions, and enhances customer satisfaction in the {industry.toLowerCase()} sector.</p>
+            </motion.div>
+          ))}
         </div>
       </section>
 
-      <section className="py-20 text-center px-4">
-        <h2 className="text-4xl font-bold mb-12 text-gray-900">Your AI Voice Agent in Three Simple Steps</h2>
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <div className="p-6">
-            <h3 className="text-2xl font-semibold mb-2 text-gray-900">1. Understand</h3>
-            <p className="text-gray-700">We learn your workflows and customer interaction goals.</p>
-          </div>
-          <div className="p-6">
-            <h3 className="text-2xl font-semibold mb-2 text-gray-900">2. Customize</h3>
-            <p className="text-gray-700">VoiceShine tailors an AI voice agent to fit your tone, intent, and journey.</p>
-          </div>
-          <div className="p-6">
-            <h3 className="text-2xl font-semibold mb-2 text-gray-900">3. Launch</h3>
-            <p className="text-gray-700">Go live — automate calls, track engagement, and grow conversions.</p>
-          </div>
-        </div>
-        <button className="mt-10 px-8 py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors">
-          Book a Quick Call
-        </button>
-      </section>
 
-      <section id="roi" className="py-20 bg-white/40 backdrop-blur-md text-center px-4">
-        <h2 className="text-4xl font-bold mb-6 text-gray-900">Estimate Your ROI with VoiceShine</h2>
-        <p className="text-lg text-gray-700 mb-10">See how much time and money you can save by automating conversations.</p>
-        <div className="max-w-lg mx-auto bg-white/80 p-8 rounded-2xl shadow-md">
-          <label className="block text-left mb-4 text-gray-900 font-medium">Monthly Call Volume</label>
+      <section id="roi" className="py-32 px-10 bg-white/5">
+        <h3 className="text-4xl font-bold text-center mb-10 text-white">ROI Calculator</h3>
+        <div className="max-w-2xl mx-auto bg-white/10 p-8 rounded-2xl shadow-xl">
+          <label className="block mb-4 text-gray-200">Average Monthly Calls</label>
           <input
             type="number"
-            placeholder="Enter number of calls"
-            value={callVolume}
-            onChange={(e) => setCallVolume(e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-lg mb-6 text-gray-900"
+            value={calls}
+            onChange={(e) => setCalls(Number(e.target.value))}
+            className="w-full mb-6 bg-white/10 p-3 rounded text-white placeholder-gray-400"
           />
-          <label className="block text-left mb-4 text-gray-900 font-medium">Average Handling Cost per Call</label>
+          <label className="block mb-4 text-gray-200">Agent Cost per Hour ($)</label>
           <input
             type="number"
-            placeholder="Enter cost per call"
-            value={costPerCall}
-            onChange={(e) => setCostPerCall(e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-lg mb-6 text-gray-900"
+            value={cost}
+            onChange={(e) => setCost(Number(e.target.value))}
+            className="w-full mb-6 bg-white/10 p-3 rounded text-white placeholder-gray-400"
           />
-          <button className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-            Calculate My ROI
-          </button>
+          <p className="text-center text-cyan-400 text-xl">Estimated Monthly Savings: ${savings}</p>
         </div>
       </section>
 
-      <section className="py-20 text-center px-4">
-        <h2 className="text-4xl font-bold mb-12 text-gray-900">Built for Efficiency. Tuned for Experience.</h2>
-        <div className="grid md:grid-cols-4 gap-10 max-w-6xl mx-auto">
-          <div className="p-6 bg-white/60 rounded-2xl shadow-md">
-            <h3 className="text-2xl font-semibold mb-3 text-gray-900">Natural Conversations</h3>
-            <p className="text-gray-700">AI agents trained for contextual accuracy and emotional tone.</p>
-          </div>
-          <div className="p-6 bg-white/60 rounded-2xl shadow-md">
-            <h3 className="text-2xl font-semibold mb-3 text-gray-900">Plug & Play Integration</h3>
-            <p className="text-gray-700">Works seamlessly with your CRM and existing systems.</p>
-          </div>
-          <div className="p-6 bg-white/60 rounded-2xl shadow-md">
-            <h3 className="text-2xl font-semibold mb-3 text-gray-900">Always On</h3>
-            <p className="text-gray-700">Handle calls 24/7 without missing a lead or inquiry.</p>
-          </div>
-          <div className="p-6 bg-white/60 rounded-2xl shadow-md">
-            <h3 className="text-2xl font-semibold mb-3 text-gray-900">Scalable & Secure</h3>
-            <p className="text-gray-700">Deploy effortlessly across teams and geographies.</p>
-          </div>
+      <section id="about" className="py-32 px-10 text-center">
+        <h3 className="text-4xl font-bold mb-6 text-white">About VoiceShine</h3>
+        <p className="text-gray-400 max-w-3xl mx-auto leading-relaxed">VoiceShine was founded with a vision to make AI-driven voice experiences accessible to every business. We design intelligent agents that speak naturally, understand deeply, and elevate customer experiences around the clock.</p>
+      </section>
+
+      <section id="faq" className="py-32 px-10">
+        <h3 className="text-4xl font-bold text-center mb-12 text-white">Frequently Asked Questions</h3>
+        <div className="max-w-3xl mx-auto space-y-6">
+          {[
+            'How quickly can we deploy?',
+            'Do I need technical expertise?',
+            'Can VoiceShine integrate with CRM tools?',
+            'How secure is the data handling?',
+            'Is it multilingual?',
+            'What\'s the pricing model?'
+          ].map((q, i) => (
+            <details key={i} className="bg-white/5 p-5 rounded-xl">
+              <summary className="cursor-pointer text-cyan-400 font-medium">{q}</summary>
+              <p className="mt-3 text-gray-400 text-sm">VoiceShine ensures seamless setup, enterprise-level integration, and data compliance from day one.</p>
+            </details>
+          ))}
         </div>
       </section>
 
-      <section className="py-20 text-center bg-blue-600 text-white rounded-t-3xl px-4">
-        <h2 className="text-4xl font-bold mb-6">Ready to Amplify Your Customer Experience?</h2>
-        <p className="text-lg mb-10">Let VoiceShine handle your calls while you focus on growth.</p>
-        <button className="px-8 py-4 bg-white text-blue-700 rounded-full text-lg font-semibold hover:bg-gray-100 transition-colors">
-          Get Started with Voice AI
-        </button>
+      <section id="contact" className="py-32 px-10 text-center bg-white/5">
+        <h3 className="text-4xl font-bold mb-8 text-white">Let's Talk</h3>
+        <p className="text-gray-400 mb-10">Ready to experience AI conversations that convert? Get in touch with us today.</p>
+        <form className="max-w-lg mx-auto space-y-4">
+          <input type="text" placeholder="Name" className="w-full p-3 rounded bg-white/10 text-white placeholder-gray-400 border border-white/20" />
+          <input type="email" placeholder="Email" className="w-full p-3 rounded bg-white/10 text-white placeholder-gray-400 border border-white/20" />
+          <textarea placeholder="Message" className="w-full p-3 rounded bg-white/10 text-white placeholder-gray-400 border border-white/20" rows={4}></textarea>
+          <Button className="px-8 py-4 bg-cyan-500 hover:bg-cyan-400 text-black font-semibold rounded-2xl shadow-xl w-full">
+            Start the Conversation
+          </Button>
+        </form>
       </section>
 
-      <footer id="contact" className="py-10 text-center text-gray-700 px-4">
-        <div className="text-2xl font-bold mb-2 text-gray-900">VoiceShine</div>
-        <div className="space-x-6 mb-4">
-          <a href="#solutions" className="hover:text-gray-900">Solutions</a>
-          <a href="#usecases" className="hover:text-gray-900">Use Cases</a>
-          <a href="#roi" className="hover:text-gray-900">ROI Calculator</a>
-          <a href="#contact" className="hover:text-gray-900">Contact</a>
-        </div>
-        <p className="text-sm">© 2025 VoiceShine. All Rights Reserved.</p>
+      <footer className="py-10 text-center text-gray-500 text-sm bg-[#0a0a1a] border-t border-white/10">
+        © 2025 VoiceShine. All rights reserved.
       </footer>
     </div>
   );
