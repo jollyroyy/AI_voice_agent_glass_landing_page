@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Video as LucideIcon } from "lucide-react";
+import { LucideIcon } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -35,11 +35,11 @@ export function NavBar({ items, className }: NavBarProps) {
     <>
       <div className="fixed top-4 left-4 z-50">
         <img
-          src="/ChatGPT Image Nov 11, 2025, 12_44_44 PM.png"
+          src="/vs-logo-transparent.png"
           alt="VoiceShine Logo"
           className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 object-contain"
           style={{
-            filter: 'drop-shadow(0 10px 30px rgba(0, 200, 255, 0.4))',
+            filter: 'drop-shadow(0 10px 30px rgba(0, 200, 255, 0.5)) drop-shadow(0 0 20px rgba(0, 200, 255, 0.3))',
             imageRendering: 'crisp-edges'
           }}
         />
