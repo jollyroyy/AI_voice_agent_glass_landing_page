@@ -5,8 +5,28 @@ import { Target, Phone, Building2, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const navItems = [
-  { name: 'Solutions', url: '#solutions', icon: Target },
-  { name: 'Industries', url: '#industries', icon: Building2 },
+  {
+    name: 'Solutions',
+    icon: Target,
+    dropdown: [
+      { name: 'Customer Support Automation', url: '#solutions' },
+      { name: 'Lead Qualification & Follow-Up', url: '#solutions' },
+      { name: 'Appointment Scheduling', url: '#solutions' },
+      { name: 'Voice Surveys & Feedback', url: '#solutions' },
+    ]
+  },
+  {
+    name: 'Industries',
+    icon: Building2,
+    dropdown: [
+      { name: 'Real Estate', url: '#industries' },
+      { name: 'Healthcare & Dental Clinics', url: '#industries' },
+      { name: 'EdTech & Education', url: '#industries' },
+      { name: 'Travel & Tourism', url: '#industries' },
+      { name: 'E-commerce', url: '#industries' },
+      { name: 'Customer Support Centers', url: '#industries' },
+    ]
+  },
   { name: 'About', url: '#about', icon: Users },
   { name: 'Contact', url: '#contact', icon: Phone },
 ];
