@@ -28,26 +28,26 @@ export function ROICalculator() {
     <section id="roi" className="py-20 px-6 bg-gradient-to-b from-amber-50 to-white">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-amber-900 leading-[1.1]">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5 text-black leading-[1.1]">
             Calculate Your <span className="gradient-text">ROI</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-black max-w-3xl mx-auto font-semibold">
             See how much revenue you could recover with AI voice automation
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className="bg-white rounded-2xl shadow-xl p-8 border-2 border-amber-200/50">
-            <h3 className="text-2xl font-bold text-amber-900 mb-6">Your Business Metrics</h3>
+            <h3 className="text-2xl font-bold text-black mb-6">Your Business Metrics</h3>
 
             <div className="space-y-6">
               <div>
-                <label className="flex items-center justify-between text-sm font-bold text-amber-900 mb-3">
+                <label className="flex items-center justify-between text-sm font-bold text-black mb-3">
                   <span className="flex items-center gap-2">
-                    <Users className="size-5 text-amber-700" />
+                    <Users className="size-5 text-black" />
                     Missed Calls Per Week
                   </span>
-                  <span className="text-2xl text-amber-700">{missedCalls}</span>
+                  <span className="text-2xl text-black">{missedCalls}</span>
                 </label>
                 <input
                   type="range"
@@ -64,12 +64,12 @@ export function ROICalculator() {
               </div>
 
               <div>
-                <label className="flex items-center justify-between text-sm font-bold text-amber-900 mb-3">
+                <label className="flex items-center justify-between text-sm font-bold text-black mb-3">
                   <span className="flex items-center gap-2">
-                    <DollarSign className="size-5 text-amber-700" />
+                    <DollarSign className="size-5 text-black" />
                     Average Deal Value
                   </span>
-                  <span className="text-2xl text-amber-700">${avgDealValue}</span>
+                  <span className="text-2xl text-black">${avgDealValue}</span>
                 </label>
                 <input
                   type="range"
@@ -87,12 +87,12 @@ export function ROICalculator() {
               </div>
 
               <div>
-                <label className="flex items-center justify-between text-sm font-bold text-amber-900 mb-3">
+                <label className="flex items-center justify-between text-sm font-bold text-black mb-3">
                   <span className="flex items-center gap-2">
-                    <TrendingUp className="size-5 text-amber-700" />
+                    <TrendingUp className="size-5 text-black" />
                     Conversion Rate (%)
                   </span>
-                  <span className="text-2xl text-amber-700">{conversionRate}%</span>
+                  <span className="text-2xl text-black">{conversionRate}%</span>
                 </label>
                 <input
                   type="range"
@@ -112,7 +112,7 @@ export function ROICalculator() {
 
           <div className="space-y-6">
             <div className="bg-gradient-to-br from-amber-100 to-amber-50 rounded-2xl shadow-xl p-8 border-2 border-amber-300/70">
-              <h3 className="text-2xl font-bold text-amber-900 mb-6">Your Potential Results</h3>
+              <h3 className="text-2xl font-bold text-black mb-6">Your Potential Results</h3>
 
               <div className="space-y-5">
                 <div className="flex items-center justify-between pb-4 border-b-2 border-amber-200">
@@ -121,11 +121,11 @@ export function ROICalculator() {
                       <Users className="size-6 text-amber-700" />
                     </div>
                     <div>
-                      <div className="text-sm font-bold text-amber-800">Calls Recovered</div>
-                      <div className="text-xs text-amber-700">Per week</div>
+                      <div className="text-sm font-bold text-black">Calls Recovered</div>
+                      <div className="text-xs text-gray-700 font-semibold">Per week</div>
                     </div>
                   </div>
-                  <div className="text-3xl font-extrabold text-amber-900">{roi.recoveredCalls}</div>
+                  <div className="text-3xl font-extrabold text-black">{roi.recoveredCalls}</div>
                 </div>
 
                 <div className="flex items-center justify-between pb-4 border-b-2 border-amber-200">
@@ -134,11 +134,11 @@ export function ROICalculator() {
                       <TrendingUp className="size-6 text-amber-700" />
                     </div>
                     <div>
-                      <div className="text-sm font-bold text-amber-800">New Deals</div>
-                      <div className="text-xs text-amber-700">Per week</div>
+                      <div className="text-sm font-bold text-black">New Deals</div>
+                      <div className="text-xs text-gray-700 font-semibold">Per week</div>
                     </div>
                   </div>
-                  <div className="text-3xl font-extrabold text-amber-900">{roi.newDeals}</div>
+                  <div className="text-3xl font-extrabold text-black">{roi.newDeals}</div>
                 </div>
 
                 <div className="flex items-center justify-between pb-4 border-b-2 border-amber-200">
@@ -147,11 +147,11 @@ export function ROICalculator() {
                       <Clock className="size-6 text-amber-700" />
                     </div>
                     <div>
-                      <div className="text-sm font-bold text-amber-800">Time Saved</div>
-                      <div className="text-xs text-amber-700">Minutes per week</div>
+                      <div className="text-sm font-bold text-black">Time Saved</div>
+                      <div className="text-xs text-gray-700 font-semibold">Minutes per week</div>
                     </div>
                   </div>
-                  <div className="text-3xl font-extrabold text-amber-900">{roi.timeSaved}</div>
+                  <div className="text-3xl font-extrabold text-black">{roi.timeSaved}</div>
                 </div>
 
                 <div className="flex items-center justify-between pb-4 border-b-2 border-amber-200">
@@ -160,11 +160,11 @@ export function ROICalculator() {
                       <DollarSign className="size-6 text-amber-700" />
                     </div>
                     <div>
-                      <div className="text-sm font-bold text-amber-800">Monthly Revenue</div>
-                      <div className="text-xs text-amber-700">Additional income</div>
+                      <div className="text-sm font-bold text-black">Monthly Revenue</div>
+                      <div className="text-xs text-gray-700 font-semibold">Additional income</div>
                     </div>
                   </div>
-                  <div className="text-3xl font-extrabold text-amber-900">${roi.monthlyRevenue.toLocaleString()}</div>
+                  <div className="text-3xl font-extrabold text-black">${roi.monthlyRevenue.toLocaleString()}</div>
                 </div>
               </div>
             </div>

@@ -64,7 +64,7 @@ function App() {
 							description: "Answer every call in under 2 seconds with human-like AI that never sleeps",
 							titleClassName: "text-amber-900 font-extrabold",
 							className:
-								"[grid-area:stack]",
+								"[grid-area:stack] hover:!-translate-y-40 hover:!scale-150",
 						},
 						{
 							icon: <TrendingUp className="size-5 text-amber-900" />,
@@ -72,7 +72,7 @@ function App() {
 							description: "Convert prospects faster with intelligent follow-ups and qualification",
 							titleClassName: "text-amber-900 font-extrabold",
 							className:
-								"[grid-area:stack] translate-x-16 translate-y-10",
+								"[grid-area:stack] translate-x-16 translate-y-10 hover:!-translate-y-40 hover:!scale-150",
 						},
 						{
 							icon: <Clock className="size-5 text-amber-900" />,
@@ -80,7 +80,7 @@ function App() {
 							description: "Never miss a call or opportunity, even outside business hours",
 							titleClassName: "text-amber-900 font-extrabold",
 							className:
-								"[grid-area:stack] translate-x-32 translate-y-20 hover:!-translate-y-40 hover:!scale-150",
+								"[grid-area:stack] translate-x-32 translate-y-20 hover:!-translate-y-20 hover:!scale-125",
 						},
 						{
 							icon: <HeadphonesIcon className="size-5 text-amber-900" />,
@@ -88,7 +88,7 @@ function App() {
 							description: "Natural conversations that build trust and drive engagement",
 							titleClassName: "text-amber-900 font-extrabold",
 							className:
-								"[grid-area:stack] translate-x-48 translate-y-32 hover:!-translate-y-40 hover:!scale-150",
+								"[grid-area:stack] translate-x-48 translate-y-32 hover:!-translate-y-20 hover:!scale-125",
 						},
 					]}
 				/>
