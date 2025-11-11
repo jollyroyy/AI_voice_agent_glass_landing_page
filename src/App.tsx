@@ -56,7 +56,7 @@ function App() {
             <Card key={idx} className="bg-white/5 hover:bg-white/10 transition-all border-0">
               <CardContent className="p-8 text-center">
                 <h4 className="text-xl font-semibold text-cyan-400 mb-3">{title}</h4>
-                <p className="text-sm text-gray-400">AI-powered voice agents streamline operations, elevate engagement, and ensure results at scale.</p>
+                <p className="text-sm text-gray-300">AI-powered voice agents streamline operations, elevate engagement, and ensure results at scale.</p>
               </CardContent>
             </Card>
           ))}
@@ -69,7 +69,7 @@ function App() {
           {['Healthcare', 'Real Estate', 'Financial Services', 'E-commerce', 'Education', 'Hospitality'].map((industry, idx) => (
             <motion.div whileHover={{ scale: 1.05 }} key={idx} className="bg-white/5 p-8 rounded-2xl shadow-lg">
               <h4 className="text-xl font-semibold text-cyan-400 mb-2">{industry}</h4>
-              <p className="text-sm text-gray-400">VoiceShine automates communication, boosts conversions, and enhances customer satisfaction in the {industry.toLowerCase()} sector.</p>
+              <p className="text-sm text-gray-300">VoiceShine automates communication, boosts conversions, and enhances customer satisfaction in the {industry.toLowerCase()} sector.</p>
             </motion.div>
           ))}
         </div>
@@ -79,19 +79,19 @@ function App() {
       <section id="roi" className="py-32 px-10 bg-white/5">
         <h3 className="text-4xl font-bold text-center mb-10 text-white">ROI Calculator</h3>
         <div className="max-w-2xl mx-auto bg-white/10 p-8 rounded-2xl shadow-xl">
-          <label className="block mb-4 text-gray-200">Average Monthly Calls</label>
+          <label className="block mb-4 text-white font-medium">Average Monthly Calls</label>
           <input
             type="number"
             value={calls}
             onChange={(e) => setCalls(Number(e.target.value))}
-            className="w-full mb-6 bg-white/10 p-3 rounded text-white placeholder-gray-400"
+            className="w-full mb-6 bg-white/10 p-3 rounded text-white placeholder-gray-400 border border-white/20"
           />
-          <label className="block mb-4 text-gray-200">Agent Cost per Hour ($)</label>
+          <label className="block mb-4 text-white font-medium">Agent Cost per Hour ($)</label>
           <input
             type="number"
             value={cost}
             onChange={(e) => setCost(Number(e.target.value))}
-            className="w-full mb-6 bg-white/10 p-3 rounded text-white placeholder-gray-400"
+            className="w-full mb-6 bg-white/10 p-3 rounded text-white placeholder-gray-400 border border-white/20"
           />
           <p className="text-center text-cyan-400 text-xl">Estimated Monthly Savings: ${savings}</p>
         </div>
@@ -99,7 +99,7 @@ function App() {
 
       <section id="about" className="py-32 px-10 text-center">
         <h3 className="text-4xl font-bold mb-6 text-white">About VoiceShine</h3>
-        <p className="text-gray-400 max-w-3xl mx-auto leading-relaxed">VoiceShine was founded with a vision to make AI-driven voice experiences accessible to every business. We design intelligent agents that speak naturally, understand deeply, and elevate customer experiences around the clock.</p>
+        <p className="text-gray-200 max-w-3xl mx-auto leading-relaxed text-lg">VoiceShine was founded with a vision to make AI-driven voice experiences accessible to every business. We design intelligent agents that speak naturally, understand deeply, and elevate customer experiences around the clock.</p>
       </section>
 
       <section id="faq" className="py-32 px-10">
@@ -115,7 +115,7 @@ function App() {
           ].map((q, i) => (
             <details key={i} className="bg-white/5 p-5 rounded-xl">
               <summary className="cursor-pointer text-cyan-400 font-medium">{q}</summary>
-              <p className="mt-3 text-gray-400 text-sm">VoiceShine ensures seamless setup, enterprise-level integration, and data compliance from day one.</p>
+              <p className="mt-3 text-gray-200 text-sm">VoiceShine ensures seamless setup, enterprise-level integration, and data compliance from day one.</p>
             </details>
           ))}
         </div>
@@ -123,7 +123,7 @@ function App() {
 
       <section id="contact" className="py-32 px-10 text-center bg-white/5">
         <h3 className="text-4xl font-bold mb-8 text-white">Let's Talk</h3>
-        <p className="text-gray-400 mb-10">Ready to experience AI conversations that convert? Get in touch with us today.</p>
+        <p className="text-gray-200 mb-10 text-lg">Ready to experience AI conversations that convert? Get in touch with us today.</p>
         <form className="max-w-lg mx-auto space-y-4">
           <input type="text" placeholder="Name" className="w-full p-3 rounded bg-white/10 text-white placeholder-gray-400 border border-white/20" />
           <input type="email" placeholder="Email" className="w-full p-3 rounded bg-white/10 text-white placeholder-gray-400 border border-white/20" />
@@ -134,7 +134,7 @@ function App() {
         </form>
       </section>
 
-      <footer className="py-10 text-center text-gray-500 text-sm bg-[#0a0a1a] border-t border-white/10">
+      <footer className="py-10 text-center text-gray-400 text-sm bg-[#0a0a1a] border-t border-white/10">
         © 2025 VoiceShine. All rights reserved.
       </footer>
     </div>
