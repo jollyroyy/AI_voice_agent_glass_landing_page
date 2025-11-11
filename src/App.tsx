@@ -1,5 +1,6 @@
 import './App.css';
 import { NavBar } from '@/components/ui/navbar-with-dropdowns';
+import { HeroSection } from '@/components/ui/hero-section-with-smooth-bg-shader';
 import { useState } from 'react';
 import { Target, Briefcase, Calculator, Phone } from 'lucide-react';
 
@@ -18,22 +19,35 @@ function App() {
     <div className="min-h-screen">
       <NavBar items={navItems} />
 
-      <div className="flex justify-center pt-24 pb-8">
-        <img
-          src="/hero_ai_voice_image.jpeg"
-          alt="AI Voice Agent"
-          className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full object-cover shadow-2xl border-4 border-white/30"
+      <section className="relative">
+        <HeroSection
+          title=""
+          highlightText=""
+          description=""
+          buttonText=""
+          colors={["#4a9eff", "#7ec8f5", "#a8d5ff", "#e3f2ff", "#5ab9ea", "#c5e7ff"]}
+          distortion={1.2}
+          speed={0.8}
+          className="min-h-[60vh]"
         />
-      </div>
-
-      <section className="text-center py-12 px-4">
-        <h1 className="text-5xl font-extrabold text-gray-900">Give Your Business a Voice That Converts</h1>
-        <p className="mt-6 text-xl text-gray-700 max-w-2xl mx-auto">
-          Engage, qualify, and retain customers 24/7 with intelligent AI voice agents that sound human, act instantly, and scale effortlessly.
-        </p>
-        <button className="mt-10 px-8 py-4 bg-blue-600 text-white rounded-full text-lg hover:bg-blue-700 transition-colors">
-          Get a Free Demo
-        </button>
+        <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
+          <div className="flex justify-center pt-12 pb-8">
+            <img
+              src="/hero_ai_voice_image.jpeg"
+              alt="AI Voice Agent"
+              className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full object-cover shadow-2xl border-4 border-white/30"
+            />
+          </div>
+          <div className="text-center px-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900">Give Your Business a Voice That Converts</h1>
+            <p className="mt-6 text-xl text-gray-700 max-w-2xl mx-auto">
+              Engage, qualify, and retain customers 24/7 with intelligent AI voice agents that sound human, act instantly, and scale effortlessly.
+            </p>
+            <button className="mt-10 px-8 py-4 bg-blue-600 text-white rounded-full text-lg hover:bg-blue-700 transition-colors">
+              Get a Free Demo
+            </button>
+          </div>
+        </div>
       </section>
 
       <section id="solutions" className="py-20 text-center px-4">

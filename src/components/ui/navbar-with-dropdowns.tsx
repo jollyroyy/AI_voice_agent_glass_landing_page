@@ -38,6 +38,7 @@ export function NavBar({ items, className }: NavBarProps) {
           src="/voice shine logo.png"
           alt="VoiceShine Logo"
           className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 object-contain"
+          style={{ mixBlendMode: 'multiply' }}
         />
       </div>
 
