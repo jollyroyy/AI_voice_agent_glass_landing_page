@@ -4,7 +4,6 @@ import { HeroSection } from '@/components/ui/hero-section-with-smooth-bg-shader'
 import DisplayCards from '@/components/ui/display-cards';
 import { Target, Phone, Building2, Users, Zap, Clock, TrendingUp, HeadphonesIcon, Calendar } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { ROICalculator } from '@/components/sections/ROICalculator';
 const navItems = [
 	{
 		name: 'Solutions',
@@ -97,7 +96,19 @@ function App() {
 				/>
 			</HeroSection>
 
-			<ROICalculator />
+			<section id="robot-animation" className="py-20 px-6 bg-gradient-to-b from-[#16213e] to-[#0f3460] flex items-center justify-center">
+			<div className="container mx-auto max-w-4xl flex items-center justify-center">
+				<motion.img
+					src="/robot 3d object.gif"
+					alt="AI Voice Agent Robot Animation"
+					className="w-full max-w-2xl h-auto object-contain"
+					initial={{ opacity: 0, scale: 0.8 }}
+					whileInView={{ opacity: 1, scale: 1 }}
+					viewport={{ once: true, amount: 0.3 }}
+					transition={{ duration: 0.8, ease: "easeOut" }}
+				/>
+			</div>
+		</section>
 
 			<section id="solutions" className="relative py-16 px-8">
 				<div className="max-w-6xl mx-auto text-center">
