@@ -23,12 +23,12 @@ export function GenerativeArtScene() {
     renderer.setPixelRatio(window.devicePixelRatio);
     currentMount.appendChild(renderer.domElement);
 
-    const geometry = new THREE.IcosahedronGeometry(0.2, 64);
+    const geometry = new THREE.IcosahedronGeometry(1.2, 64);
     const material = new THREE.ShaderMaterial({
       uniforms: {
         time: { value: 0 },
         pointLightPos: { value: new THREE.Vector3(0, 0, 5) },
-        color: { value: new THREE.Color("#a8c5e0") },
+        color: { value: new THREE.Color("#4a9eff") },
       },
       vertexShader: `
                 uniform float time;
@@ -104,13 +104,10 @@ export function GenerativeArtScene() {
                     fresnel = pow(fresnel, 2.0);
 
                     vec3 finalColor = color * diffuse + color * fresnel * 0.5;
-                    float alpha = 0.4 + fresnel * 0.3;
 
-                    gl_FragColor = vec4(finalColor, alpha);
+                    gl_FragColor = vec4(finalColor, 1.0);
                 }`,
       wireframe: true,
-      transparent: true,
-      blending: THREE.AdditiveBlending,
     });
     const mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
