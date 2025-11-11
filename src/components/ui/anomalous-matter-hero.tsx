@@ -23,22 +23,17 @@ export function GenerativeArtScene() {
     renderer.setPixelRatio(window.devicePixelRatio);
     currentMount.appendChild(renderer.domElement);
 
-    const textureLoader = new THREE.TextureLoader();
-    const imageTexture = textureLoader.load('/hero_ai_voice_image.jpeg');
-
     const geometry = new THREE.IcosahedronGeometry(0.2, 64);
     const material = new THREE.ShaderMaterial({
       uniforms: {
         time: { value: 0 },
         pointLightPos: { value: new THREE.Vector3(0, 0, 5) },
-        color: { value: new THREE.Color("#2a1810") },
-        imageTexture: { value: imageTexture },
+        color: { value: new THREE.Color("#a8c5e0") },
       },
       vertexShader: `
                 uniform float time;
                 varying vec3 vNormal;
                 varying vec3 vPosition;
-                varying vec2 vUv;
 
                 vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
                 vec4 mod289(vec4 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
@@ -90,7 +85,6 @@ export function GenerativeArtScene() {
                 void main() {
                     vNormal = normal;
                     vPosition = position;
-                    vUv = uv;
                     float displacement = snoise(position * 2.0 + time * 0.5) * 0.2;
                     vec3 newPosition = position + normal * displacement;
                     gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
@@ -98,10 +92,8 @@ export function GenerativeArtScene() {
       fragmentShader: `
                 uniform vec3 color;
                 uniform vec3 pointLightPosition;
-                uniform sampler2D imageTexture;
                 varying vec3 vNormal;
                 varying vec3 vPosition;
-                varying vec2 vUv;
 
                 void main() {
                     vec3 normal = normalize(vNormal);
@@ -111,10 +103,8 @@ export function GenerativeArtScene() {
                     float fresnel = 1.0 - dot(normal, vec3(0.0, 0.0, 1.0));
                     fresnel = pow(fresnel, 2.0);
 
-                    vec4 texColor = texture2D(imageTexture, vUv);
-                    vec3 blendedColor = mix(color, texColor.rgb, 0.7);
-                    vec3 finalColor = blendedColor * (diffuse * 1.5) + blendedColor * fresnel * 0.8;
-                    float alpha = 0.85 + fresnel * 0.15;
+                    vec3 finalColor = color * diffuse + color * fresnel * 0.5;
+                    float alpha = 0.4 + fresnel * 0.3;
 
                     gl_FragColor = vec4(finalColor, alpha);
                 }`,
