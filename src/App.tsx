@@ -31,7 +31,7 @@ function App() {
       <section id="solutions" className="relative py-32 px-8">
         <div className="max-w-6xl mx-auto text-center">
           <motion.h2
-            className="text-5xl font-bold text-cyan-400 mb-10"
+            className="text-5xl font-bold text-black mb-10"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -59,13 +59,13 @@ function App() {
             ].map((card, i) => (
               <motion.div
                 key={i}
-                className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition"
+                className="p-8 rounded-2xl bg-white/80 backdrop-blur-sm border border-white/40 hover:bg-white/90 transition shadow-lg hover:shadow-2xl"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
               >
-                <h3 className="text-xl font-semibold text-white mb-3">{card.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{card.desc}</p>
+                <h3 className="text-xl font-semibold text-black mb-3">{card.title}</h3>
+                <p className="text-gray-800 text-sm leading-relaxed">{card.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -120,14 +120,14 @@ function App() {
 
       <section id="about" className="py-32 px-8 text-center bg-[#0a0a0f]">
         <motion.h2
-          className="text-5xl font-bold text-cyan-400 mb-8"
+          className="text-5xl font-bold text-black mb-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
           About VoiceShine
         </motion.h2>
-        <p className="max-w-4xl mx-auto text-gray-400 leading-relaxed text-lg">
+        <p className="max-w-4xl mx-auto text-black leading-relaxed text-lg">
           VoiceShine empowers businesses to deliver effortless, human-like voice experiences.
           Our AI Voice Agents combine emotion, context, and speed to create real impact — from generating leads to building lasting relationships.
           Designed to scale, evolve, and adapt, VoiceShine turns every customer conversation into measurable growth.
