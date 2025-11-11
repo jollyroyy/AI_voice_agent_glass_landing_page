@@ -35,11 +35,11 @@ export function NavBar({ items, className }: NavBarProps) {
     <>
       <div className="fixed top-4 left-4 z-50">
         <img
-          src="/voice shine logo copy.png"
+          src="/ChatGPT Image Nov 11, 2025, 12_44_44 PM.png"
           alt="VoiceShine Logo"
           className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 object-contain"
           style={{
-            filter: 'drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3))',
+            filter: 'drop-shadow(0 10px 30px rgba(0, 200, 255, 0.4))',
             imageRendering: 'crisp-edges'
           }}
         />
