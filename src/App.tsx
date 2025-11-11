@@ -4,12 +4,8 @@ import { HeroSection } from '@/components/ui/hero-section-with-smooth-bg-shader'
 import DisplayCards from '@/components/ui/display-cards';
 import { Target, Phone, Building2, Users, Zap, Clock, TrendingUp, HeadphonesIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
-<<<<<<< HEAD
-import { VoiceAIAgent } from "./components/ui/VoiceAIAgent";
-=======
+import { VoiceAIAgent } from "./components/ui/VoiceAIAgent.tsx";
 import { ROICalculator } from '@/components/sections/ROICalculator';
-
->>>>>>> c425aac0371e6b67b3caeae04172d30ac36d3f42
 const navItems = [
 	{
 		name: 'Solutions',
