@@ -33,18 +33,71 @@ export function NavBar({ items, className }: NavBarProps) {
 
   return (
     <>
-      <div className="fixed top-6 left-6 z-50">
-        <img
-          src="/voice shine logo.png"
-          alt="VoiceShine Logo"
-          className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 object-contain"
-          style={{ mixBlendMode: 'multiply' }}
-        />
+      <div className="fixed top-4 left-4 z-50">
+        <div className="flex flex-col items-center justify-center w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-4">
+          <svg viewBox="0 0 200 200" className="w-full h-full">
+            <defs>
+              <linearGradient id="vsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style={{ stopColor: "#1e40af", stopOpacity: 1 }} />
+                <stop offset="50%" style={{ stopColor: "#3b82f6", stopOpacity: 1 }} />
+                <stop offset="100%" style={{ stopColor: "#60a5fa", stopOpacity: 1 }} />
+              </linearGradient>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+
+            <path d="M 60 40 L 100 130 L 140 40"
+                  fill="none"
+                  stroke="url(#vsGradient)"
+                  strokeWidth="12"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  filter="url(#glow)"/>
+
+            <path d="M 140 70 Q 150 70 155 80 Q 160 90 155 100 Q 150 110 140 110 L 120 110"
+                  fill="none"
+                  stroke="#94a3b8"
+                  strokeWidth="12"
+                  strokeLinecap="round"
+                  filter="url(#glow)"/>
+
+            <path d="M 30 90 L 170 90"
+                  stroke="#60a5fa"
+                  strokeWidth="2"
+                  strokeDasharray="5,5"
+                  opacity="0.5">
+              <animate attributeName="stroke-dashoffset" from="0" to="10" dur="1s" repeatCount="indefinite"/>
+            </path>
+
+            <text x="100" y="165"
+                  fontFamily="Arial, sans-serif"
+                  fontSize="24"
+                  fontWeight="bold"
+                  fill="url(#vsGradient)"
+                  textAnchor="middle"
+                  filter="url(#glow)">
+              VoiceShine
+            </text>
+
+            <text x="100" y="185"
+                  fontFamily="Arial, sans-serif"
+                  fontSize="10"
+                  fill="#64748b"
+                  textAnchor="middle">
+              VOICE AI AGENT
+            </text>
+          </svg>
+        </div>
       </div>
 
       <div
         className={cn(
-          "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-6",
+          "fixed top-6 right-6 z-50",
           className
         )}
       >
