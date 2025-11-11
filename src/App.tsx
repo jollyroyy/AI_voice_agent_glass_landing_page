@@ -96,13 +96,16 @@ function App() {
 				/>
 			</HeroSection>
 
-			<section id="robot-animation" className="py-20 px-6 bg-gradient-to-b from-[#16213e] to-[#0f3460] flex items-center justify-center min-h-[600px]">
-			<div className="container mx-auto max-w-6xl flex items-center justify-center">
-				<img
-					src="/robot 3d object.gif"
-					alt="AI Voice Agent Robot Animation"
-					className="w-full max-w-4xl h-auto object-contain"
-				/>
+			<section id="robot-animation" className="py-24 px-6 bg-gradient-to-b from-[#16213e] to-[#0f3460] flex items-center justify-center min-h-[700px]">
+			<div className="container mx-auto max-w-7xl flex items-center justify-center">
+				<div className="w-full max-w-5xl">
+					<img
+						src="/robot 3d object.gif"
+						alt="AI Voice Agent Robot Animation"
+						className="w-full h-auto"
+						style={{ display: 'block', maxWidth: '100%' }}
+					/>
+				</div>
 			</div>
 		</section>
 
