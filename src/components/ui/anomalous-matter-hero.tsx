@@ -174,13 +174,11 @@ export function AnomalousMatterHero({
   return (
     <section
       role="banner"
-      className="relative w-full h-screen bg-[#0a0a0f] text-white overflow-hidden"
+      className="relative w-full h-screen bg-transparent text-white overflow-hidden"
     >
-      <Suspense fallback={<div className="w-full h-full bg-[#0a0a0f]" />}>
+      <Suspense fallback={<div className="w-full h-full bg-transparent" />}>
         <GenerativeArtScene />
       </Suspense>
-
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-[#0a0a0f]/70 to-transparent z-10" />
 
       <div className="relative z-20 flex flex-col items-center justify-end h-full pb-20 md:pb-32 text-center">
         <div className="max-w-3xl px-4 animate-fade-in-long">
