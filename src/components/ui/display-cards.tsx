@@ -27,7 +27,7 @@ function DisplayCard({
     <div
       onClick={onClick}
       className={cn(
-        "relative flex h-auto min-h-[200px] w-[26rem] -skew-y-[8deg] cursor-pointer select-none flex-col justify-start gap-4 rounded-xl border-2 border-amber-200/50 bg-gradient-to-br from-[#f5f5dc] via-[#faf8f3] to-[#f8f6f0] px-6 py-5 transition-all duration-500 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-[24rem] after:bg-gradient-to-l after:from-background after:to-transparent after:content-[''] hover:border-amber-300/70 hover:shadow-2xl hover:shadow-amber-200/40 hover:-translate-y-8 hover:scale-105",
+        "relative flex h-auto min-h-[200px] w-[26rem] -skew-y-[8deg] cursor-pointer select-none flex-col justify-start gap-4 rounded-xl border-2 border-amber-200/50 bg-gradient-to-br from-[#f5f5dc] via-[#faf8f3] to-[#f8f6f0] px-6 py-5 transition-all duration-500 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-[24rem] after:bg-gradient-to-l after:from-background after:to-transparent after:content-[''] hover:border-amber-300/70 hover:shadow-2xl hover:shadow-amber-200/40 hover:-translate-y-20 hover:scale-125",
         className
       )}
     >
@@ -77,23 +77,23 @@ export default function DisplayCards({ cards }: DisplayCardsProps) {
             onClick={() => handleCardClick(index)}
             className={cn(
               cardProps.className,
-              selectedCard === index && "z-50 scale-110 -translate-y-20"
+              selectedCard === index && "z-50 scale-150 -translate-y-32"
             )}
           />
         ))}
       </div>
       {selectedCard !== null && (
         <div
-          className="fixed inset-0 bg-black/70 backdrop-blur-lg z-[100] flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/80 backdrop-blur-lg z-[100] flex items-center justify-center p-6"
           onClick={() => setSelectedCard(null)}
         >
           <div
-            className="relative max-w-3xl w-full"
+            className="relative max-w-4xl w-full"
             onClick={(e) => e.stopPropagation()}
           >
             <DisplayCard
               {...displayCards[selectedCard]}
-              className="!skew-y-0 !w-full !min-h-[280px] scale-100 shadow-2xl border-amber-300/80 hover:scale-100 hover:translate-y-0 after:hidden"
+              className="!skew-y-0 !w-full !min-h-[350px] !h-auto scale-100 shadow-2xl border-amber-300/80 hover:scale-100 hover:translate-y-0 after:hidden !gap-6 !py-8 !px-8"
               onClick={() => setSelectedCard(null)}
             />
           </div>
