@@ -1,4 +1,3 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar, MessageCircle, Bell, PhoneForwarded } from 'lucide-react';
 
 const solutions = [
@@ -37,26 +36,19 @@ export function Solutions() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {solutions.map((solution, index) => {
             const Icon = solution.icon;
             return (
-              <Card
-                key={index}
-                className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/50"
-              >
-                <CardHeader>
-                  <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                    <Icon className="w-7 h-7 text-primary" />
-                  </div>
-                  <CardTitle className="text-2xl">{solution.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base text-gray-600">
-                    {solution.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#72b9bb] to-[#8cc5b8] flex items-center justify-center mb-6 mx-auto">
+                  <Icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">{solution.title}</h3>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  {solution.description}
+                </p>
+              </div>
             );
           })}
         </div>
