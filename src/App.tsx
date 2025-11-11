@@ -1,44 +1,8 @@
 import './App.css';
 import { HeroSection } from '@/components/ui/hero-section-with-smooth-bg-shader';
 import { NavBar } from '@/components/ui/navbar-with-dropdowns';
-import WavyShader from '@/components/ui/wavy-shader';
-import { FeaturesSectionWithCardGradient } from '@/components/ui/feature-section-with-card-gradient';
-import { Solutions } from '@/components/sections/Solutions';
-import { Industries } from '@/components/sections/Industries';
-import { PainPoints } from '@/components/sections/PainPoints';
-import { HowItWorks } from '@/components/sections/HowItWorks';
-import { Pricing } from '@/components/sections/Pricing';
-import { CTASection } from '@/components/sections/CTASection';
-import { FAQ } from '@/components/sections/FAQ';
-import { Contact } from '@/components/sections/Contact';
-import { Footer } from '@/components/sections/Footer';
-import { Target, MessagesSquare, Phone, Building2, DollarSign } from 'lucide-react';
 
-const navItems = [
-  {
-    name: 'Solutions',
-    icon: Target,
-    dropdown: [
-      { name: 'AI Phone Call Agent', url: '#solutions' },
-      { name: 'Real Time Chat Assistant', url: '#solutions' },
-    ]
-  },
-  {
-    name: 'Industries',
-    icon: Building2,
-    dropdown: [
-      { name: 'BPO', url: '#industries' },
-      { name: 'Real Estate', url: '#industries' },
-      { name: 'Edtech', url: '#industries' },
-      { name: 'Restaurant', url: '#industries' },
-      { name: 'Dental Clinics', url: '#industries' },
-      { name: 'Realtors & Broker Teams', url: '#industries' },
-    ]
-  },
-  { name: 'Pricing', url: '#pricing', icon: DollarSign },
-  { name: 'FAQs', url: '#faqs', icon: MessagesSquare },
-  { name: 'Contact', url: '#contact', icon: Phone },
-];
+const navItems: never[] = [];
 
 function App() {
   return (
@@ -58,23 +22,9 @@ function App() {
           titleClassName=""
           descriptionClassName="text-black"
           onButtonClick={() => console.log('Book demo clicked')}
-          onSecondaryButtonClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
+          onSecondaryButtonClick={() => console.log('See how it works clicked')}
         />
       </section>
-
-      <FeaturesSectionWithCardGradient />
-
-      <WavyShader />
-
-      <PainPoints />
-      <Solutions />
-      <HowItWorks />
-      <Industries />
-      <Pricing />
-      <FAQ />
-      <CTASection />
-      <Contact />
-      <Footer />
     </div>
   );
 }
