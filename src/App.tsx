@@ -1,8 +1,33 @@
 import './App.css';
 import { HeroSection } from '@/components/ui/hero-section-with-smooth-bg-shader';
 import { NavBar } from '@/components/ui/navbar-with-dropdowns';
+import { Target, MessagesSquare, Phone, Building2, DollarSign } from 'lucide-react';
 
-const navItems: never[] = [];
+const navItems = [
+  {
+    name: 'Solutions',
+    icon: Target,
+    dropdown: [
+      { name: 'AI Phone Call Agent', url: '#solutions' },
+      { name: 'Real Time Chat Assistant', url: '#solutions' },
+    ]
+  },
+  {
+    name: 'Industries',
+    icon: Building2,
+    dropdown: [
+      { name: 'BPO', url: '#industries' },
+      { name: 'Real Estate', url: '#industries' },
+      { name: 'Edtech', url: '#industries' },
+      { name: 'Restaurant', url: '#industries' },
+      { name: 'Dental Clinics', url: '#industries' },
+      { name: 'Realtors & Broker Teams', url: '#industries' },
+    ]
+  },
+  { name: 'Pricing', url: '#pricing', icon: DollarSign },
+  { name: 'FAQs', url: '#faqs', icon: MessagesSquare },
+  { name: 'Contact', url: '#contact', icon: Phone },
+];
 
 function App() {
   return (
