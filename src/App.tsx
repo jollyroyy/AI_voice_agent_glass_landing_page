@@ -4,8 +4,10 @@ import { HeroSection } from '@/components/ui/hero-section-with-smooth-bg-shader'
 import DisplayCards from '@/components/ui/display-cards';
 import { Target, Phone, Building2, Users, Zap, Clock, TrendingUp, HeadphonesIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { VoiceAIAgent } from "./components/ui/VoiceAIAgent.tsx";
+import { lazy, Suspense } from 'react';
 import { ROICalculator } from '@/components/sections/ROICalculator';
+
+const VoiceAIAgent = lazy(() => import('./components/ui/VoiceAIAgent').then(module => ({ default: module.VoiceAIAgent })));
 const navItems = [
 	{
 		name: 'Solutions',
@@ -38,13 +40,20 @@ function App() {
 		<main className="text-gray-100 bg-[#0a0a0f]">
 			<NavBar items={navItems} />
 
-			<VoiceAIAgent />
+			<Suspense fallback={<div className="w-full h-[380px] flex items-center justify-center">
+				<div className="animate-pulse text-cyan-400">Loading 3D Experience...</div>
+			</div>}>
+				<VoiceAIAgent />
+			</Suspense>
 
 			<HeroSection
 				title="AI Voice Agents that Drive Growth"
 				highlightText="for Modern Businesses"
 				description="Transform every call into a customer. VoiceShine automates engagement, lead generation, and retention — your always-on, human-sounding voice growth engine."
-				buttonText="Try the Voice Agent Now"
+				buttonText="Get Started Free"
+				onButtonClick={() => {
+					document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+				}}
 				colors={[
 					'#4a9eff',
 					'#7ec8f5',
@@ -260,21 +269,30 @@ function App() {
 					Ready to elevate your customer experience with intelligent voice
 					automation?
 				</p>
-				<form className="max-w-xl mx-auto space-y-4">
+				<form
+					className="max-w-xl mx-auto space-y-4"
+					onSubmit={(e) => {
+						e.preventDefault();
+						alert('Thank you for your interest! We will contact you soon.');
+					}}
+				>
 					<input
 						type="text"
 						placeholder="Your Name"
-						className="w-full p-4 bg-white/5 border border-white/10 rounded-lg text-white"
+						required
+						className="w-full p-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder:text-gray-400"
 					/>
 					<input
 						type="email"
 						placeholder="Your Email"
-						className="w-full p-4 bg-white/5 border border-white/10 rounded-lg text-white"
+						required
+						className="w-full p-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder:text-gray-400"
 					/>
 					<textarea
 						placeholder="Your Message"
 						rows={4}
-						className="w-full p-4 bg-white/5 border border-white/10 rounded-lg text-white"
+						required
+						className="w-full p-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder:text-gray-400"
 					></textarea>
 					<button
 						type="submit"

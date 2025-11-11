@@ -113,7 +113,6 @@ const WavyShader = () => {
     gl.compileShader(shader);
 
     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-      console.error('Shader compile error: ', gl.getShaderInfoLog(shader));
       gl.deleteShader(shader);
       return null;
     }
@@ -135,7 +134,6 @@ const WavyShader = () => {
     gl.linkProgram(shaderProgram);
 
     if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
-      console.error('Shader program link error: ', gl.getProgramInfoLog(shaderProgram));
       return null;
     }
 
@@ -148,7 +146,6 @@ const WavyShader = () => {
 
     const gl = canvas.getContext('webgl');
     if (!gl) {
-      console.warn('WebGL not supported.');
       return;
     }
 

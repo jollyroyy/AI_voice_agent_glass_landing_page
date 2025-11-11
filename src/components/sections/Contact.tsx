@@ -10,7 +10,8 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    alert('Thank you! We will contact you within 24 hours to schedule your demo.');
+    setFormData({ name: "", email: "", company: "" });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
