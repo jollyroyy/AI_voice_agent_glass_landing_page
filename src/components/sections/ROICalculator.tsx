@@ -25,13 +25,13 @@ export function ROICalculator() {
   const roi = calculateROI();
 
   return (
-    <section id="roi" className="py-20 px-6 bg-white">
+    <section id="roi" className="py-20 px-6 bg-gradient-to-b from-[#16213e] to-[#0f3460]">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-gray-900 leading-[1.1]">
-            Calculate Your <span className="gradient-text">ROI</span>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-white leading-[1.1]">
+            Calculate Your <span className="text-cyan-400">ROI</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
             See how much revenue you could recover with AI voice automation
           </p>
         </div>
