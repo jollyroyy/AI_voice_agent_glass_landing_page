@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { LucideIcon } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { useAuth } from "@/contexts/AuthContext";
+import { LogOut, User as UserIcon } from "lucide-react";
 
 interface DropdownItem {
   name: string;
@@ -19,11 +21,14 @@ interface NavItem {
 interface NavBarProps {
   items: NavItem[];
   className?: string;
+  onSignInClick?: () => void;
+  onSignUpClick?: () => void;
 }
 
-export function NavBar({ items, className }: NavBarProps) {
+export function NavBar({ items, className, onSignInClick, onSignUpClick }: NavBarProps) {
   const [activeTab, setActiveTab] = useState<string | null>(null);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const { user, signOut } = useAuth();
 
   const handleItemClick = (itemName: string, url?: string) => {
     setActiveTab(itemName);
@@ -40,6 +45,39 @@ export function NavBar({ items, className }: NavBarProps) {
           alt="VoiceShine Logo"
           className="w-64 h-40 object-contain"
         />
+      </div>
+
+      <div className="fixed top-1 right-2 z-50 flex items-center gap-2">
+        {user ? (
+          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-lg border border-gray-200/30 rounded-full px-4 py-2">
+            <div className="flex items-center gap-2 text-sm font-medium text-[#3b2e1a]">
+              <UserIcon className="w-4 h-4" />
+              <span className="hidden sm:inline">{user.email}</span>
+            </div>
+            <button
+              onClick={() => signOut()}
+              className="text-sm font-semibold px-3 py-1 rounded-full bg-gradient-to-r from-[#815a2b] to-[#5e3f1d] text-[#fffaf3] hover:from-[#6b4a21] hover:to-[#4d3318] transition-all duration-300"
+            >
+              <span className="hidden sm:inline">Sign Out</span>
+              <LogOut className="w-4 h-4 sm:hidden" />
+            </button>
+          </div>
+        ) : (
+          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-lg border border-gray-200/30 rounded-full px-4 py-2">
+            <button
+              onClick={onSignInClick}
+              className="text-sm font-semibold px-4 py-1.5 rounded-full text-[#3b2e1a] hover:bg-white/20 transition-all duration-300"
+            >
+              Sign In
+            </button>
+            <button
+              onClick={onSignUpClick}
+              className="text-sm font-semibold px-4 py-1.5 rounded-full bg-gradient-to-r from-[#815a2b] to-[#5e3f1d] text-[#fffaf3] hover:from-[#6b4a21] hover:to-[#4d3318] transition-all duration-300"
+            >
+              Sign Up
+            </button>
+          </div>
+        )}
       </div>
 
       <div

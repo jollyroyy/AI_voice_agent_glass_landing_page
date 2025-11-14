@@ -4,6 +4,9 @@ import { HeroSection } from '@/components/ui/hero-section-with-smooth-bg-shader'
 import DisplayCards from '@/components/ui/display-cards';
 import { Target, Phone, Building2, Users, Zap, Clock, TrendingUp, HeadphonesIcon, Calendar } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { AuthProvider } from '@/contexts/AuthContext';
+import { AuthModal } from '@/components/AuthModal';
+import { useState } from 'react';
 
 const navItems = [
   {
@@ -34,12 +37,36 @@ const navItems = [
 ];
 
 function App() {
-  return (
-    <main className="relative text-gray-100 bg-[#0a0a0f] min-h-screen overflow-visible">
-      {/* Premium radial background layer */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(0,255,255,0.1),transparent_70%)] pointer-events-none z-0"></div>
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<'signin' | 'signup'>('signin');
 
-      <NavBar items={navItems} />
+  const handleSignInClick = () => {
+    setAuthMode('signin');
+    setAuthModalOpen(true);
+  };
+
+  const handleSignUpClick = () => {
+    setAuthMode('signup');
+    setAuthModalOpen(true);
+  };
+
+  return (
+    <AuthProvider>
+      <main className="relative text-gray-100 bg-[#0a0a0f] min-h-screen overflow-visible">
+        {/* Premium radial background layer */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(0,255,255,0.1),transparent_70%)] pointer-events-none z-0"></div>
+
+        <NavBar
+          items={navItems}
+          onSignInClick={handleSignInClick}
+          onSignUpClick={handleSignUpClick}
+        />
+
+        <AuthModal
+          isOpen={authModalOpen}
+          onClose={() => setAuthModalOpen(false)}
+          initialMode={authMode}
+        />
 
       {/* Original Hero Section (restored) */}
 
@@ -251,20 +278,52 @@ function App() {
 
     <form
       className="bg-[#f9f5ef]/95 border border-[#d4c4a8] shadow-2xl rounded-3xl p-10 space-y-6 max-w-3xl mx-auto backdrop-blur-lg"
-      onSubmit={(e) => {
+      onSubmit={async (e) => {
         e.preventDefault();
-        alert('Thank you for reaching out! Our strategy team will contact you shortly.');
+        const formData = new FormData(e.currentTarget);
+        const fullName = formData.get('fullName') as string;
+        const email = formData.get('email') as string;
+        const company = formData.get('company') as string;
+        const message = formData.get('message') as string;
+
+        try {
+          const { supabase } = await import('@/lib/supabase');
+          const { data: { user } } = await supabase.auth.getUser();
+
+          const { error } = await supabase
+            .from('contact_submissions')
+            .insert({
+              user_id: user?.id || null,
+              full_name: fullName,
+              email: email,
+              company: company,
+              message: message,
+            });
+
+          if (error) {
+            console.error('Error submitting form:', error);
+            alert('There was an error submitting your form. Please try again.');
+          } else {
+            alert('Thank you for reaching out! Our strategy team will contact you shortly.');
+            e.currentTarget.reset();
+          }
+        } catch (err) {
+          console.error('Error:', err);
+          alert('There was an error submitting your form. Please try again.');
+        }
       }}
     >
       <div className="grid md:grid-cols-2 gap-6">
         <input
           type="text"
+          name="fullName"
           placeholder="Full Name"
           required
           className="w-full p-4 bg-[#fffaf3] text-[#3b2e1a] placeholder-[#8a7960] border border-[#d4c4a8] rounded-xl focus:ring-2 focus:ring-[#815a2b] focus:outline-none font-['Inter']"
         />
         <input
           type="email"
+          name="email"
           placeholder="Business Email"
           required
           className="w-full p-4 bg-[#fffaf3] text-[#3b2e1a] placeholder-[#8a7960] border border-[#d4c4a8] rounded-xl focus:ring-2 focus:ring-[#815a2b] focus:outline-none font-['Inter']"
@@ -273,11 +332,13 @@ function App() {
 
       <input
         type="text"
+        name="company"
         placeholder="Company / Organization"
         className="w-full p-4 bg-[#fffaf3] text-[#3b2e1a] placeholder-[#8a7960] border border-[#d4c4a8] rounded-xl focus:ring-2 focus:ring-[#815a2b] focus:outline-none font-['Inter']"
       />
 
       <textarea
+        name="message"
         placeholder="Tell us about your goals or challenges"
         rows={5}
         required
@@ -323,6 +384,7 @@ function App() {
         </div>
       </footer>
     </main>
+    </AuthProvider>
   );
 }
 
