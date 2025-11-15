@@ -281,16 +281,22 @@ function App() {
       className="bg-[#f9f5ef]/95 border border-[#d4c4a8] shadow-2xl rounded-3xl p-10 space-y-6 max-w-3xl mx-auto backdrop-blur-lg relative z-10"
       onSubmit={async (e) => {
         e.preventDefault();
+
+        const submitButton = e.currentTarget.querySelector('button[type="submit"]') as HTMLButtonElement;
+        if (submitButton) submitButton.disabled = true;
+
         const formData = new FormData(e.currentTarget);
         const fullName = formData.get('fullName') as string;
         const email = formData.get('email') as string;
-        const company = formData.get('company') as string;
+        const company = (formData.get('company') as string) || null;
         const message = formData.get('message') as string;
+
+        console.log('Submitting form with:', { fullName, email, company, message });
 
         try {
           const { data: { user } } = await supabase.auth.getUser();
 
-          const { error } = await supabase
+          const { data, error } = await supabase
             .from('contact_submissions')
             .insert({
               user_id: user?.id || null,
@@ -298,18 +304,22 @@ function App() {
               email: email,
               company: company,
               message: message,
-            });
+            })
+            .select();
 
           if (error) {
-            console.error('Error submitting form:', error);
-            alert('There was an error submitting your form. Please try again.');
+            console.error('Supabase error:', error);
+            alert(`Error: ${error.message}. Please try again or contact us directly.`);
           } else {
+            console.log('Form submitted successfully:', data);
             alert('Thank you for reaching out! Our strategy team will contact you shortly.');
             e.currentTarget.reset();
           }
         } catch (err) {
-          console.error('Error:', err);
-          alert('There was an error submitting your form. Please try again.');
+          console.error('Unexpected error:', err);
+          alert('There was an unexpected error. Please try again or contact us directly at contact@voiceshine.ai');
+        } finally {
+          if (submitButton) submitButton.disabled = false;
         }
       }}
     >
@@ -358,7 +368,7 @@ function App() {
 
       <button
         type="submit"
-        className="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-[#815a2b] to-[#5e3f1d] text-[#fffaf3] font-semibold text-lg rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 font-['Inter']"
+        className="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-[#815a2b] to-[#5e3f1d] text-[#fffaf3] font-semibold text-lg rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 font-['Inter'] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 cursor-pointer"
       >
         Get My Free Strategy Call
       </button>
