@@ -41,6 +41,53 @@ function App() {
 
       <NavBar items={navItems} />
 
+
+
+{/* ALWAYS VISIBLE Mic Below Navbar */}
+<div
+  className="relative w-full flex justify-center pointer-events-auto"
+  style={{ 
+    zIndex: 5000,           // above hero + shader
+    position: "relative", 
+    marginTop: "100px",      // pushes just below navbar
+    marginBottom: "-90px",  // pulls hero section upward
+  }}
+>
+  <button
+    onClick={() => {
+      const SR = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+      if (!SR) return alert("Speech recognition not supported.");
+
+      const rec = new SR();
+      rec.lang = "en-US";
+      rec.interimResults = false;
+      rec.onresult = (e: any) => {
+        const text = e.results[0][0].transcript;
+        alert("You said: " + text);
+      };
+      rec.start();
+    }}
+    className="h-14 w-14 flex items-center justify-center rounded-full
+               bg-gradient-to-br from-[#e3f2ff] to-[#b7d8ff]
+               hover:from-[#d9ecff] hover:to-[#a7ceff]
+               border border-white/40 shadow-xl
+               backdrop-blur-md transition duration-300"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="#1a2b4b"
+      className="w-6 h-6 drop-shadow-sm"
+    >
+      <path d="M12 14a3 3 0 003-3V6a3 3 0 10-6 0v5a3 3 0 003 3z" />
+      <path d="M19 11a1 1 0 10-2 0 5 5 0 01-10 0 1 1 0 10-2 0 7 7 0 006 6.92V21a1 1 0 102 0v-3.08A7 7 0 0019 11z" />
+      <span className="mt-2 text-sm text-[#5e3f1d] font-semibold">Try Demo</span>
+    </svg>
+  </button>
+</div>
+
+
+
       {/* Original Hero Section (restored) */}
 
       <HeroSection
