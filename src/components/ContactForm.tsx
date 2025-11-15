@@ -120,8 +120,11 @@ export function ContactForm() {
           onClick={() => {
             console.log('🖱️ Button clicked!', { isSubmitting, disabled: isSubmitting });
           }}
-          className="px-10 py-4 bg-gradient-to-r from-[#815a2b] to-[#5e3f1d] text-[#fffaf3] font-semibold text-lg rounded-full shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 font-['Inter'] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 cursor-pointer relative z-20"
-          style={{ pointerEvents: 'auto' }}
+          className="px-10 py-4 bg-gradient-to-r from-[#815a2b] to-[#5e3f1d] text-[#fffaf3] font-semibold text-lg rounded-full shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 font-['Inter'] disabled:opacity-50 disabled:hover:scale-100 relative z-20"
+          style={{
+            pointerEvents: 'auto',
+            cursor: isSubmitting ? 'not-allowed' : 'pointer'
+          }}
         >
           {isSubmitting ? 'Submitting...' : 'Get My Free Strategy Call'}
         </button>
