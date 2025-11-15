@@ -72,7 +72,7 @@ export function Contact() {
                 Full Name
               </label>
               <div className="relative">
-                <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-700" />
+                <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-700 pointer-events-none z-10" />
                 <input
                   type="text"
                   id="name"
@@ -81,7 +81,9 @@ export function Contact() {
                   onChange={handleChange}
                   placeholder="John Doe"
                   required
-                  className="w-full pl-12 pr-4 py-3 bg-[#f5f0e8] border-2 border-[#d4c4a8] rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all text-gray-900 placeholder:text-gray-600"
+                  autoComplete="name"
+                  className="w-full pl-12 pr-4 py-3 bg-white border-2 border-[#d4c4a8] rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all text-gray-900 placeholder:text-gray-500 relative z-0 cursor-text"
+                  style={{ pointerEvents: 'auto' }}
                 />
               </div>
             </div>
@@ -91,7 +93,7 @@ export function Contact() {
                 Email Address
               </label>
               <div className="relative">
-                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-700" />
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-700 pointer-events-none z-10" />
                 <input
                   type="email"
                   id="email"
@@ -100,7 +102,9 @@ export function Contact() {
                   onChange={handleChange}
                   placeholder="john@company.com"
                   required
-                  className="w-full pl-12 pr-4 py-3 bg-[#f5f0e8] border-2 border-[#d4c4a8] rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all text-gray-900 placeholder:text-gray-600"
+                  autoComplete="email"
+                  className="w-full pl-12 pr-4 py-3 bg-white border-2 border-[#d4c4a8] rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all text-gray-900 placeholder:text-gray-500 relative z-0 cursor-text"
+                  style={{ pointerEvents: 'auto' }}
                 />
               </div>
             </div>
@@ -110,7 +114,7 @@ export function Contact() {
                 Company Name <span className="text-gray-500 font-normal">(Optional)</span>
               </label>
               <div className="relative">
-                <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-700" />
+                <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-700 pointer-events-none z-10" />
                 <input
                   type="text"
                   id="company"
@@ -118,7 +122,9 @@ export function Contact() {
                   value={formData.company}
                   onChange={handleChange}
                   placeholder="Acme Inc."
-                  className="w-full pl-12 pr-4 py-3 bg-[#f5f0e8] border-2 border-[#d4c4a8] rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all text-gray-900 placeholder:text-gray-600"
+                  autoComplete="organization"
+                  className="w-full pl-12 pr-4 py-3 bg-white border-2 border-[#d4c4a8] rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all text-gray-900 placeholder:text-gray-500 relative z-0 cursor-text"
+                  style={{ pointerEvents: 'auto' }}
                 />
               </div>
             </div>
@@ -128,7 +134,7 @@ export function Contact() {
                 Message
               </label>
               <div className="relative">
-                <MessageSquare className="absolute left-4 top-4 w-5 h-5 text-gray-700" />
+                <MessageSquare className="absolute left-4 top-4 w-5 h-5 text-gray-700 pointer-events-none z-10" />
                 <textarea
                   id="message"
                   name="message"
@@ -137,7 +143,8 @@ export function Contact() {
                   placeholder="Tell us about your needs..."
                   required
                   rows={4}
-                  className="w-full pl-12 pr-4 py-3 bg-[#f5f0e8] border-2 border-[#d4c4a8] rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all text-gray-900 placeholder:text-gray-600 resize-none"
+                  className="w-full pl-12 pr-4 py-3 bg-white border-2 border-[#d4c4a8] rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all text-gray-900 placeholder:text-gray-500 resize-none relative z-0 cursor-text"
+                  style={{ pointerEvents: 'auto' }}
                 />
               </div>
             </div>
