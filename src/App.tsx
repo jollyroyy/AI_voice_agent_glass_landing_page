@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { AuthProvider } from '@/contexts/AuthContext';
 import { AuthModal } from '@/components/AuthModal';
 import { useState } from 'react';
+import { supabase } from '@/lib/supabase';
 
 const navItems = [
   {
@@ -287,7 +288,6 @@ function App() {
         const message = formData.get('message') as string;
 
         try {
-          const { supabase } = await import('@/lib/supabase');
           const { data: { user } } = await supabase.auth.getUser();
 
           const { error } = await supabase
