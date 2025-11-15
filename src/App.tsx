@@ -6,8 +6,8 @@ import { Target, Phone, Building2, Users, Zap, Clock, TrendingUp, HeadphonesIcon
 import { motion } from 'framer-motion';
 import { AuthProvider } from '@/contexts/AuthContext';
 import { AuthModal } from '@/components/AuthModal';
+import { ContactForm } from '@/components/ContactForm';
 import { useState } from 'react';
-import { supabase } from '@/lib/supabase';
 
 const navItems = [
   {
@@ -277,102 +277,7 @@ function App() {
       Share your goals below, and our team will design a personalized strategy that converts more leads and saves you time.
     </p>
 
-    <form
-      className="bg-[#f9f5ef]/95 border border-[#d4c4a8] shadow-2xl rounded-3xl p-10 space-y-6 max-w-3xl mx-auto backdrop-blur-lg relative z-10"
-      onSubmit={async (e) => {
-        e.preventDefault();
-
-        const submitButton = e.currentTarget.querySelector('button[type="submit"]') as HTMLButtonElement;
-        if (submitButton) submitButton.disabled = true;
-
-        const formData = new FormData(e.currentTarget);
-        const fullName = formData.get('fullName') as string;
-        const email = formData.get('email') as string;
-        const company = (formData.get('company') as string) || null;
-        const message = formData.get('message') as string;
-
-        console.log('Submitting form with:', { fullName, email, company, message });
-
-        try {
-          const { data: { user } } = await supabase.auth.getUser();
-
-          const { data, error } = await supabase
-            .from('contact_submissions')
-            .insert({
-              user_id: user?.id || null,
-              full_name: fullName,
-              email: email,
-              company: company,
-              message: message,
-            })
-            .select();
-
-          if (error) {
-            console.error('Supabase error:', error);
-            alert(`Error: ${error.message}. Please try again or contact us directly.`);
-          } else {
-            console.log('Form submitted successfully:', data);
-            alert('Thank you for reaching out! Our strategy team will contact you shortly.');
-            e.currentTarget.reset();
-          }
-        } catch (err) {
-          console.error('Unexpected error:', err);
-          alert('There was an unexpected error. Please try again or contact us directly at contact@voiceshine.ai');
-        } finally {
-          if (submitButton) submitButton.disabled = false;
-        }
-      }}
-    >
-      <div className="grid md:grid-cols-2 gap-6">
-        <input
-          type="text"
-          name="fullName"
-          id="fullName"
-          placeholder="Full Name"
-          required
-          autoComplete="name"
-          className="w-full p-4 bg-white text-[#3b2e1a] placeholder-[#8a7960] border-2 border-[#d4c4a8] rounded-xl focus:ring-2 focus:ring-[#815a2b] focus:outline-none font-['Inter'] cursor-text"
-          style={{ pointerEvents: 'auto', zIndex: 1 }}
-        />
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Business Email"
-          required
-          autoComplete="email"
-          className="w-full p-4 bg-white text-[#3b2e1a] placeholder-[#8a7960] border-2 border-[#d4c4a8] rounded-xl focus:ring-2 focus:ring-[#815a2b] focus:outline-none font-['Inter'] cursor-text"
-          style={{ pointerEvents: 'auto', zIndex: 1 }}
-        />
-      </div>
-
-      <input
-        type="text"
-        name="company"
-        id="company"
-        placeholder="Company / Organization"
-        autoComplete="organization"
-        className="w-full p-4 bg-white text-[#3b2e1a] placeholder-[#8a7960] border-2 border-[#d4c4a8] rounded-xl focus:ring-2 focus:ring-[#815a2b] focus:outline-none font-['Inter'] cursor-text"
-        style={{ pointerEvents: 'auto', zIndex: 1 }}
-      />
-
-      <textarea
-        name="message"
-        id="message"
-        placeholder="Tell us about your goals or challenges"
-        rows={5}
-        required
-        className="w-full p-4 bg-white text-[#3b2e1a] placeholder-[#8a7960] border-2 border-[#d4c4a8] rounded-xl focus:ring-2 focus:ring-[#815a2b] focus:outline-none font-['Inter'] resize-none cursor-text"
-        style={{ pointerEvents: 'auto', zIndex: 1 }}
-      ></textarea>
-
-      <button
-        type="submit"
-        className="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-[#815a2b] to-[#5e3f1d] text-[#fffaf3] font-semibold text-lg rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 font-['Inter'] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 cursor-pointer"
-      >
-        Get My Free Strategy Call
-      </button>
-    </form>
+    <ContactForm />
 
     <div className="mt-12 text-[#3b2e1a]/80 text-sm font-['Inter']">
       <p>
