@@ -263,11 +263,11 @@ function App() {
   className="relative py-28 px-6 flex flex-col items-center justify-center text-center overflow-hidden"
 >
   {/* Shader background (unchanged) */}
-  <div className="absolute inset-0 -z-10">
-    <canvas id="contact-shader-bg" className="w-full h-full"></canvas>
+  <div className="absolute inset-0 -z-10 pointer-events-none">
+    <canvas id="contact-shader-bg" className="w-full h-full pointer-events-none"></canvas>
   </div>
 
-  <div className="relative z-10 max-w-5xl mx-auto">
+  <div className="relative z-10 max-w-5xl mx-auto pointer-events-auto">
     <h2 className="text-5xl font-['Playfair_Display'] font-bold text-[#3b2e1a] mb-6">
       Let’s Create Your AI Voice Breakthrough
     </h2>
@@ -278,7 +278,7 @@ function App() {
     </p>
 
     <form
-      className="bg-[#f9f5ef]/95 border border-[#d4c4a8] shadow-2xl rounded-3xl p-10 space-y-6 max-w-3xl mx-auto backdrop-blur-lg"
+      className="bg-[#f9f5ef]/95 border border-[#d4c4a8] shadow-2xl rounded-3xl p-10 space-y-6 max-w-3xl mx-auto backdrop-blur-lg relative z-10"
       onSubmit={async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -317,32 +317,43 @@ function App() {
         <input
           type="text"
           name="fullName"
+          id="fullName"
           placeholder="Full Name"
           required
-          className="w-full p-4 bg-[#fffaf3] text-[#3b2e1a] placeholder-[#8a7960] border border-[#d4c4a8] rounded-xl focus:ring-2 focus:ring-[#815a2b] focus:outline-none font-['Inter']"
+          autoComplete="name"
+          className="w-full p-4 bg-white text-[#3b2e1a] placeholder-[#8a7960] border-2 border-[#d4c4a8] rounded-xl focus:ring-2 focus:ring-[#815a2b] focus:outline-none font-['Inter'] cursor-text"
+          style={{ pointerEvents: 'auto', zIndex: 1 }}
         />
         <input
           type="email"
           name="email"
+          id="email"
           placeholder="Business Email"
           required
-          className="w-full p-4 bg-[#fffaf3] text-[#3b2e1a] placeholder-[#8a7960] border border-[#d4c4a8] rounded-xl focus:ring-2 focus:ring-[#815a2b] focus:outline-none font-['Inter']"
+          autoComplete="email"
+          className="w-full p-4 bg-white text-[#3b2e1a] placeholder-[#8a7960] border-2 border-[#d4c4a8] rounded-xl focus:ring-2 focus:ring-[#815a2b] focus:outline-none font-['Inter'] cursor-text"
+          style={{ pointerEvents: 'auto', zIndex: 1 }}
         />
       </div>
 
       <input
         type="text"
         name="company"
+        id="company"
         placeholder="Company / Organization"
-        className="w-full p-4 bg-[#fffaf3] text-[#3b2e1a] placeholder-[#8a7960] border border-[#d4c4a8] rounded-xl focus:ring-2 focus:ring-[#815a2b] focus:outline-none font-['Inter']"
+        autoComplete="organization"
+        className="w-full p-4 bg-white text-[#3b2e1a] placeholder-[#8a7960] border-2 border-[#d4c4a8] rounded-xl focus:ring-2 focus:ring-[#815a2b] focus:outline-none font-['Inter'] cursor-text"
+        style={{ pointerEvents: 'auto', zIndex: 1 }}
       />
 
       <textarea
         name="message"
+        id="message"
         placeholder="Tell us about your goals or challenges"
         rows={5}
         required
-        className="w-full p-4 bg-[#fffaf3] text-[#3b2e1a] placeholder-[#8a7960] border border-[#d4c4a8] rounded-xl focus:ring-2 focus:ring-[#815a2b] focus:outline-none font-['Inter']"
+        className="w-full p-4 bg-white text-[#3b2e1a] placeholder-[#8a7960] border-2 border-[#d4c4a8] rounded-xl focus:ring-2 focus:ring-[#815a2b] focus:outline-none font-['Inter'] resize-none cursor-text"
+        style={{ pointerEvents: 'auto', zIndex: 1 }}
       ></textarea>
 
       <button
