@@ -6,6 +6,9 @@ export function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    e.stopPropagation();
+
+    console.log('🔵 Form submit triggered!');
     setIsSubmitting(true);
 
     const formData = new FormData(e.currentTarget);
@@ -14,11 +17,20 @@ export function ContactForm() {
     const company = (formData.get('company') as string) || null;
     const message = formData.get('message') as string;
 
-    console.log('Submitting form with:', { fullName, email, company, message });
+    console.log('📝 Form data extracted:', { fullName, email, company, message });
+
+    if (!fullName || !email || !message) {
+      alert('Please fill in all required fields');
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
+      console.log('🔍 Getting current user...');
       const { data: { user } } = await supabase.auth.getUser();
+      console.log('👤 Current user:', user);
 
+      console.log('💾 Inserting into database...');
       const { data, error } = await supabase
         .from('contact_submissions')
         .insert({
@@ -30,12 +42,14 @@ export function ContactForm() {
         })
         .select();
 
+      console.log('📊 Database response - data:', data, 'error:', error);
+
       if (error) {
-        console.error('Supabase error:', error);
+        console.error('❌ Supabase error:', error);
         alert(`Error: ${error.message}. Please try again or contact us directly.`);
       } else {
-        console.log('Form submitted successfully:', data);
-        alert('Thank you for reaching out! Our strategy team will contact you shortly.');
+        console.log('✅ Form submitted successfully:', data);
+        alert('✅ Thank you for reaching out! Our strategy team will contact you shortly.');
         e.currentTarget.reset();
       }
     } catch (err) {
@@ -43,6 +57,7 @@ export function ContactForm() {
       alert('There was an unexpected error. Please try again or contact us directly at contact@voiceshine.ai');
     } finally {
       setIsSubmitting(false);
+      console.log('🏁 Form submission complete');
     }
   };
 
@@ -98,14 +113,19 @@ export function ContactForm() {
         style={{ pointerEvents: 'auto', zIndex: 1 }}
       ></textarea>
 
-      <button
-        type="submit"
-        disabled={isSubmitting}
-        className="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-[#815a2b] to-[#5e3f1d] text-[#fffaf3] font-semibold text-lg rounded-full shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 font-['Inter'] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 cursor-pointer relative z-20"
-        style={{ pointerEvents: 'auto' }}
-      >
-        {isSubmitting ? 'Submitting...' : 'Get My Free Strategy Call'}
-      </button>
+      <div className="flex justify-center md:justify-start">
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          onClick={() => {
+            console.log('🖱️ Button clicked!', { isSubmitting, disabled: isSubmitting });
+          }}
+          className="px-10 py-4 bg-gradient-to-r from-[#815a2b] to-[#5e3f1d] text-[#fffaf3] font-semibold text-lg rounded-full shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 font-['Inter'] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 cursor-pointer relative z-20"
+          style={{ pointerEvents: 'auto' }}
+        >
+          {isSubmitting ? 'Submitting...' : 'Get My Free Strategy Call'}
+        </button>
+      </div>
     </form>
   );
 }
