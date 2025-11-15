@@ -4,6 +4,10 @@ import { HeroSection } from '@/components/ui/hero-section-with-smooth-bg-shader'
 import DisplayCards from '@/components/ui/display-cards';
 import { Target, Phone, Building2, Users, Zap, Clock, TrendingUp, HeadphonesIcon, Calendar } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { AuthProvider } from '@/contexts/AuthContext';
+import { AuthModal } from '@/components/AuthModal';
+import { ContactForm } from '@/components/ContactForm';
+import { useState } from 'react';
 
 const navItems = [
   {
@@ -34,12 +38,36 @@ const navItems = [
 ];
 
 function App() {
-  return (
-    <main className="relative text-gray-100 bg-[#0a0a0f] min-h-screen overflow-visible">
-      {/* Premium radial background layer */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(0,255,255,0.1),transparent_70%)] pointer-events-none z-0"></div>
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<'signin' | 'signup'>('signin');
 
-      <NavBar items={navItems} />
+  const handleSignInClick = () => {
+    setAuthMode('signin');
+    setAuthModalOpen(true);
+  };
+
+  const handleSignUpClick = () => {
+    setAuthMode('signup');
+    setAuthModalOpen(true);
+  };
+
+  return (
+    <AuthProvider>
+      <main className="relative text-gray-100 bg-[#0a0a0f] min-h-screen overflow-visible">
+        {/* Premium radial background layer */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(0,255,255,0.1),transparent_70%)] pointer-events-none z-0"></div>
+
+        <NavBar
+          items={navItems}
+          onSignInClick={handleSignInClick}
+          onSignUpClick={handleSignUpClick}
+        />
+
+        <AuthModal
+          isOpen={authModalOpen}
+          onClose={() => setAuthModalOpen(false)}
+          initialMode={authMode}
+        />
 
 
 
@@ -282,11 +310,11 @@ function App() {
   className="relative py-28 px-6 flex flex-col items-center justify-center text-center overflow-hidden"
 >
   {/* Shader background (unchanged) */}
-  <div className="absolute inset-0 -z-10">
-    <canvas id="contact-shader-bg" className="w-full h-full"></canvas>
+  <div className="absolute inset-0 -z-10 pointer-events-none">
+    <canvas id="contact-shader-bg" className="w-full h-full pointer-events-none"></canvas>
   </div>
 
-  <div className="relative z-10 max-w-5xl mx-auto">
+  <div className="relative z-10 max-w-5xl mx-auto pointer-events-auto">
     <h2 className="text-5xl font-['Playfair_Display'] font-bold text-[#3b2e1a] mb-6">
       Let’s Create Your AI Voice Breakthrough
     </h2>
@@ -296,48 +324,7 @@ function App() {
       Share your goals below, and our team will design a personalized strategy that converts more leads and saves you time.
     </p>
 
-    <form
-      className="bg-[#f9f5ef]/95 border border-[#d4c4a8] shadow-2xl rounded-3xl p-10 space-y-6 max-w-3xl mx-auto backdrop-blur-lg"
-      onSubmit={(e) => {
-        e.preventDefault();
-        alert('Thank you for reaching out! Our strategy team will contact you shortly.');
-      }}
-    >
-      <div className="grid md:grid-cols-2 gap-6">
-        <input
-          type="text"
-          placeholder="Full Name"
-          required
-          className="w-full p-4 bg-[#fffaf3] text-[#3b2e1a] placeholder-[#8a7960] border border-[#d4c4a8] rounded-xl focus:ring-2 focus:ring-[#815a2b] focus:outline-none font-['Inter']"
-        />
-        <input
-          type="email"
-          placeholder="Business Email"
-          required
-          className="w-full p-4 bg-[#fffaf3] text-[#3b2e1a] placeholder-[#8a7960] border border-[#d4c4a8] rounded-xl focus:ring-2 focus:ring-[#815a2b] focus:outline-none font-['Inter']"
-        />
-      </div>
-
-      <input
-        type="text"
-        placeholder="Company / Organization"
-        className="w-full p-4 bg-[#fffaf3] text-[#3b2e1a] placeholder-[#8a7960] border border-[#d4c4a8] rounded-xl focus:ring-2 focus:ring-[#815a2b] focus:outline-none font-['Inter']"
-      />
-
-      <textarea
-        placeholder="Tell us about your goals or challenges"
-        rows={5}
-        required
-        className="w-full p-4 bg-[#fffaf3] text-[#3b2e1a] placeholder-[#8a7960] border border-[#d4c4a8] rounded-xl focus:ring-2 focus:ring-[#815a2b] focus:outline-none font-['Inter']"
-      ></textarea>
-
-      <button
-        type="submit"
-        className="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-[#815a2b] to-[#5e3f1d] text-[#fffaf3] font-semibold text-lg rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 font-['Inter']"
-      >
-        Get My Free Strategy Call
-      </button>
-    </form>
+    <ContactForm />
 
     <div className="mt-12 text-[#3b2e1a]/80 text-sm font-['Inter']">
       <p>
@@ -370,6 +357,7 @@ function App() {
         </div>
       </footer>
     </main>
+    </AuthProvider>
   );
 }
 

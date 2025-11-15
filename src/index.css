@@ -137,6 +137,24 @@ button:focus-visible {
   * {
     @apply border-border;
   }
+
+  input,
+  textarea,
+  button {
+    pointer-events: auto !important;
+    user-select: text !important;
+    -webkit-user-select: text !important;
+  }
+
+  button {
+    cursor: pointer !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+  }
+
+  button:disabled {
+    cursor: not-allowed !important;
+  }
 }
 
 .gradient-text {
